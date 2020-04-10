@@ -1,6 +1,0 @@
-D:\Hiishop_Mall\branches\Himall3.3\src\HiMall.OpenApi\obj\Debug\HiMall.OpenApi.csprojResolveAssemblyReference.cache
-D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Web\bin\Himall.OpenApi.dll.config
-D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Web\bin\Himall.OpenApi.dll
-D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Web\bin\Himall.OpenApi.pdb
-D:\Hiishop_Mall\branches\Himall3.3\src\HiMall.OpenApi\obj\Debug\Himall.OpenApi.dll
-D:\Hiishop_Mall\branches\Himall3.3\src\HiMall.OpenApi\obj\Debug\Himall.OpenApi.pdb
