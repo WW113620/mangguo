@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>订单分享</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+     <link rel="stylesheet" href="css/mui.min.css" />
+     <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我要晒单</h1>
+			<!--<a class="mui-action-back iconfont icon-more mui-pull-right orderShare_more" id="orderShare_more"></a>-->
+			<span id="orderShare_more" class="goods-share iconfont icon-fenxiang mui-pull-right"></span>
+	</header> 
+    <div class="mui-content transparent" id="orderShare_box">
+	    <div class="swiper-container orderShare" id="orderShare" >
+	        <div class="swiper-wrapper" id="orderDetails">
+				
+	        </div>
+	    </div>
+		<div class="swiper-pagination orderShareDian"></div>
+		<button class="returnOrderList">返回订单列表</button>
+    </div>   
+    <!--<div class="ordershareFx"><img src="images/fenxiang.png"/></div>-->
+	<script src="js/mui.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/md5.js" ></script>
+	<script src="js/swiper.min.js"></script>
+	<script src="js/delayimg.min.js"></script>
+	<script src="js/template.js" ></script>
+	
+	<script>
+		mui.init();
+		var userkey=himall.getState().userkey,
+			ws;
+		mui.plusReady(function(){
+			ws=plus.webview.currentWebview();
+			mui.ajax(URL+"api/Order/GetOrderShareProduct",{
+	        	data:himall.md5Data({
+					orderids:ws.orderId,
+					userkey:userkey
+				}),
+				dataType:'json',
+				type:'get',
+				timeout:10000,
+				success:function(data){
+					if(data.success){
+						document.getElementById("orderDetails").innerHTML=template('initData', data.OrderDetail[0]);
+						var swiper = new Swiper('.swiper-container', {
+					        pagination: '.swiper-pagination',
+					        slidesPerView: 'auto',
+					        centeredSlides: true,
+					        paginationClickable: true,
+					        spaceBetween: 20
+				        });
+				        document.getElementById('orderShare_box').style.opacity='1';
+					}
+				},
+				error:function(xhr){
+					plus.nativeUI.toast('请求失败，请检查网络重试');
+				}
+			});
+			
+			mui('#orderShare_box').on('tap', '.returnOrderList', function() {
+				ws.close();
+			});
+			mui('#orderDetails').on('tap', '.vshop-detail', function() {
+				 var vshopid = this.getAttribute('data-vshopid');
+				 var shopbranchid = this.getAttribute('data-shopbranchid');
+				 if(shopbranchid && shopbranchid>0){
+	            	himall.openVW('store-home.html',{shopid:shopbranchid});	 	
+				 }else{
+					himall.openVW('vshop-detail.html',{vshopId:vshopid});
+				}
+			});
+				
+			document.getElementById('orderShare_more').addEventListener('tap',function(){
+		   		var shareurl = URL+'m-weixin/order/ordershare?orderids='+ws.orderId+'&source=share',
+		   			thumbs=document.getElementsByClassName('shareImg')[0].getAttribute('data-thumb'),
+		   			pictures=document.getElementsByClassName('shareImg')[0].getAttribute('data-picture');
+		   	    loadShare({
+					title:"买到好货，必须炫一下",
+					href:shareurl,
+					content:document.getElementsByClassName('shareContent')[0].innerText,
+					pictures:pictures,
+					thumbs:thumbs,
+					callBack:function(){
+						mui.ajax(URL+'api/Order/PostOrderShareAddIntegral',{
+						data:himall.md5Data({
+						orderids:ws.orderId,
+						userkey:userkey
+						}),
+							dataType:'json',
+							type:'POST',
+							timeout:10000,
+							success:function(data){
+								if(data.success){
+									plus.nativeUI.toast('分享成功！');
+								}
+							},
+							error:function(xhr){
+								plus.nativeUI.toast('请求失败，请检查网络重试');
+							}
+						});
+					}
+				});
+			});
+		   
+			mui(document).on("tap",'.ordershareFx',function(){
+				this.style.display='none';
+			});
+		});
+   
+    </script>
+    
+    <script id="initData" type="text/html">
+		{{each Detail.OrderItems as item}}
+			<div class="swiper-slide">
+				<div class="item-box">
+					<div class="orderShare_img">
+						<img class="shareImg" src="{{item.ThumbnailsUrl}}" data-thumb="{{item.ShareImage}}" data-picture="{{item.ProductImage}}"/>
+					</div>
+					<p class="shareContent">
+						{{item.ProductName}}
+					</p>
+					<span class="price"><i>¥</i>{{item.SalePrice}}</span>
+					<p class="ads border-top"><span class="iconfont icon-shop"></span>{{if Detail.ShopBranchId && Detail.ShopBranchId>0}}{{Detail.ShopBranchName}}{{else}}{{Detail.ShopName}}{{/if}}</p>
+					<div class="orderShare_btn">
+						{{if Detail.VShopId>0}}
+							<a class="vshop-detail" data-vshopid="{{Detail.VShopId}}" data-shopbranchid="{{Detail.ShopBranchId}}">进店逛逛</a>
+						{{/if}}
+					</div>
+				</div>
+			</div>
+		{{/each}}
+ 	</script>
+</body>
+</html>

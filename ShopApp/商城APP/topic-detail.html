@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="css/style.css" />
+		<style>.members_con{ background: transparent;}</style>
+	</head>
+
+	<body>   
+		<header class="mui-bar mui-bar-nav">      
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">加载中...</h1>
+		</header>
+		
+		<div class="mui-content">
+			<div id="modules" class="cl">
+				<div class="members_con">
+                 <div class="fulltext"><p>『富文本编辑器』</p></div>
+             </div>
+             <form action="/m-Wap/search" method="get">
+                 <div class="members_con">
+                     <section class="members_search">
+                         <input type="search" name="keywords" id="" value="" placeholder="搜索">
+                         <label></label>
+                     </section>
+                 </div>
+             </form>
+             <div class="members_con">
+                 <section class="members_special titlestyle1 right">
+                     <h2 class="j-title">
+                         标题名称
+                     </h2>
+                     <!--<p class="j-subtitle">『副标题』</p>-->
+                     <!--
+                         <b>更多</b>
+                     -->
+                 </section>
+             </div>
+         <div class="swiper-container" id="swiper_20187131355539">
+ 		        <div class="swiper-wrapper">
+ 		            	<div class="swiper-slide"><a href="/m-wap/product/detail/1804"><img src="content/public/images/blank/swiper.png" data-delay="https://himallhttps.himall.kuaidiantong.cn//Storage/Shop/1/Products/1804/1_350.png"></a></div>
+ 		            	<div class="swiper-slide"><a href="/topic/list"><img src="content/public/images/blank/swiper.png" data-delay="https://himallhttps.himall.kuaidiantong.cn/temp/image/20180710/6366683287117693328557928.png"></a></div>
+ 		            	<div class="swiper-slide"><a href="/m-wap/LimitTimeBuy/Home"><img src="content/public/images/blank/swiper.png" data-delay="https://himallhttps.himall.kuaidiantong.cn/temp/image/20180706/6366649520774352252371933.jpg"></a></div>
+ 		        </div>
+ 		        <div class="swiper-pagination"></div>
+ 			</div>
+			</div>
+		</div>
+		        
+		<script src="js/mui.min.js"></script>     
+		<script src="js/app.js"></script> 
+		<script src="js/md5.js" ></script>
+		<script src="js/delayimg.min.js"></script>
+		<script src="js/swiper.min.js" ></script>
+		<script src="js/template.js" ></script>
+		<script type="text/javascript">        
+			
+			var title=document.querySelector('.mui-title'),
+				modules=document.getElementById('modules');
+			mui.plusReady(function() {
+		    	var ws=plus.webview.currentWebview();
+		    	var id=ws.topicId;
+			  	loadPage(id);
+			});  
+			document.addEventListener('updateData',function(e){
+				loadPage(e.detail.topicId);
+			});
+			
+			function loadPage(id){
+			  	var w=plus.nativeUI.showWaiting('',{padlock:true});
+				mui.ajax(URL+'special/'+id+'/data/default.json',{
+					data:himall.md5Data(),
+					dataType:'json',
+					type:'get',
+					success:function(data){
+						title.innerText=data.page.title||'专题';
+						var str='';
+						for(var i=0; i<data.LModules.length; i++){
+							var de=new Base64(),
+								item=data.LModules[i];
+							if(item.type==9 && item.content.showType=='1'){
+								str+=template('initSwiper',item);
+							}else{
+								str+=de.decode(item.dom_conitem);
+							}
+						}
+						modules.innerHTML=himall.parseModulesImg(str.replace(new RegExp('/Content','g'),'Content'));
+						mui('.swiper-container').each(function(){
+							new Swiper('#'+this.id, {
+								pagination: '.swiper-pagination',
+								autoplay:4000,
+								speed:500
+							});
+						});
+						delayimg.init({offset:100});
+						w.close();
+					},
+					error:function(xhr){
+						w.close();
+						reloadWvLoad();
+					}
+				});
+			}
+			
+			himall.templateHref();
+			
+			
+		</script>
+		
+		<script type="text/html" id="initSwiper">
+			<div class="swiper-container" {{if content.space=='1'}}style="margin:10px 0"{{/if}} id="swiper_{{id}}">
+		        <div class="swiper-wrapper">
+		        	{{each content.dataset}}
+		            	<div class="swiper-slide"><a href="{{$value.link}}"><img src="{{$value.pic}}"/></a></div>
+		            {{/each}}
+		        </div>
+		        <div class="swiper-pagination"></div>
+			</div>
+		</script>
+	</body>
+
+</html>                     

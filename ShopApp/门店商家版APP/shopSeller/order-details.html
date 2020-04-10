@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<title>订单详情</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button class="mui-action-back mui-btn mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav"></span>返回</button>
+			<h1 class="mui-title">订单详情</h1>
+		</header>
+		<div class="mui-content verify order-detail" id="order-info">
+	
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/delayimg.min.js"></script>
+	<script src="js/mui.zoom.js"></script>
+	<script src="js/mui.previewimage.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/md5.js" ></script>
+	<script src="js/template.js"></script>
+	<script type="text/javascript">
+		var userkey=himall.getState().userkey,
+				orderId,
+				w,
+				ws,
+				List=document.getElementById('List'),
+				errorTips=document.getElementById('errorTips'),
+				isJoin=himall.isJoin();
+		mui.init({
+			swipeBack: true
+		});
+		var ajaxUrlList='api/ShopBranchOrder/GetOrderDetail';
+		if(isJoin){
+			ajaxUrlList='api/ShopOrder/GetOrderDetail';
+		}
+		mui.plusReady(function() {
+			ws=plus.webview.currentWebview();
+			ws.setStyle({scrollIndicator:'none'});
+			orderId=ws.orderId;
+			w=plus.nativeUI.showWaiting('',{padlock:true});
+			mui.ajax(URL+ajaxUrlList,{
+	        	data:himall.md5Data({
+					userkey:userkey,
+					id:orderId
+				}),
+				dataType:'json',
+				type:'get',
+				timeout:10000,
+				success:function(data){
+					if(data.success===false && data.code==504){
+						plus.nativeUI.toast(data.msg);
+						showLogin();
+					}
+					if(data.success){
+						data.Order.isJoin = isJoin;
+			            document.getElementById('order-info').innerHTML=template('initData',data);
+			            delayimg.init({content:document.getElementById('order-info')});
+			            var btnb=document.getElementById("bottom_fixedBtn");
+			            if(!isJoin && btnb){
+			            	btnb.style.display="";
+			            }
+						w.close();
+						himall.removeClass(document.querySelector('.mui-content'),'transparent');
+						mui.previewImage();
+					}else{
+						plus.nativeUI.toast("该订单已被转移");
+						w.close();
+                		ws.close();
+                		return;
+					}
+			        
+      				w.close();	
+				},
+				error:function(xhr,type,errorThrown){
+					w.close();
+					reloadWvLoad();
+				}
+			});
+		});
+		mui('#order-info').on('tap','.btn-delivery',function(){
+			himall.openVW("goods-deliver.html",{orderId:orderId});
+		});
+	</script>
+	<script id="initData" type="text/html">
+		<div class="status">
+	    	订单状态：<span>{{Order.Status}}</span>
+	    </div>
+	    {{if Order.HasExpressStatus}}
+	    <a class="street-well common shopaddr" href="">
+	    	<i class="iconfont2 icon-dingwei1"></i>
+	        <p>{{Order.ShipTo}}: {{Order.Phone}}</p>
+	        <p class="mt10">{{Order.Address}}</p>
+	    </a>
+	    {{/if}}
+	    <div class="pro-list common">
+			<a class="shopname">
+				<i class="iconfont icon-otoshouhouliebiaodianpu"></i>
+				<span>{{Order.ShopBranchName||Order.ShopName}}</span>
+			</a>
+			{{each OrderItem}}	
+	        <div class="shopcart-m-item">
+	            <div class="shopcart-item-pic">
+	                <img src="images/blank.gif" data-delay="{{$value.ProductImage}}">
+	            </div>
+	            <div class="shpcart-item-txt">
+	                <div class="shopcart-txt-t ">
+	                    <div class="shopcart-txt-name two-text-overflow">{{$value.ProductName}}</div>
+	                    <div class="shopcart-txt-saleprice ">
+	                        <span>¥ {{$value.Price}}</span>
+	                        <div class="shopcart-item-num ">
+	                            <div class="txt ">× {{$value.Count}}</div>
+	                        </div>
+	                    </div>
+	                </div>
+	                 <div class="shopcart-txt-b ">
+	                     <p class="shpcart-item-skuname">
+	                        {{if $value.size}}{{$value.SizeAlias}}：{{$value.size}}&nbsp;&nbsp;{{/if}}
+							{{if $value.color}}{{$value.ColorAlias}}：{{$value.color}}&nbsp;&nbsp;{{/if}}
+							{{if $value.version}}{{$value.VersionAlias}}：{{$value.version}}{{/if}} 
+	                    </p> 
+	                </div>
+	            </div>
+	        </div>
+	        {{/each}}
+	    </div>
+	    {{if VerificationCodes}}
+	    <div class="vericode">
+	    	<div class="info">
+	    		<h3 class="title">核销码</h3>
+        		{{if validityType}}<p>有效期 {{startDate}} ~ {{endDate}}</p>{{/if}}
+	    	</div>
+	    	<ul>
+	    		{{each VerificationCodes as item i}}
+	    		<li class="{{item.Status==1?'wait':(item.Status==3?'ing':'')}}">
+	    			<span>核销码{{i+1}}</span>
+	    			<span>{{item.VerificationCode}}</span>
+	    			<span class="fr">{{item.StatusText}}</span>
+	    		</li>
+	    		{{/each}}
+	    	</ul>
+	    </div>
+	    {{/if}}
+	    <div class="user">
+	    	<ul class="infolist">
+	    		<li>
+	    			<label>商品金额</label>
+	    			<span>￥{{Order.ProductTotalAmount.toFixed(2)}}</span>
+	    		</li>
+	    		<li class="{{Order.DiscountAmount>0?'':'hidden'}}">
+	    			<label>优惠券</label>
+	    			<span>-￥{{Order.DiscountAmount.toFixed(2)}}</span>
+	    		</li>
+	    		<li class="{{Order.FullDiscount>0?'':'hidden'}}">
+	    			<label>满额减</label>
+	    			<span>-￥{{Order.FullDiscount.toFixed(2)}}</span>
+	    		</li>
+	    		<li class="{{Order.IntegralDiscount>0?'':'hidden'}}">
+	    			<label>积分抵扣</label>
+	    			<span>-￥{{Order.IntegralDiscount.toFixed(2)}}</span>
+	    		</li>
+	    		{{if !VerificationCodes}}
+	    		<li>
+	    			<label>运费</label>
+	    			<span>￥{{Order.Freight.toFixed(2)}}</span>
+	    		</li>
+	    		{{/if}}
+	    		<li class="{{Order.Tax>0?'':'hidden'}}">
+	    			<label>税费</label>
+	    			<span>￥{{Order.Tax.toFixed(2)}}</span>
+	    		</li>
+	    		<li>
+	    			<label>实付金额</label>
+	    			<span class="price fontbold">￥{{Order.RealTotalAmount.toFixed(2)}}</span>
+	    		</li>
+	    		{{if Order.CapitalAmount>0||Order.OrderPayAmount>0}}
+		    		<h3 class="title">付款信息</h3>
+		    		{{if Order.CapitalAmount>0}}
+		    		<li>
+		    			<label>预存款抵扣</label>
+		    			<span>￥{{Order.CapitalAmount.toFixed(2)}}</span>
+		    		</li>
+		    		{{/if}}
+		    		{{if Order.OrderPayAmount>0}}
+		    		<li>
+		    			<label>{{Order.PaymentTypeName}}</label>
+		    			<span>￥{{Order.OrderPayAmount.toFixed(2)}}</span>
+		    		</li>
+		    		{{/if}}
+	    		{{/if}}
+	    	</ul>
+	    </div>
+	    <div class="user">
+	    	<ul class="infolist">
+	    		<li>
+	    			<label>订单号</label>
+	    			<span>{{Order.Id}}</span>
+	    		</li>
+	    		<li>
+	    			<label>支付方式</label>
+	    			<span>{{Order.PaymentTypeDesc}}</span>
+	    		</li>
+	    		<li>
+	    			<label>下单时间</label>
+	    			<span>{{Order.OrderDate}}</span>
+	    		</li>
+	    		<li>
+	    			<label>买家留言</label>
+	    			<span>{{Order.OrderRemarks}}</span>
+	    		</li>
+	    	</ul>
+	    </div>
+	    {{if VerificationCodes}}
+	    <div class="user">
+	    	<h3 class="title">用户信息</h3>
+	    	<ul class="infolist">
+	    		{{each VirtualOrderItems}}
+        			{{if $value.VirtualProductItemType==6}}
+	        		<li class="imgs">
+	        			<label>{{$value.VirtualProductItemName}}</label>
+	        			<div>
+	        				{{each $value.Content as item i}}
+	        				<img src="{{item}}" data-preview-src="" data-preview-group="1"/>
+	        				{{/each}}
+	        			</div>
+	        		</li>
+	        		{{else}}
+	        		<li>
+	        			<label>{{$value.VirtualProductItemName}}</label>
+	        			<span>{{$value.Content[0]}}</span>
+	        		</li>
+	        		{{/if}}
+        		{{/each}}
+	    	</ul>
+	    </div>
+	    {{/if}}
+	    {{if Order.OrderInvoice}}
+	    <div class="user">
+	    	<ul class="infolist">
+	    		<h3 class="title">发票信息</h3>
+	    		<li class="{{Order.OrderInvoice.InvoiceTypeName?'':'hidden'}}">
+	    			<label>发票类型</label>
+	    			<span>{{Order.OrderInvoice.InvoiceTypeName}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.InvoiceTitle?'':'hidden'}}">
+	    			<label>发票抬头</label>
+	    			<span>{{Order.OrderInvoice.InvoiceTitle}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.InvoiceCode?'':'hidden'}}">
+	    			<label>纳税人识别号</label>
+	    			<span>{{Order.OrderInvoice.InvoiceCode}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.InvoiceContext?'':'hidden'}}">
+	    			<label>发票内容</label>
+	    			<span>{{Order.OrderInvoice.InvoiceContext}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.RegisterAddress?'':'hidden'}}">
+	    			<label>注册地址</label>
+	    			<span>{{Order.OrderInvoice.RegisterAddress}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.RegisterPhone?'':'hidden'}}">
+	    			<label>注册电话</label>
+	    			<span>{{Order.OrderInvoice.RegisterPhone}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.BankName?'':'hidden'}}">
+	    			<label>开户银行</label>
+	    			<span>{{Order.OrderInvoice.BankName}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.BankNo?'':'hidden'}}">
+	    			<label>银行账户</label>
+	    			<span>{{Order.OrderInvoice.BankNo}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.RealName?'':'hidden'}}">
+	    			<label>收票人姓名</label>
+	    			<span>{{Order.OrderInvoice.RealName}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.CellPhone?'':'hidden'}}">
+	    			<label>收票人手机</label>
+	    			<span>{{Order.OrderInvoice.CellPhone}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.Email?'':'hidden'}}">
+	    			<label>收票人邮箱</label>
+	    			<span>{{Order.OrderInvoice.Email}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.RegionFullName?'':'hidden'}}">
+	    			<label>收票人地区</label>
+	    			<span>{{Order.OrderInvoice.RegionFullName}}</span>
+	    		</li>
+	    		<li class="{{Order.OrderInvoice.Address?'':'hidden'}}">
+	    			<label>收票人地址</label>
+	    			<span>{{Order.OrderInvoice.Address}}</span>
+	    		</li>
+	    	</ul>
+	    </div>
+	    {{/if}}
+	    {{if Order.orderStatus==2 && (Order.DeliveryType==0 || Order.DeliveryType==2) && ((!Order.isJoin && Order.ShopBranchName!='') || (Order.isJoin && Order.ShopBranchName==''))  }}
+	    <div class="bottom_fixedBtn">
+	    	<button class="mui-btn mui-btn-block mui-btn-blue btn-delivery">去发货</button>
+	    </div>
+	    {{/if}}
+	</script>
+</html>

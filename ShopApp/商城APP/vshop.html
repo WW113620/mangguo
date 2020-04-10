@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<title>微店首页</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper transparent">
+			<div class="mui-scroll">
+				<div id="TopVShop" class="vshop-list">
+				</div>
+				<div id="HotShop" class="vshop-list">
+				</div>
+			</div>
+		</div>
+		<div class="empty-show" id="emptyShow" style="display: none;">
+			<h4>网络不给力，请检查网络！</h4><button id="fireReloadWv" class="mui-btn mui-btn-negative">重新加载</button></div>
+
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/delayimg.min.js"></script>
+		<script src="js/template.js"></script>
+		<script>
+			var isnodata = false,
+				page = 1,
+				flag = false;
+			document.addEventListener('updateData', function() {
+				if(!flag) {
+					mui.init({
+						pullRefresh: {
+							container: '#pullrefresh',
+							deceleration: 0.0006,
+							up: {
+								contentrefresh: "正在加载...",
+								contentnomore: '已加载全部热门微店',
+								callback: function() {
+									var self = this;
+									setTimeout(function() {
+										if(!isnodata) {
+											page++;
+											mui.ajax(URL + 'api/VShopHome/GetVShopHome', {
+												data: himall.md5Data({
+													pageno: page,
+													pagesize: 10,
+													userkey: himall.getState().userkey
+												}),
+												dataType: 'json',
+												type: 'get',
+												timeout: 10000,
+												success: function(data) {
+													if(data.success) {
+														document.getElementById('HotShop').insertAdjacentHTML('beforeend', template('initHotShop', data));
+														delayimg.render();
+														if(data.total <= page * 10) {
+															isnodata = true;
+														}
+														self.endPullupToRefresh(isnodata);
+													}
+												},
+												error: function(xhr) {
+													plus.nativeUI.toast('请求失败，请检查网络')
+												}
+											});
+										} else {
+											self.endPullupToRefresh(isnodata);
+										}
+									}, 1500);
+								}
+							},
+							down: {
+								contentdown: "下拉可以刷新",
+								contentover: "释放立即刷新",
+								contentrefresh: "正在刷新...",
+								callback: function() {
+									setTimeout(function() {
+										page = 1;
+										isnodata = false;
+										loadPage();
+										mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+										mui('#pullrefresh').pullRefresh().refresh(true);
+									}, 300)
+								}
+							}
+						}
+					});
+
+					mui.plusReady(function() {
+						var w = plus.nativeUI.showWaiting('', {
+							padlock: true
+						});
+						loadPage = function() {
+							mui.ajax(URL + 'api/VShopHome/GetVShopHome', {
+								data: himall.md5Data({
+									pageno: page,
+									pagesize: 10,
+									userkey: himall.getState().userkey
+								}),
+								dataType: 'json',
+								type: 'get',
+								timeout: 10000,
+								success: function(data) {
+									if(data.success) {
+										if(data.TopVShop && data.TopVShop.Success == 'true') {
+											document.getElementById('TopVShop').innerHTML = template('initTopShop', data);
+										} 
+										if(data.total <= 10) {
+											isnodata = true;
+										}
+										if(data.total > 0) {
+											document.getElementById('HotShop').innerHTML = template('initHotShop', data);
+										}
+										delayimg.init();
+										flag = true;
+										if(w)
+											w.close();
+										document.getElementById('pullrefresh').style.display = 'block';
+										document.getElementById('emptyShow').style.display = 'none';
+										himall.removeClass(document.querySelector('.mui-content'), 'transparent');
+									}
+								},
+								error: function(xhr) {
+									flag = false;
+									if(w)
+										w.close();
+									document.getElementById('pullrefresh').style.display = 'none';
+									document.getElementById('emptyShow').style.display = 'block';
+								}
+							});
+						}
+						loadPage();
+
+						mui('body').on('tap', '#fireReloadWv', function() {
+							document.getElementById('emptyShow').style.display = 'none';
+							w = plus.nativeUI.showWaiting('', {
+								padlock: true
+							});
+							setTimeout(function() {
+								page = 1;
+								isnodata = false;
+								loadPage();
+								mui('#pullrefresh').pullRefresh().refresh(true);
+							}, 300)
+						});
+
+						mui('.mui-content').on('tap', '.goods-url', function() {
+							showProduct(this.getAttribute('data-id'));
+						});
+
+						mui('.mui-content').on('tap', '.vshop-url', function() {
+							himall.openVW('vshop-detail.html', {
+								vshopId: this.getAttribute('data-vshopid')
+							});
+						});
+
+						commonFn.favShop();
+						
+
+					});
+				}
+			});
+		</script>
+		<script type="text/html" id="initTopShop">
+			<div class="item">
+                <div class="info vshop-url" data-vshopid="{{TopVShop.VShopId}}">
+                    <a><img src="{{TopVShop.ShopLogo}}"></a>
+                    <h3><a>{{TopVShop.ShopName}}</a><i class="favShop iconfont {{TopVShop.IsFavorite?'icon-aixin':'icon-guanzhu'}}"  data-shopid="{{TopVShop.ShopId}}"></i></h3>
+                    <p>宝贝数 <span>{{TopVShop.productCount}}</span><em></em>关注度 <span>{{TopVShop.FavoritesCount}}</span></p>
+                    <h5><span>{{TopVShop.Tag1||''}}</span><span>{{TopVShop.Tag2||''}}</span></h5>
+                </div>
+                {{if TopVShop.Products.length>0}}
+	                <ul class="product clearfix">
+	                	{{each TopVShop.Products}}
+		                    <li>
+		                        <a class="goods-url p-img" data-id="{{$value.Id}}" ><img src="{{$value.ImageUrl}}" ></a>
+		                    </li>
+	                    {{/each}}
+	                </ul>
+                {{/if}}
+            </div>
+		</script>
+
+		<script type="text/html" id="initHotShop">
+			{{each HotShop as item}}
+			<div class="item">
+                <div class="info vshop-url" data-vshopid="{{item.VShopId}}">
+                    <a><img src="{{item.ShopLogo}}"></a>
+                    <h3><a>{{item.ShopName}}</a><i class="favShop iconfont {{item.IsFavorite?'icon-aixin':'icon-guanzhu'}}"  data-shopid="{{item.ShopId}}"></i></h3>
+                    <p>宝贝数 <span>{{item.productCount}}</span><em></em>关注度 <span>{{item.FavoritesCount}}</span></p>
+                    <h5><span>{{item.Tag1||''}}</span><span>{{item.Tag2||''}}</span></h5>
+                </div>
+                {{if item.Products.length>0}}
+	                <ul class="product clearfix">
+	                	{{each item.Products}}
+		                    <li>
+		                        <a class="goods-url p-img" data-id="{{$value.Id}}" ><img src="{{$value.ImageUrl}}" ></a>
+		                    </li>
+	                    {{/each}}
+	                </ul>
+                {{/if}}
+            </div>
+			{{/each}}
+		</script>
+	</body>
+
+</html>

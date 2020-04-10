@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<title>我的积分</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我的积分</h1>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper transparent">
+			<div class="mui-scroll">
+				<div class="integral-use-hd">
+					<h3 id="score"></h3>
+					<a class="" id="integralOrder">礼品兑换记录</a>
+				</div>
+				<ul class="integral-use-list" id="List"></ul>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/delayimg.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/template.js"></script>
+		<script>
+			var isnodata = false,
+				page = 1,
+				type=0,
+				loadPage,
+				w,
+				userkey=himall.getState().userkey,
+				List=document.getElementById('List');
+			mui.init({
+				pullRefresh : {
+				    container:'#pullrefresh',
+				    deceleration:0.0006,
+				    up : {
+					    contentrefresh : "正在加载...",
+					    contentnomore:'已加载所有记录',
+					    callback :function(){
+					      	var self=this;
+					      	if (!isnodata) {
+					      		page++;
+						        mui.ajax(URL+'api/UserCenter/GetIntegralRecord',{
+						        	data:himall.md5Data({
+										userkey:userkey,
+										page:page,
+										pagesize:15
+									}),
+									dataType:'json',
+									type:'get',
+									timeout:10000,
+									success:function(data){
+								        if(data.data.length > 0) {
+								        	List.insertAdjacentHTML('beforeend',template('initData', data));
+								        	delayimg.render();
+								        }else{
+											isnodata = true;
+										}
+					                    if (data.total<=page*10) {isnodata = true;}
+										self.endPullupToRefresh(isnodata);
+									},
+									error:function(xhr){
+										plus.nativeUI.toast('请求失败，请检查网络')
+									}
+								});
+						    }else{
+						    	self.endPullupToRefresh(isnodata);
+						    }
+				    	}
+				    }
+				},
+				swipeBack: true
+			});
+			
+			if (mui.os.android)
+				document.getElementsByClassName('mui-scroll')[0].className='';
+			
+			himall.immersedNav();
+			mui.plusReady(function() {
+				var ws=plus.webview.currentWebview();
+	            
+				ws.setStyle({scrollIndicator:'none'});
+				document.getElementById('score').innerHTML='<span>'+ws.score.toString().replace('分','')+'</span><i>分</i>';
+				w=plus.nativeUI.showWaiting('',{padlock:true});
+				loadPage=function(){
+					mui.ajax(URL+'api/UserCenter/GetIntegralRecord',{
+						data:himall.md5Data({
+							userkey:userkey,
+							page:1,
+							pagesize:15
+						}),
+						dataType:'json',
+						type:'get',
+						timeout:10000,
+						success:function(data){
+							if (data.total<10) {isnodata = true;}
+					        if(data.data.length > 0) {
+					            List.innerHTML=template('initData', data);
+					            delayimg.init();
+					        }else{
+					        	var html='<div class="empty-show"><h4>暂无此类积分记录...</h4></div>';
+					        	List.innerHTML=html;
+					        }
+							w.close();
+							himall.removeClass(document.querySelector('.mui-content'),'transparent');
+							
+						},
+						error:function(xhr){
+							w.close();
+							reloadWvLoad();
+						}
+					});
+				}
+				
+				loadPage();
+			});
+			
+			function reloadPage(){
+				isnodata = false;
+				page = 1;
+				mui('#pullrefresh').pullRefresh().refresh(true);
+				loadPage();
+			}
+			
+			mui('#fixedNav').on('tap', 'li', function() {
+				type=this.getAttribute('data-status');
+				reloadPage();
+				document.getElementById("fixedNav").querySelector('.active').className='';
+				this.className='active';
+			});
+			
+			document.getElementById('integralOrder').addEventListener('tap',function(){
+				himall.openVW('integral-order.html');
+			});
+			
+		</script>
+		
+		<script id="initData" type="text/html">
+		    {{each data}}
+			    <li class="border-bot">
+			    	<h3>
+			    		{{$value.ShowType}}
+			    		{{if $value.ReMark.indexOf('订单')>-1}}
+			    			<span>（{{$value.ReMark.substring($value.ReMark.indexOf("订单号"),$value.ReMark.length)}}）</span>
+			    		{{else if $value.TypeId == 11 || $value.TypeId == 2}}
+			    			<span>（{{$value.ReMark}}）</span>
+			    		{{/if}}
+			    	</h3>
+			    	<p>{{$value.RecordDate.replace('T',' ')}}</p>
+			    	<em>{{$value.Integral>=0?'+':''}}{{$value.Integral}}</em>
+			    	
+			    </li>
+			{{/each}}
+		</script>
+		
+	</body>
+
+</html>

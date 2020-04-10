@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="format-detection" content="telephone=no,email=no" />
+        <title>去呼唤朋友</title>
+        <link href="css/mui.min.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1 class="mui-title">加载中...</h1>
+        </header>
+        <div class="scroll-div">
+            <div class="mui-content merge-small-page merge-call transparent">
+                <div class="merge-call-bg"></div>
+                <a class="mui-btn mui-btn-danger btn-call" id="shareMyGroup">去呼唤朋友</a>
+                <p id="tips">您已参团成功，马上邀请好友一起参团吧!</p>
+            </div>
+        </div>
+    </body>
+    <script src="js/mui.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/md5.js" ></script>
+    <script>
+        mui.plusReady(function() {
+        	var shareData,w=plus.nativeUI.showWaiting('',{padlock:true}),
+        		ws=plus.webview.currentWebview(),
+            	id = ws.Id,
+            	title=document.querySelector('.mui-title'),
+            	shareMyGroup=document.getElementById('shareMyGroup');
+            	
+            	mui.ajax(URL + 'api/FightGroup/GetFightGroupOrderDetail', {
+            	data:himall.md5Data({
+            		id:id,
+            		userkey:himall.getState().userkey
+            	}),
+                dataType:'json',
+                type:'get',
+                timeout: 10000,
+                success: function(data) {
+                	if(data.OrderDetail.GroupStatus===1){
+                		title.innerText='组团成功';
+                		shareMyGroup.innerText='查看我的拼团';
+                		shareMyGroup.setAttribute('isSuccess',1);
+                		document.getElementById('tips').innerText='恭喜已成团，等待卖家发货！';
+                	}else{
+                		title.innerText='去呼唤朋友';
+                	}
+                    shareData={
+                    	title: '火拼团：'+data.OrderDetail.ProductName,
+	                    href: URL + 'm-weixin/FightGroup/GroupDetail/'+data.OrderDetail.GroupId+'?aid='+data.OrderDetail.ActiveId,
+	                    content: data.OrderDetail.MiniGroupPrice+'元立即拼团',
+	                    pictures:data.OrderDetail.IconUrl,
+	                    thumbs:data.OrderDetail.thumbs
+                    }
+                    w.close();
+                    himall.removeClass(document.querySelector('.mui-content'),'transparent');
+                    
+                },
+                error: function(xhr) {
+                    plus.nativeUI.toast('请求失败，请检查网络');
+                }
+            }, 100);
+        	shareMyGroup.addEventListener('tap', function() {
+        		if(this.getAttribute('isSuccess')){
+        			himall.openVW('merge-personal-list.html');
+        			setTimeout(function() {
+						plus.webview.currentWebview().close('none');
+					}, 1000);
+        		}else{
+        			loadShare(shareData);
+        		}
+	        });
+        });
+        
+    </script>
+</html>

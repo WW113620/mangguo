@@ -1,0 +1,212 @@
+{
+	"index.html": {
+		"resources": [
+			"home.html"
+		],
+		"refer": [
+			"vshop.html",
+			"product-detail.html",
+			"usercenter.html",
+			"home.html",
+			"stores.html",
+			"guide.html",
+			"cart-box.html",
+			"search.html",
+			"login.html"
+		]
+	},
+	"usercenter.html": {
+		"refer": [
+			"login.html",
+			"user-assets.html",
+			"user-account.html",
+			"user-coupon.html",
+			"order-list.html",
+			"address.html",
+			"user-favproduct.html",
+			"user-favshop.html",
+			"order-refund-list.html",
+			"integral-use.html",
+			"aboutus.html",
+			"user-history.html"
+		],
+		"resources": []
+	},
+	"user-assets.html": {
+		"refer": [
+			"user-recharge.html"
+		],
+		"resources": []
+	},
+	"user-account.html": {
+		"refer": [
+			"user-info.html"
+		],
+		"resources": []
+	},
+	"user-favshop.html": {
+		"refer": [
+			"vshop-detail.html"
+		],
+		"resources": []
+	},
+	"cart-box.html": {
+		"resources": [
+			"cart.html"
+		],
+		"refer": [
+			"cart.html"
+		]
+	},
+	"product-detail.html": {
+		"refer": [
+			"vshop-detail.html",
+			"store-list.html",
+			"store-home.html",
+			"order-submit.html"
+		],
+		"resources": []
+	},
+	"login.html": {
+		"refer": [
+			"bind-phone.html",
+			"user-favproduct.html",
+			"user-account.html",
+			"login-bind.html"
+		],
+		"resources": []
+	},
+	"home.html": {
+		"refer": [
+			"web-show.html",
+			"integral-home.html",
+			"merge-detail.html",
+			"topic-detail.html",
+			"noauth.html",
+			"integral-detail.html"
+		],
+		"resources": []
+	},
+	"integral-home.html": {
+		"refer": [
+			"integral-coupon.html",
+			"integral-use.html",
+			"integral-detail.html",
+			"web-show.html",
+			"login.html"
+		],
+		"resources": [
+			"images/inte-icon.png",
+			"images/blank.gif",
+			"images/logo-bg.png"
+		]
+	},
+	"integral-use.html": {
+		"refer": [
+			"integral-order.html"
+		],
+		"resources": []
+	},
+	"integral-order.html": {
+		"refer": [
+			"integral-order-detail.html"
+		],
+		"resources": []
+	},
+	"address.html": {
+		"refer": [
+			"address-add.html"
+		],
+		"resources": []
+	},
+	"stores.html": {
+		"refer": [
+			"store-search.html",
+			"store-home.html",
+			"store-choose-address.html"
+		],
+		"resources": []
+	},
+	"store-home.html": {
+		"refer": [
+			"store-product-detail.html"
+		],
+		"resources": []
+	},
+	"store-search.html": {
+		"refer": [
+			"store-home.html"
+		],
+		"resources": []
+	},
+	"order-list.html": {
+		"refer": [
+			"order-evaluate.html",
+			"order-express.html",
+			"order-detail.html",
+			"order-refund.html"
+		],
+		"resources": []
+	},
+	"cart.html": {
+		"refer": [
+			"order-submit.html"
+		],
+		"resources": []
+	},
+	"integral-detail.html": {
+		"refer": [
+			"login.html",
+			"integral-submit.html"
+		],
+		"resources": []
+	},
+	"vshop.html": {
+		"refer": [
+			"vshop-detail.html"
+		],
+		"resources": []
+	},
+	"vshop-detail.html": {
+		"refer": [
+			"vshop-intro.html",
+			"vshop-category.html"
+		],
+		"resources": []
+	},
+	"vshop-category.html": {
+		"refer": [
+			"vshop-search.html"
+		],
+		"resources": []
+	},
+	"vshop-intro.html": {
+		"refer": [
+			"login.html"
+		],
+		"resources": []
+	},
+	"integral-submit.html": {
+		"refer": [
+			"integral-order.html"
+		],
+		"resources": []
+	},
+	"order-detail.html": {
+		"refer": [
+			"order-refund.html",
+			"order-refund-detail.html"
+		]
+	},
+	"store-choose-address.html": {
+		"refer": [
+			"login.html",
+			"address-add.html"
+		]
+	},
+	"topic-detail.html": {
+		"refer": [
+			"topic.html"
+		]
+	}
+}

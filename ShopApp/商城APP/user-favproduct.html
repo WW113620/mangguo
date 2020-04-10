@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<title>我收藏的商品</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">我收藏的商品</h1>
+			<a class="mui-pull-right mui-btn-link" id="Edit">编辑</a>
+		</header>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper transparent">
+			<div class="mui-scroll">
+				<ul class="mui-table-view mui-grid-view mui-clearfix vshop-product" id="productsList" style="margin-top: 10px;">
+					
+				</ul>
+			</div>
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/delayimg.min.js"></script>
+		<script>
+			var isnodata = false,
+				page = 1,
+				userkey=himall.getState().userkey,
+				List=document.getElementById('productsList'),
+				Edit=document.getElementById('Edit');
+			mui.init({
+				pullRefresh : {
+				    container:'#pullrefresh',
+				    deceleration:0.0006,
+				    up : {
+					    contentrefresh : "正在加载...",
+					    contentnomore:'已加载收藏商品',
+					    callback :function(){
+					      	var self=this;
+					      	if (!isnodata) {
+					      		page++;
+						        mui.ajax(URL+'api/UserCenter/GetUserCollectionProduct',{
+						        	data:himall.md5Data({
+										pageno:page,
+										pagesize:10,
+										userkey:userkey
+									}),
+									dataType:'json',
+									type:'get',
+									timeout:10000,
+									success:function(data){
+										var html='';
+					                    if(data.data.length>0){
+											List.insertAdjacentHTML('beforeend',initData(html,data));
+											delayimg.render();
+										}
+					                    if (data.total<=page*10) {isnodata = true;}
+										self.endPullupToRefresh(isnodata);
+									},
+									error:function(xhr){
+										plus.nativeUI.toast('请求失败，请检查网络')
+									}
+								});
+						    }else{
+						    	self.endPullupToRefresh(isnodata);
+						    }
+				    	}
+				    }
+				},
+				swipeBack: true
+			});
+			mui.plusReady(function() {
+				var ws=plus.webview.currentWebview();
+				ws.setStyle({scrollIndicator:'none'});
+				var w=plus.nativeUI.showWaiting('',{padlock:true});
+				mui.ajax(URL+'api/UserCenter/GetUserCollectionProduct',{
+					data:himall.md5Data({
+						pageno:page,
+						pagesize:10,
+						userkey:userkey
+					}),
+					dataType:'json',
+					type:'get',
+					timeout:10000,
+					success:function(data){
+						var html='';
+						if (data.total<=10) {isnodata = true;}
+						if(data.data.length>0){
+							List.innerHTML=initData(html,data);
+		                    delayimg.init();
+						}else{
+							var html='<div class="empty-show"><h4>还没有收藏任何商品</h4><button class="j_gofavor mui-btn mui-btn-negative">马上去收藏</button></div>';
+				        	document.getElementById('pullrefresh').innerHTML=html;
+						}
+						w.close();
+						himall.removeClass(document.querySelector('.mui-content'),'transparent');
+					},
+					error:function(xhr){
+						w.close();
+						reloadWvLoad();
+					}
+				});
+				
+				
+				mui('.vshop-product').on('tap', 'a', function() {
+					var id=this.parentNode.parentNode.getAttribute('data-id');
+					showProduct(id);
+				});
+				
+				mui('.vshop-product').on('tap', '.del', function(event) {
+					var liEl=this.parentNode.parentNode.parentNode.parentNode;
+					event.stopPropagation();
+					mui.confirm('确认取消收藏？', '', ['取消', '确认'], function(e) {
+						if(e.index == 1) {
+							mui.ajax(URL + 'api/product/PostAddFavoriteProduct', {
+								data: himall.md5Data({
+									productId: liEl.getAttribute('data-id'),
+									userkey: userkey
+								}),
+								dataType: 'json',
+								type: 'POST',
+								timeout: 10000,
+								success: function(data) {
+									w.close();
+									plus.nativeUI.toast(data.msg);
+									liEl.parentNode.removeChild(liEl);
+								},
+								error: function(xhr) {
+									w.close();
+									plus.nativeUI.toast('关注失败，请检查网络')
+								}
+							});
+						}
+					});
+				});
+				
+				mui('.mui-content').on('tap', '.j_gofavor', function() {
+					mui.fire(plus.webview.getLaunchWebview(),'pageActive',{newUrl:'home.html'});
+					himall.goBackIndex();
+				});
+			});
+			
+			Edit.addEventListener('tap',function(){
+				if(himall.hasClass(List,'active')){
+					himall.removeClass(List,' active');
+					this.innerText='编辑';
+				}else{
+					List.className+=' active';
+					this.innerText='保存';
+				}
+			});
+			
+			function initData(html,data){
+				for(var i=0; i<data.data.length; i++){
+					var item=data.data[i];
+					html+='<li class="mui-table-view-cell mui-media mui-col-xs-6" data-id="'+item.Id+'">'+
+            			'<div class="vshop-product-box">'+
+							'<a data-status="'+item.Status+'">'+
+								'<div class="p-img"><b data-delay-background="'+item.Image+'"></b></div>'+
+								'<div class="mui-media-body">'+item.ProductName+'</div>'+
+								'<p class="vshop-product-price"><span>¥ '+item.SalePrice+'</span><i class="mui-icon mui-icon-trash del"></i></p>'+
+							'</a>'+
+						'</div>';
+						if(item.Status==1){
+							html+='<i class="sale-out">已失效</i>';
+						}else if(item.Status==2){
+							html+='<i class="sale-out">已售罄</i>';
+						}else if(item.Status==3){
+							html+='<i class="sale-out">已下架</i>';
+						}
+            		html+='</li>';
+				}
+				return html;
+			}
+			
+		</script>
+	</body>
+
+</html>

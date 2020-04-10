@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<title>核销详情</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<button class="mui-action-back mui-btn mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav"></span>返回</button>
+			<h1 class="mui-title">核销详情</h1>
+			<div class="check-success hidden">核销成功</div>
+		</header>
+		<div class="mui-content verify" id="List">
+			
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/delayimg.min.js"></script>
+	<script src="js/mui.zoom.js"></script>
+	<script src="js/mui.previewimage.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/md5.js" ></script>
+	<script src="js/template.js"></script>
+	<script type="text/javascript">
+		var userkey=himall.getState().userkey,
+				code,
+				w,
+				ws,
+				List=document.getElementById('List'),
+				errorTips=document.getElementById('errorTips'),
+				isJoin=himall.isJoin(),
+				pagedata;
+		mui.init({
+			swipeBack: true
+		});
+		var ajaxUrlList='api/ShopBranchOrder/GetShopBranchOrder',
+			confirmUrl='api/ShopBranchOrder/GetShopBranchOrderConfirm';
+		if(isJoin){
+			ajaxUrlList='api/ShopOrder/GetShopOrder';
+			confirmUrl='api/ShopOrder/GetShopOrderConfirm';
+		}
+		mui.plusReady(function() {
+			ws=plus.webview.currentWebview();
+			ws.setStyle({scrollIndicator:'none'});
+			code=ws.code;
+			w=plus.nativeUI.showWaiting('',{padlock:true});
+			mui.ajax(URL+ajaxUrlList,{
+	        	data:himall.md5Data({
+					userkey:userkey,
+					pickcode:code
+				}),
+				dataType:'json',
+				type:'get',
+				timeout:10000,
+				success:function(data){
+					if(data.success===false && data.code==504){
+						plus.nativeUI.toast(data.msg);
+						showLogin();
+					}
+					if(data.success){
+						if(data.verificationCodes){
+							var tmp = 0;
+							for(var i=0,len=data.verificationCodes.length;i<len;i++){
+								if(data.verificationCodes[i].SourceCode==code){
+									tmp = i;
+								}
+							}
+							if(tmp!=0){
+								var obj = data.verificationCodes[tmp];
+								data.verificationCodes.splice(tmp,1);
+								data.verificationCodes.unshift(obj);
+							}
+						}
+						List.innerHTML=template('initData',data);
+						delayimg.init();
+						himall.removeClass(document.querySelector('.mui-content'),'transparent');
+						mui.previewImage();
+						pagedata = data;
+					}else{
+						himall.openVW('check-fail.html',{msg:data.msg});
+						setTimeout(function(){
+					    	plus.webview.currentWebview().close('none');
+					    },1000);
+					}
+			        
+      				w.close();	
+				},
+				error:function(xhr,type,errorThrown){
+					w.close();
+					reloadWvLoad();
+				}
+			});
+		});
+		mui('#List').on('tap','#enterCheck',function(){
+			var _this=this,cartidArr=[];
+			mui.confirm('是否确认核销该订单！', '', ['取消', '确认'], function(e) {
+				if (e.index == 1) {
+					mui('.vericode input[name="checkItem"]:checked').each(function(){
+						cartidArr.push(this.parentNode.getAttribute('data-code'));
+					});
+					plus.nativeUI.showWaiting('',{padlock:true});
+					mui.ajax(URL+confirmUrl,{
+			        	data:himall.md5Data({
+							userkey:userkey,
+							pickcode:pagedata.verificationCodes?cartidArr.join(','):code
+						}),
+						dataType:'json',
+						type:'get',
+						timeout:10000,
+						success:function(data){
+							plus.nativeUI.closeWaiting();
+							if(data.success){
+								var goBack = document.getElementById("goBack"),
+									goCheck = document.getElementById("goCheck");
+								if(pagedata.verificationCodes){
+									pagedata.verificationCodes = data.verificationCodes.split(',');
+									pagedata.verificationTime = data.verificationTime;
+									pagedata.verificationUser = data.verificationUser;
+								}
+								pagedata.haschecked = true;
+								List.innerHTML=template('initData',pagedata);
+								himall.removeClass(document.querySelector(".check-success"),'hidden');
+							}else{
+								himall.openVW('check-fail.html',{msg:data.msg});
+								setTimeout(function(){
+							    	plus.webview.currentWebview().close('none');
+							    },1000);
+							}
+						},
+						error:function(xhr,type,errorThrown){
+							plus.nativeUI.toast('核销失败！请检查网络后重试');
+						}
+					});
+				}
+			});
+		});
+		mui('#List').on('tap','#goCheck',function(){
+			himall.openVW('check-qrcode.html');
+			setTimeout(function(){
+		    	plus.webview.currentWebview().close('none');
+		    },1000);
+		});
+		mui('#List').on('tap','#goBack',function(){
+			ws.close();
+		});
+	</script>
+	<script id="initData" type="text/html">
+		<div class="pro-list" >
+			<h3 class="title">商品清单</h3>
+			{{each orderItem}}
+            <div class="shopcart-m-item">
+                <div class='shopcart-item-pic'>
+                    <img src="images/blank.gif" data-delay="{{$value.ThumbnailsUrl}}"></img>
+                </div>
+                <div class='shpcart-item-txt'>
+                    <div class="shopcart-txt-t ">
+                        <div class="shopcart-txt-name two-text-overflow">{{$value.ProductName}}</div>
+                        <div class="shopcart-txt-saleprice ">
+                            <span>¥ {{$value.SalePrice.toFixed(2)}}</span>
+                            <div class="shopcart-item-num ">
+                                <div class="txt ">× {{$value.Quantity}}</div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="shopcart-txt-b ">
+                         <p class="shpcart-item-skuname">
+                            {{if $value.Size}}
+							{{$value.SizeAlias}}：{{$value.Size}}&nbsp;&nbsp;
+							{{/if}}
+							{{if $value.Color}}
+								{{$value.ColorAlias}}：{{$value.Color}}&nbsp;&nbsp;
+							{{/if}}
+							{{if $value.Version}}
+								{{$value.VersionAlias}}：{{$value.Version}}
+							{{/if}}
+                        </p> 
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{if verificationCodes}}
+        <div class="vericode">
+        	<div class="info">
+        		<h3 class="title">核销码</h3>
+        		{{if validityType}}<p>有效期 {{startDate}} ~ {{endDate}}</p>{{/if}}
+        	</div>
+        	{{if haschecked}}
+        	<ul class="haschecked">
+        		{{each verificationCodes as item i}}
+        		<li>
+        			<span>核销码{{i+1}}</span>
+        			<span>{{item}}</span>
+        		</li>
+        		{{/each}}
+        	</ul>
+        	<div class="baseline">
+        		<label>核销人</label>
+    			<span>{{verificationUser}}</span>
+        	</div>
+        	<div class="baseline">
+        		<label>核销时间</label>
+    			<span>{{verificationTime}}</span>
+        	</div>
+        	{{else}}
+        	<ul>
+        		{{each verificationCodes as item i}}
+        		{{if i==0}}
+        		<li class="mui-checkbox" data-code="{{item.SourceCode}}">
+        			<input checked="checked" disabled="disabled" name="checkItem" type="checkbox" />
+        			<span>核销码{{i+1}}</span>
+        			<span>{{item.SourceCode}}</span>
+        		</li>
+        		{{else}}
+        		<li class="mui-checkbox" data-code="{{item.SourceCode}}">
+        			<input name="checkItem" type="checkbox" />
+        			<span>核销码{{i+1}}</span>
+        			<span>{{item.VerificationCode}}</span>
+        		</li>
+        		{{/if}}
+        		{{/each}}
+        	</ul>
+        	{{/if}}
+        	
+        </div>
+        
+        <div class="user">
+        	<h3 class="title">用户信息</h3>
+        	<ul class="infolist">
+        		{{each virtualOrderItemInfos}}
+        			{{if $value.VirtualProductItemType==6}}
+	        		<li class="imgs">
+	        			<label>{{$value.VirtualProductItemName}}</label>
+	        			<div>
+	        				{{each $value.Content as item i}}
+	        				<img src="{{item}}" data-preview-src="" data-preview-group="1"/>
+	        				{{/each}}
+	        			</div>
+	        		</li>
+	        		{{else}}
+	        		<li>
+	        			<label>{{$value.VirtualProductItemName}}</label>
+	        			<span>{{$value.Content[0]}}</span>
+	        		</li>
+	        		{{/if}}
+        		{{/each}}
+        	</ul>
+        </div>
+        {{/if}}
+        <div class="user">
+	    	<ul class="infolist">
+	    		<li>
+	    			<label>商品金额</label>
+	    			<span>￥{{order.ProductTotalAmount.toFixed(2)}}</span>
+	    		</li>
+	    		<li class="{{order.DiscountAmount>0?'':'hidden'}}">
+	    			<label>优惠券</label>
+	    			<span>-￥{{order.DiscountAmount.toFixed(2)}}</span>
+	    		</li>
+	    		<li class="{{order.FullDiscount>0?'':'hidden'}}">
+	    			<label>满额减</label>
+	    			<span>-￥{{order.FullDiscount.toFixed(2)}}</span>
+	    		</li>
+	    		<li class="{{order.IntegralDiscount>0?'':'hidden'}}">
+	    			<label>积分抵扣</label>
+	    			<span>-￥{{order.IntegralDiscount.toFixed(2)}}</span>
+	    		</li>
+	    		<li class="{{order.Tax>0?'':'hidden'}}">
+	    			<label>税费</label>
+	    			<span>￥{{order.Tax.toFixed(2)}}</span>
+	    		</li>
+	    		<li>
+	    			<label>实付金额</label>
+	    			<span class="price fontbold">￥{{order.ActualPayAmount.toFixed(2)}}</span>
+	    		</li>
+	    		<h3 class="title">付款信息</h3>
+	    		{{if order.CapitalAmount>0}}
+	    		<li>
+	    			<label>预存款抵扣</label>
+	    			<span>￥{{order.CapitalAmount.toFixed(2)}}</span>
+	    		</li>
+	    		{{/if}}
+	    		{{if order.OrderPayAmount>0}}
+	    		<li>
+	    			<label>{{order.PaymentTypeName}}</label>
+	    			<span>￥{{order.OrderPayAmount.toFixed(2)}}</span>
+	    		</li>
+	    		{{/if}}
+	    	</ul>
+	    </div>
+        <div class="user">
+        	<ul class="infolist">
+        		<li>
+        			<label>订单号</label>
+        			<span>{{order.Id}}</span>
+        		</li>
+        		<li>
+        			<label>订单状态</label>
+        			<span>{{order.OrderStatusText}}</span>
+        		</li>
+        		<li>
+	    			<label>支付方式</label>
+	    			<span>{{order.PaymentTypeDesc}}</span>
+	    		</li>
+        		<li>
+        			<label>下单时间</label>
+        			<span>{{order.PayDate.replace('T',' ')}}</span>
+        		</li>
+        		<li>
+        			<label>订单备注</label>
+        			<span>{{order.OrderRemarks}}</span>
+        		</li>
+        	</ul>
+        </div>
+        <div class="mui-content-padded mt20">
+			<button class="mui-btn mui-btn-block mui-btn-blue {{haschecked?'':'hidden'}}" id="goCheck">继续核销</button>
+			<button class="mui-btn mui-btn-block {{haschecked?'':'hidden'}}" id="goBack">返回首页</button>
+			<button class="mui-btn mui-btn-block mui-btn-blue {{haschecked?'hidden':''}}" id="enterCheck">确认核销</button>
+		</div>
+	</script>
+</html>

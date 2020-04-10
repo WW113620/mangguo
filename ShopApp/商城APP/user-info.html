@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<title>修改个人信息</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+		<link href="css/account.css" rel="stylesheet"/>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">修改个人信息</h1>
+		</header>
+		<div class="mui-content ">
+			<div id='login-form' class="mui-input-group">
+				<div class="mui-input-row" style="padding: 8px 0; height: 56px;">
+					<label>头像</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" value="" disabled>
+					<img class="user-photo" id="photo" src="images/default-photo.png" />
+				</div>
+				<div class="mui-input-row">
+					<label>真实姓名</label>
+					<input maxlength="10" id='realName' type="text" class="mui-input-clear mui-input" placeholder="请输入真实姓名">
+				</div>	
+				<div class="mui-input-row">
+					<label>性别</label>
+					<select id="sex" placeholder="请选择性别">
+						<option value="1">男</option>
+						<option value="2">女</option>
+					</select>
+					<i class="mui-icon mui-icon-arrowright"></i>
+				</div>
+				<div class="mui-input-row">
+					<label>生日</label>
+					<input id='brithday' type="date" class="mui-input" style="position: relative; left: -4px;">
+					<i class="mui-icon mui-icon-arrowright"></i>
+				</div>
+				<div class="mui-input-row">
+					<label>QQ</label>
+					<input oninput="if(value.length>20)value=value.slice(0,20)"  id='qq' type="number" class="mui-input-clear mui-input" placeholder="请输入QQ">
+				</div>
+				<div class="mui-input-row">
+					<label>昵称</label>
+					<input maxlength="10" id='nickName' type="text" class="mui-input-clear mui-input" placeholder="请输入昵称">
+				</div>
+			</div>
+			<div class="mui-content-padded">
+				<button id='updateUserInfo' class="mui-btn mui-btn-block mui-btn-danger">提 交</button>
+			</div>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/lrz.bundle.js" ></script>
+		<script>
+			mui.init({swipeBack: true});
+			
+			var userkey=himall.getState().userkey,
+				photo=document.getElementById('photo'),
+				realName=document.getElementById('realName'),
+				sex=document.getElementById('sex'),
+				brithday=document.getElementById('brithday'),
+				qq=document.getElementById('qq'),
+				nickName=document.getElementById('nickName');
+			
+			var userInfo=JSON.parse(localStorage.getItem('userInfo'));
+				document.getElementById('account').value=userInfo.UserName;
+				photo.src=(userInfo.Photo||'images/default-photo.png')+'?version='+new Date();
+				realName.value=userInfo.RealName||'';
+				sex.value=userInfo.Sex||1;
+				brithday.value=(userInfo.BirthDay||'1990-01-01').substr(0,10);
+				qq.value=userInfo.QQ||'';
+				nickName.value=userInfo.Nick;
+			
+			mui.plusReady(function() {
+				himall.removeClass(document.querySelector('.mui-content'),'transparent');
+				document.getElementById('updateUserInfo').addEventListener('tap',function(){
+					var w = plus.nativeUI.showWaiting('', {padlock: true});
+					mui.ajax(URL + 'api/UserCenter/SaveUserInfo', {
+						data: himall.md5Data({
+							photo:photo.src.split(';base64,')[1],
+							realname: realName.value,
+							sex: sex.value,
+							birthday:brithday.value,
+							qq:qq.value,
+							nick:nickName.value,
+							userkey: userkey
+						}),
+						dataType: 'json',
+						type: 'post',
+						timeout: 10000,
+						success: function(data) {
+							w.close();
+							if(data.success) {
+								localStorage.setItem('userInfo',JSON.stringify({
+									UserName:userInfo.UserName,
+									Photo:photo.src,
+									RealName: realName.value,
+									Sex: sex.value,
+									BirthDay:brithday.value,
+									QQ:qq.value,
+									Nick:nickName.value
+								}));
+								plus.nativeUI.toast('个人信息修改成功！');
+								mui.fire(plus.webview.getWebviewById('usercenter.html'),'updateData');
+							}else{
+								plus.nativeUI.toast(data.msg);
+							}
+						}
+					});
+				});
+			});
+			
+			photo.addEventListener('tap',function(){
+				plus.nativeUI.actionSheet({
+					cancel: "取消",
+					buttons: [{title: "拍照上传"}, {title: "相册选取"}]
+				}, function(event) {
+					var index = event.index;
+					switch (index) {
+						case 1:
+							getImage();
+							break;
+						case 2:
+							appendByGallery();
+							break;
+					}
+				});
+			});
+			
+			// 拍照添加文件
+			function getImage() {
+			    plus.camera.getCamera().captureImage( function ( p ) {        
+			        plus.io.resolveLocalFileSystemURL( p, function ( entry ) {    
+						var localurl = entry.toLocalURL();
+						appendFile(localurl);
+					});   
+			    });   
+			}
+			
+			// 从相册添加文件 
+			function appendByGallery(){
+			    plus.gallery.pick(function(path){
+			        appendFile(path);//处理图片的地方
+			    });
+			}
+			
+			// 添加文件
+			function appendFile(path){
+				var wt=plus.nativeUI.showWaiting();
+	            lrz(path).then(function (rst) {
+	            	photo.src=rst.base64;
+	            	wt.close();
+		        })
+			}
+			
+		</script>
+	</body>
+
+</html>

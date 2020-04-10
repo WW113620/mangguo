@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html class="proShare">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-isSales-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<title>核销记录</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+	<body class="proShare">
+		<header class="mui-bar mui-bar-nav">
+			<button class="mui-action-back mui-btn mui-btn-link mui-btn-nav mui-pull-left"><span class="mui-icon mui-icon-left-nav"></span>返回</button>
+			<h1 class="mui-title">核销记录</h1>
+			<a class="mui-pull-right header-icon" id="search"><i class="iconfont icon-search"></i></a>
+			<a class="mui-pull-right header-icon hidden" id="orderFilter"><i class="iconfont icon-filter"></i></a>
+			<div class="header-search">
+				<div class="mui-input-row mui-search">
+					<input type="search" id="keywordsText" class="mui-input-clear" data-input-search="1"><span class="mui-icon mui-icon-clear mui-hidden"></span><span class="mui-placeholder"><span class="mui-icon mui-icon-search"></span><span>订单编号/核销码</span></span>
+				</div>
+				<a class="search-cancel">取消</a>
+			</div>
+		</header>
+		<ul class="nav-list border-bot fixed" id="fixedNav">
+			<li class="active" data-type="1"><span>虚拟商品订单</span></li>
+			<li data-type="2"><span>自提订单</span></li>
+		</ul>
+		<div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+			<div class="mui-scroll">
+				<div id="List" class="has-fixed">
+					<div class="pull-loading"><div class="mui-icon mui-spinner"></div>正在加载...</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/mui.min.js"></script>
+	<script src="js/delayimg.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/md5.js" ></script>
+	<script src="js/template.js"></script>
+	<script src="js/swiper.min.js"></script>
+	<script type="text/javascript">
+		var isEnd = false,
+				page = 0,
+				type=localStorage.getItem("verifytype")?localStorage.getItem("verifytype"):1,
+				isJoin=himall.isJoin(),
+				List=document.getElementById('List'),
+				searchVal,
+				userkey=himall.getState().userkey,
+				ajaxUrl;
+			if(isJoin){
+				document.querySelector("#fixedNav li[data-type='2']").className+=' hidden';
+				type=1;
+			}
+			if(!isJoin&&type!="1"){
+				var obj = document.querySelector("#fixedNav li");
+				obj.setAttribute("data-type","2");
+				obj.innerHTML = "<span>自提订单</span>";
+				himall.getSiblings(obj)[0].setAttribute("data-type","1");
+				himall.getSiblings(obj)[0].innerHTML = "<span>虚拟商品订单</span>";
+			}
+			mui.init({
+				pullRefresh : {
+				    container:'#pullrefresh',
+				    deceleration:0.0006,
+				    up : {
+					    contentrefresh : "正在加载...",
+					    contentnomore:'已加载完全部',
+					    callback :loadPage
+				    }
+				},
+				swipeBack: true
+			});
+			
+			if (mui.os.android)
+				document.getElementsByClassName('mui-scroll')[0].className='';
+			
+			himall.immersedNav();
+			himall.immersedSide();
+			mui.plusReady(function() {
+				var ws=plus.webview.currentWebview();
+				ws.setStyle({scrollIndicator:'none'});
+				loadPage('reset');
+				ws.setPullToRefresh({
+					support:true,
+					height:"50px",
+					range:"100px",
+					style: 'circle',
+					offset: '20px'
+				},function(){
+					setTimeout(function(){
+						reloadPage();
+						ws.endPullToRefresh();
+					},300)
+				});
+			});
+			
+			function changeurl(){
+				ajaxUrl=type=='1'?'api/ShopBranchOrder/PostSearchVerificationRecord':'api/ShopBranchOrder/PostSearchShopBranchOrder';
+				if(isJoin){
+					ajaxUrl=type=='1'?'api/ShopOrder/PostSearchVerificationRecord':'/api/ShopOrder/PostSearchShopOrder';
+					List.className+=' isJoin';
+				}
+			}
+			
+			function loadPage(re){
+				var self=this;
+		      	if (!isEnd) {
+		      		page++;
+		      		var param = {
+							pageno:page,
+							pagesize:10,
+							userkey:userkey,
+							orderid:searchVal
+						};
+					if(type==2){
+						param.isselftake = 1;
+					}
+					changeurl();
+			        mui.ajax(URL+ajaxUrl,{
+			        	data:himall.md5Data(param),
+						dataType:'json',
+						type:'post',
+						timeout:20000,
+						success:function(data){
+							var jdata = {};
+							jdata.type = type;
+							jdata.list = data;
+							if(data.success===false && data.code==504){
+								plus.nativeUI.toast(data.msg);
+								showLogin();
+							}
+					        if(data.length <10){
+								isEnd = true;
+							}
+					        if(re){
+					        	List.innerHTML=template('initData', jdata);
+					        	mui('#pullrefresh').pullRefresh().scrollTo(0,0,20);
+					        }else{
+					        	List.insertAdjacentHTML('beforeend',template('initData', jdata));
+					        	self.endPullupToRefresh(isEnd);
+					        }
+					        
+							if(page==1){
+								if(data.length > 0){
+									delayimg.init();
+									document.querySelector('.mui-pull-bottom-pocket').style.opacity=1;
+								}else{
+									document.querySelector('.mui-pull-bottom-pocket').style.opacity=0;
+									List.innerHTML='<div class="empty-show"><h4>未找到任何记录...</h4></div>';
+								}
+								himall.removeClass(document.querySelector('.mui-content'),'transparent');
+							}else{
+								delayimg.render();
+							}
+		      					
+						},
+						error:function(xhr,type,errorThrown){
+							if(page==1){
+								reloadWvLoad();
+							}else{
+								plus.nativeUI.toast('请求失败，请检查网络重试');
+								self.endPullupToRefresh(isEnd);
+								page--;
+							}
+							
+						}
+					});
+			    }else{
+			    	self.endPullupToRefresh(isEnd);
+			    }
+			}
+			
+			function reloadPage(){
+				isEnd = false;
+				page = 0;
+				mui('#pullrefresh').pullRefresh().refresh(true);
+				loadPage('reset');
+			}
+			
+			mui('#fixedNav').on('tap','li',function(){
+				document.querySelector('#fixedNav li.active').className='';
+				this.className='active';
+				type=this.getAttribute('data-type');
+				himall.removeClass(search,' active');
+				changeurl();
+				reloadPage();
+				localStorage.setItem("verifytype",type);
+			});
+			mui('#List').on('tap','.service-info',function(){
+				var _t=this;
+				orderid=_t.getAttribute('data-id');
+				if(parseInt(type)==1){
+					himall.openVW("verify-detail.html",{orderId:orderid});
+				}else{
+					himall.openVW("order-details.html",{orderId:orderid});
+				}
+			});
+			
+			commonFn.search();
+	</script>
+	<script id="initData" type="text/html">
+		{{if type==1}}
+		{{each list}}
+			<div class="service-info" data-id="{{$value.Id}}">
+				<div class="item border-bot">
+					<div class="order-shop">
+						<a class="vshop-url"><i class="iconfont icon-otoshouhouliebiaodianpu"></i>{{$value.Name}}</a><span class="mui-pull-right forOrderId">{{$value.OrderId}}</span>
+					</div>
+				</div>
+				<div class="item">
+                    <div class="buy-goods">
+                    	<a class="goods-url goods-img"><img src="images/blank.gif" data-delay="{{$value.ImagePath}}"/></a>
+                        <div class="right_goods_info"><p><em>¥ {{$value.Price.toFixed(2)}}<i>x {{$value.Quantity}}</i></em><span><a class="goods-url">{{$value.ProductName}}</a></span></p>
+                        <h5>
+                        	{{$value.Specifications}}
+                        </h5></div>
+                    </div>
+                </div>
+				<!--<div class="total-m border-top">共7件商品 总价: <span>¥223.00</span></div>-->
+				<div class="bottom-info border-top">
+					<span>核销人: {{$value.VerificationUser}}</span>
+					<span class="fr">{{$value.VerificationTime}}</span>
+				</div>
+			</div>
+		{{/each}}
+		{{else}}
+		{{each list}}
+			<div class="service-info" data-id="{{$value.Id}}">
+				<div class="item border-bot">
+					<div class="order-shop">
+						<a class="vshop-url"><i class="iconfont icon-otoshouhouliebiaodianpu"></i>{{$value.ShopBranchName||$value.ShopName}}</a><span class="mui-pull-right forOrderId">{{$value.OrderId}}</span>
+					</div>
+				</div>
+				{{each $value.OrderItems as item}}
+				<div class="item">
+                    <div class="buy-goods">
+                    	<a class="goods-url goods-img"><img src="images/blank.gif" data-delay="{{item.ThumbnailsUrl}}"/></a>
+                        <div class="right_goods_info"><p><em>¥ {{item.SalePrice.toFixed(2)}}<i>x {{item.Quantity}}</i></em><span><a class="goods-url">{{item.ProductName}}</a></span></p>
+                        <h5>
+                        	{{if item.Size}}
+								{{item.SizeAlias}}：{{item.Size}}&nbsp;&nbsp;
+							{{/if}}
+							{{if item.Color}}
+								{{item.ColorAlias}}：{{item.Color}}&nbsp;&nbsp;
+							{{/if}}
+							{{if item.Version}}
+								{{item.VersionAlias}}：{{item.Version}}
+							{{/if}}
+                        </h5></div>
+                    </div>
+                </div>
+                {{/each}}
+				<div class="total-m border-top">共{{$value.ProductCount}}件商品 总价: <span>¥{{$value.OrderTotalAmount!=null?$value.OrderTotalAmount.toFixed(2):$value.OrderTotalAmount}}</span></div>
+			</div>
+		{{/each}}
+		{{/if}}
+	</script>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="format-detection" content="telephone=no,email=no" />
+		<title>电子凭证</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">电子凭证</h1>
+		</header>
+		<div class="mui-content transparent" id="qrCode"></div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/app.js"></script>
+		<script src="js/md5.js" ></script>
+		<script src="js/swiper.min.js"></script>
+		<script src="js/template.js"></script>
+		<script>
+			var	w,
+				userkey=himall.getState().userkey,
+				qrCode=document.getElementById('qrCode');
+			mui.init({});
+			mui.plusReady(function() {
+				var w=plus.nativeUI.showWaiting('',{padlock:true});
+				mui.ajax(URL+'api/MemberOrder/GetElectronicCredentials',{
+        			data:himall.md5Data({
+						orderid:plus.webview.currentWebview().orderId,
+						userkey:userkey
+					}),
+					dataType:'json',
+					type:'get',
+					timeout:20000,
+					success:function(data){
+						w.close();
+						if(data.success){
+							qrCode.innerHTML=template('initData', data);
+							
+							var swiper = new Swiper('.swiper-container', {
+								slidesPerView: 'auto',
+								centeredSlides: true,
+								spaceBetween: 10,
+								pagination: '.swiper-pagination'
+						    });
+						}else{
+							mui.toast(data.msg);
+						}
+						w.close();
+						himall.removeClass(qrCode,'transparent');
+					}
+				});
+			});
+		</script>
+		<script id="initData" type="text/html">
+			<div class="vericode-text">共 {{total}} 张, {{validityDate?'有效期 '+validityDateStart+'至 '+validityDate:'长期有效'}}</div>
+			<div class="swiper-container qrcode-swiper">
+                <div class="swiper-wrapper">
+					{{each orderVerificationCodes}}
+                    	<div class="swiper-slide qrcode-slide">
+                    		<img src="{{$value.QRCode}}" />
+                    		<h3>核销码</h3>
+                    		<p>{{$value.VerificationCode}}</p>
+                    		{{if $value.Status!=1&&$value.Status!=3}}
+                    			<div><span class="status{{$value.Status}}"></span></div>
+                    		{{/if}}
+                    	</div>
+					{{/each}}
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+		</script>
+	</body>
+
+</html>
