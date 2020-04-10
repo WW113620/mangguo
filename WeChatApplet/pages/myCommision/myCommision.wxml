@@ -1,0 +1,49 @@
+<view class='header'>
+  <image class='bg' src='../../images/mycommision_bg.png'></image>
+  <view class='header_content'>
+    <view class='btn' bindtap='bindWithdrawCash'>提现</view>
+    <view class='title'>总收益（元）</view>
+    <view class='amount'>{{myBrokerage.SettlementAmount}}</view>
+  </view>
+</view>
+
+<view class='flex_container'>
+  <view class='flex_item'>
+    <view class='amount'>
+      ￥<text>{{myBrokerage.NoSettlementAmount}}</text>
+    </view>
+    <view class='description'>未结算</view>
+  </view>
+  <view class='flex_item'>
+    <view class='amount'>
+      ￥<text>{{myBrokerage.Balance}}</text>
+    </view>
+    <view class='description'>可提现</view>
+  </view>
+  <view class='flex_item'>
+    <view class='amount'>
+      ￥<text>{{myBrokerage.WithdrawalsAmount}}</text>
+    </view>
+    <view class='description'>已提现</view>
+  </view>
+</view>
+
+<view class='list' wx:if="{{!showEmpty}}">
+  <view class='list_item' wx:for='{{records}}' wx:key="{{index}}">
+    <view class='amount'>
+      <text>￥</text>{{item.Amount}}</view>
+    <view class='order_num'>
+      {{item.Type}}<text>（{{item.Remark}}）</text>
+    </view>
+    <view class='time'>{{item.Time}}</view> 
+  </view>
+  <view class='list_footer' wx:if='{{records.length == total}}'>
+    <view>没有更多数据了</view>
+  </view>
+</view>
+
+<view class='no_data' wx:if="{{showEmpty}}">
+  <image src='../../images/no_commision.png'></image>
+  <view class='title'>暂无收益</view>
+  <view class='des'>您还没有获得分佣哦，快快分享吧</view>
+</view>

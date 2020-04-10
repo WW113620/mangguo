@@ -1,0 +1,235 @@
+.banner swiper {
+    height: 320rpx;
+}
+
+.banner .help_item {
+    height: 88rpx;
+    background: #fff;
+    padding: 24rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.banner .help_item .icon {
+    position: relative;
+    top: 6rpx;
+    margin-right: 16rpx;
+    height: 32rpx;
+    width: 32rpx;
+    border-radius: 50%;
+    background: #ffc107;
+    text-align: center;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    color: #fff;
+    float: left;
+    font-weight: bold;
+}
+
+.banner .help_item .icon .icon-star24 {
+    font-size: 24rpx !important;
+}
+
+.banner .help_item .txt {
+    font-size: 28rpx;
+    color: #515151;
+    line-height: 40rpx;
+    width: 654rpx;
+    float: left;
+}
+
+.banner .help_item .txt text.points {
+    color: #fb1438;
+    font-weight: bold;
+    font-size: 32rpx;
+    padding: 0 12rpx;
+}
+
+.banner .help_item .txt text.login {
+    padding: 0 12rpx;
+    float: right;
+    border: 1rpx solid #ffc107;
+    color: #ffc107;
+    border-radius: 8rpx;
+}
+
+.group {
+    margin-top: 24rpx;
+}
+
+.group .group_title, .group .more {
+    height: 88rpx;
+    line-height: 88rpx;
+    color: #212121;
+    font-size: 32rpx;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    background: #fff;
+}
+
+.group .more {
+    font-size: 28rpx;
+    margin-top: 8rpx;
+}
+
+.group .group_title image.bg_img, .group .group_title .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.group .group_title .content {
+    z-index: 99;
+}
+
+.grid {
+    height: auto;
+    overflow: hidden;
+}
+
+.grid .grid_item {
+    width: 371rpx;
+    height: 483rpx;
+    background: #fff;
+    padding: 0 24rpx 24rpx;
+    line-height: 40rpx;
+    float: left;
+    box-sizing: border-box;
+    margin-top: 8rpx;
+    position: relative;
+}
+
+.grid .grid_item:nth-child(odd) {
+    margin-right: 8rpx;
+}
+
+.grid .grid_item image {
+    width: 323rpx;
+    height: 371rpx;
+}
+
+.grid .grid_item .name {
+    font-size: 26rpx;
+    color: #212121;
+    margin-top: 8rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.grid .grid_item .points .fl {
+    color: #747474;
+    font-size: 24rpx;
+    width: 60%;
+}
+
+.grid .grid_item .points .fl text {
+    color: #fb1438;
+    font-size: 28rpx;
+    padding-right: 8rpx;
+}
+
+.grid .grid_item .points .fr {
+    color: #bdbdbd;
+    font-size: 24rpx;
+    width: 40%;
+    text-align: right;
+}
+
+.list .list_item {
+    height: 224rpx;
+    box-sizing: border-box;
+    padding: 32rpx 24rpx;
+    background: #fff;
+    margin-top: 8rpx;
+}
+
+.list .list_item image {
+    height: 160rpx;
+    width: 160rpx;
+}
+
+.list .list_item .center {
+    width: 329rpx;
+    padding: 0 24rpx 0 16rpx;
+}
+
+.list .list_item .center .store_name {
+    color: #212121;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    height: 40rpx;
+    font-weight: bold;
+}
+
+.list .list_item .center .des {
+    color: #747474;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    max-height: 64rpx;
+    margin-top: 8rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.list .list_item .center .price {
+    color: #212121;
+    font-size: 24rpx;
+    line-height: 48rpx;
+    margin-top: 8rpx;
+}
+
+.list .list_item .center .price text {
+    color: #fb1438;
+    font-size: 28rpx;
+    padding-right: 16rpx;
+}
+
+.list .list_item .right {
+    margin-top: 30rpx;
+    text-align: center;
+    width: 172rpx;
+    font-size: 32rpx;
+    line-height: 40rpx;
+    font-weight: bold;
+}
+
+.list .list_item .right .status {
+    font-size: 26rpx;
+    color: #fff;
+    height: 56rpx;
+    line-height: 56rpx;
+    padding: 0 30rpx;
+    border-radius: 28rpx;
+    margin-top: 8rpx;
+    background: #fb1438;
+    font-weight: normal;
+}
+
+.other_group .imgs {
+    padding: 0 24rpx;
+    box-sizing: border-box;
+    border-top: 1rpx solid #f0f0f0;
+    background: #fff;
+}
+
+.other_group .imgs image {
+    width: 702rpx;
+    height: 280rpx;
+    margin: 24rpx 0;
+}
+@import "../../style/common.wxss";
+
+.more.has_indicator::after, .more.has_indicator::before {
+    right: 280rpx;
+}
+
+.more.has_indicator::before {
+    right: 276rpx;
+}

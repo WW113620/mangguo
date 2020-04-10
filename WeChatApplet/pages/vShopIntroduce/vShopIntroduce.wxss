@@ -1,0 +1,91 @@
+.head {
+    height: 320rpx;
+    background: #fff;
+}
+
+image.bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.head .logo {
+    height: 200rpx;
+    position: relative;
+    text-align: center;
+}
+
+.head .logo>view, .code>view {
+    position: absolute;
+    width: 100%;
+}
+
+.head .logo image.iconlogo {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    border: 5rpx solid #cc2a29;
+    margin: 0 auto;
+    background: #fff;
+}
+
+.head .logo .iconfont {
+    font-size: 44rpx;
+    color: #fff;
+    height: 44rpx;
+    width: 44rpx;
+    line-height: 44rpx;
+    position: absolute;
+    z-index: 1;
+    right: 24rpx;
+    top: 0;
+}
+
+.head .logo .name {
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 40rpx;
+    margin-top: 16rpx;
+    font-weight: bold;
+}
+
+.head .comment {
+    height: 120rpx;
+    display: flex;
+    justify-content: space-around;
+}
+
+.head .comment .comment_item {
+    padding: 24rpx;
+    text-align: center;
+    font-size: 24rpx;
+    color: #bdbdbd;
+    line-height: 32rpx;
+}
+
+.head .comment .comment_item view {
+    color: #f00;
+    font-size: 32rpx;
+    line-height: 48rpx;
+}
+
+.code {
+    height: 488rpx;
+    width: 400rpx;
+    margin: 96rpx auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.code image.qrcode {
+    margin: 24rpx;
+    height: 352rpx;
+    width: 352rpx;
+}
+
+.code view {
+    text-align: center;
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 40rpx;
+}

@@ -1,0 +1,34 @@
+@import "../../style/noData.wxss";
+.category{
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100rpx;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+}
+
+.category>view{
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 33%;
+}
+
+.category>view::-webkit-scrollbar{width: 0;}
+
+.category1{
+    background: #fff;
+}
+
+.category>view .category_item{
+    height: 88rpx;
+    line-height: 88rpx;
+    padding: 0 24rpx;
+    color: #212121;
+    font-size: 28rpx;
+}
+
+.category>view .category_item.active{
+    color: #fb1438;
+}

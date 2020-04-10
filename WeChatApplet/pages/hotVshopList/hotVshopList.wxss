@@ -1,0 +1,42 @@
+@import '../vShopList/vShopList.wxss';
+
+.more{
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    background: #fff;
+    margin-top: 24rpx;
+    color: #747474;
+    font-size: 32rpx;
+}
+
+.list_item{
+    height: auto;
+    overflow: hidden;
+}
+
+.list_item .info_wrapper{
+    height: auto;
+    overflow: hidden;
+}
+
+.list_item .products{
+    margin-top: 24rpx;
+    border-top: 1rpx solid #eeeeee;
+    height: auto;
+    overflow: hidden;
+}
+
+.list_item .products image{
+    margin-top: 24rpx;
+    height: 164rpx;
+    width: 163rpx;
+    box-sizing: border-box;
+    border: 1rpx solid #eeeeee;
+    float: left;
+    margin-right: 16rpx;
+}
+
+.list_item .products image:nth-child(4n){
+    margin-right: 0;
+}

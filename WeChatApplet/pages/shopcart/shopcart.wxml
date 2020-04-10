@@ -1,0 +1,138 @@
+<!--shopcart.wxml-->
+<view class="page-section container {{pageLoaded?'':'transparent'}}">
+    <view hidden="{{isEmpty||!islogin}}">
+        <view class="shopcart-t bg-wihte">
+            <view class="shopcart-ck" class="mt0">
+                <icon type="{{selectAllStatus?'success':'circle'}}" color="{{selectAllStatus?'#fb1438':''}}" bindtap="selectAll" class="fl mt20 line_height1" />
+                <view class="ml16 fl">全选</view>
+            </view>
+            <view class="shopcart-edite" bindtap="SwitchEdite">{{EditeText}}</view>
+        </view>
+        <view class="shopcart-m">
+            <block wx:for="{{ShopCarts}}" wx:for-index="idx" wx:for-item="shop" wx:key="{{idx}}">
+                <view class="cart-item bg-wihte">
+                    <view class="shopTitle">
+                        <icon type="{{shopSelectAll[idx].shopSelect?'success':'circle'}}" color="{{shopSelectAll[idx].shopSelect?'#fb1438':''}}" bindtap="selectShop" data-idx="{{idx}}" />
+                        <view class="iconfont icon-dianpu"></view>
+                        <text>{{shop[0].ShopName}}</text>
+                    </view>
+                    <block wx:for="{{shop}}" wx:for-index="ix" wx:for-item="item" wx:key="{{ix}}">
+                        <view class="shopcart-m-item {{item.IsValid==0?'':'shopcart-invalid'}}">
+                            <view class="shopcart-ck {{item.IsValid==0?'':'ck-txt'}}">
+                                <view wx:if="{{item.IsValid==0}}">
+                                    <icon data-skuid="{{item.SkuId}}" data-idx="{{ix}}" data-sidx="{{idx}}" type="{{item.selected?'success':'circle'}}" color="{{item.selected?'#fb1438':''}}" bindtap="selectList" />
+                                </view>
+                                <text wx:else>
+                                    <block wx:if="{{item.ProductStatus==2}}">已售罄</block>
+                                    <block wx:elif="{{item.ProductStatus==3}}">已下架</block>
+                                    <block wx:elif="{{item.ProductStatus==1}}">已失效</block>
+                                </text>
+                            </view>
+                            <view class="shopcart-item-pic " data-productid="{{item.Id}}" bindtap="goToProductDetail" data-isvalid="{{item.IsValid}}" data-activeid="{{item.ActiveId}}">
+                                <image mode="aspectFill " src="{{item.ImgUrl}} " />
+                            </view>
+
+                            <view class="shpcart-item-txt " data-productid="{{item.Id}}" bindtap="goToProductDetail" hidden="{{isEdite&&item.IsValid==0}}" data-isvalid="{{item.IsValid}}" data-activeid="{{item.ActiveId}}">
+                                <view class="shopcart-txt-t ">
+                                    <view class="shopcart-txt-name ">{{item.Name}}</view>
+                                    <view class="shopcart-txt-saleprice " hidden="{{isEdite}}">
+                                        <text>¥ {{item.Price}}</text>
+                                        <view class="shopcart-item-num ">
+                                            <view class="txt ">
+                                                × {{item.Count}}</view>
+                                        </view>
+                                    </view>
+                                </view>
+                                <view class="shopcart-txt-b ">
+                                    <view class="shpcart-item-skuname">
+                                        <block wx:if="{{item.Size}}">
+                                            {{item.SizeAlias}}:{{item.Size}}
+                                        </block>
+                                        <block wx:if="{{item.Color}}">
+                                            {{item.ColorAlias}}:{{item.Color}}
+                                        </block>
+                                        <block wx:if="{{item.Version}}">
+                                            {{item.VersionAlias}}:{{item.Version}}
+                                        </block>
+                                    </view>
+                                </view>
+                            </view>
+
+                            <view class=" shpcart-item-txt shopcart-item-edite " hidden="{{!isEdite}}">
+                                <view class="shopcart-item-edite-l " hidden="{{item.IsValid!=0}}">
+                                    <view class="shpcart-item-edite-num ">
+                                        <text class="iconfont icon-minus_regular fl" data-dotype="minus" bindtap="countNum" data-idx="{{ix}}" data-sidx="{{idx}}"></text>
+                                        <input class="m" value="{{item.Count}}" type="number" data-idx="{{ix}}" data-sidx="{{idx}}" bindblur="bindblurNum" />
+                                        <text class="iconfont icon-plus_regular fr" data-dotype="add" bindtap="countNum" data-idx="{{ix}}" data-sidx="{{idx}}"></text>
+                                    </view>
+                                    <view class="shpcart-item-skuname ">{{item.SkuContent}}</view>
+                                </view>
+                                <view class="shopcart-item-edite-r " bindtap="DelCarts" data-index="{{ix}}" data-skuid="{{item.SkuId}}">
+                                    <text class="iconfont icon-trash"></text>
+                                </view>
+                            </view>
+                        </view>
+                    </block>
+                </view>
+            </block>
+            <view class="cart-item bg-wihte" bindtap="goToShop" data-id="{{store.ShopBranch[0].ShopBranchId}}" wx:for="{{ShopBranchs}}" wx:for-item="store" wx:for-index="storeindex" wx:key="{{storeindex}}">
+                <view class="shopTitle">
+                    <view class="iconfont icon-store"></view>
+                    <text>{{store.ShopBranch[0].ShopBranchName}}</text>
+                    <text class="iconfont icon-arrow_right"></text>
+                </view>
+                <view class="store-ul clearfix">
+                    <view class="item" wx:for="{{store.ShopBranch}}" wx:if="{{index<4}}" wx:key="{{index}}">
+                        <view wx:if="{{item.Status>0}}" class='disabled-pic'>
+                            <text wx:if="{{item.Status==2}}">已售罄</text>
+                            <text wx:elif="{{item.Status==1}}">已失效</text>
+                            <text wx:elif="{{item.Status==3}}">已下架</text>
+                        </view>
+                        <image src="{{item.ImgUrl}}" mode="aspectFill"></image>
+                        <view class="price">¥{{item.Price}}</view>
+                    </view>
+                    <view hidden="{{isEdite}}"  class="more-pro" wx:if="{{store.ShopBranch.length>4}}"><text class="iconfont icon-more"></text>共{{store.cartSum}}件</view>
+                    <view  hidden="{{!isEdite}}" class="shopcart-item-edite-r" bindtap="delStoreProduct" data-index="{{storeindex}}" data-shopid="{{store.ShopBranch[0].ShopBranchId}}">
+                        <text class="iconfont icon-trash"></text>
+                    </view>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="shopcart-b bg-wihte ">
+            <view class="shopcart-total ">
+                <view class="shopcart-total-txt ">总价: </view>
+                <view class="shopcart-total-p ">
+                    <text class="saleprice ">¥{{TotalPrice}} </text>
+                </view>
+                (不含运费)
+            </view>
+            <view class="shopcart-buy" bindtap="SettlementShopCart">
+                <text>{{SettlementText}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="shopcart-no" hidden="{{!isEmpty}}">
+        <view class="shopcart-no-item">
+            <view class="pic">
+                <image src="../../images/shopcart-empty.jpg"></image>
+            </view>
+            <view class="mt24 mb24 line_height48 font32">购物车空空如也~</view>
+            <view class="btn">
+                <navigator open-type="switchTab" url="../productcategory/productcategory" class="btn_go">去逛逛</navigator>
+            </view>
+        </view>
+    </view>
+     <view class="shopcart-no" wx-if="{{!islogin}}">
+        <view class="shopcart-no-item">
+            <view class="pic">
+                <image src="../../images/shopcart-empty.jpg"></image>
+            </view>
+            <view class="mt24 mb24 line_height48 font32">您还没有登录</view>
+            <view class="btn">
+                <navigator url="../login/login" class="btn_go">去登录</navigator>
+            </view>
+        </view>
+    </view>
+</view>

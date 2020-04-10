@@ -1,0 +1,40 @@
+<view class="page-section">
+    <!--pages/coupon/coupon.wxml-->
+
+    <view class="coupontitle bg-white">
+        <view class="coupontitlel" bindtap="couponTypeChange" data-type="0">
+            <view class="{{couponType==0?'active':''}}">未使用</view>
+        </view>
+        <view class="coupontitlel" bindtap="couponTypeChange" data-type="1">
+            <view class="{{couponType==1?'active':''}}">已使用</view>
+        </view>
+        <view class="coupontitlel" bindtap="couponTypeChange" data-type="2">
+            <view class="{{couponType==2?'active':''}}">已过期</view>
+        </view>
+    </view>
+    <view class="mt120">
+        <block wx:for="{{couponList[couponType]}}" wx:for-item="item" wx:for-index="idx"  wx:key="{{idx}}">
+            <view class="couponlist">
+                <view class="coupon-info bg-white">
+                    <view class="coupon-pic">
+                        <view style="background:url({{counpimg[couponType]}}) center center no-repeat; background-size:100% 100%" class="counpimg padding24">
+                            <view class="coupon-money">￥{{item.couponsPrice}}</view>
+                            <view class="coupon-type">{{item.couponsCanUseProductse}}</view>
+                        </view>
+                    </view>
+                    <view class="coupon-des {{couponStyle[couponType]}}">
+                        <view wx:if="{{item.Remark}}" class="coupon-txt">{{item.Remark}}</view>
+                        <view class="coupon-txt">{{item.LimitText}}</view>
+                        <view class="coupon-txt">{{item.couponsDate}}</view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+
+    <view class='no_data' wx:if='{{showEmpty}}'>
+        <image src='../../images/no_order.png'></image>
+        <view class='title'>暂无此类优惠券</view>
+        <!-- <view class='des'>您还没有订单</view> -->
+    </view>
+</view>

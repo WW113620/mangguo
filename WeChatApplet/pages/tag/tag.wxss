@@ -1,0 +1,6 @@
+/* pages/tag/tag.wxss */
+.store-container{
+    padding: 0 24rpx;
+}page{
+    background:#f0f0f0;
+}

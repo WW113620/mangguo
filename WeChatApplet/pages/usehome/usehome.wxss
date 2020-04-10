@@ -1,0 +1,168 @@
+/* pages/usehome/usehome.wxss */
+.uselogos{
+    text-align: center;
+    padding-bottom: 24rpx;
+}
+.uselogo {
+  width: 128rpx;
+  height: 128rpx;
+  border-radius: 50%;
+  border: 5rpx solid #cc2a29;
+  margin: 0 auto;
+}
+.username {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  text-align: center;
+  margin-top:8rpx;
+}
+
+.uselogos .favorite{
+    line-height: 88rpx;
+    height: 88rpx;
+    display: flex;
+    justify-content: space-around;
+    color: #fff;
+    text-align: center;
+    margin-top: 24rpx;
+}
+
+.uselogos .favorite view{
+    font-size: 28rpx;
+    line-height: 48rpx;
+    text-align: center;
+}
+
+.uselogos .favorite view text{
+    font-size: 24rpx;
+    line-height: 32rpx;
+    height: 32rpx;
+    display: block;
+}
+
+.usecd {
+  display: flex;
+  background: #fff;
+  padding: 24rpx; 
+  overflow: hidden;
+}
+
+.usecdlist {
+  width: 185rpx;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.usecdlist .iconfont{
+    font-size: 48rpx;
+}
+
+.usecdlist text {
+  font-size: 24rpx;
+  line-height: 40rpx;
+  color: #424242;
+}
+
+.usecdlist .order_num {
+  border-radius: 16rpx;
+  border: 3rpx solid #fb1438;
+  background: #fff;
+  top: -7rpx;
+  position: absolute;
+  left: 57%;
+  font-size: 20rpx;
+  line-height: 32rpx;
+  padding:0 8rpx;
+  min-width: 16rpx;
+  text-align: center;
+  height: 32rpx;
+}
+
+
+.usecdlist .order_num text{
+   color: #fb1438;
+   line-height: 32rpx;
+}
+
+.hdonglist {
+  padding: 32rpx 24rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  position: relative;
+  background: #fff;
+  margin-top: 24rpx;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.hdonglist:last-child {
+  border: none;
+}
+
+.hdonglist::after, .hdonglist::before {
+  border: 6px solid transparent;
+  border-left: 6px solid #fff;
+  width: 0;
+  position: absolute;
+  right: 10px;
+  height: 0;
+  top: 38rpx;
+  content: ' ';
+}
+
+.hdonglist::before {
+  border-left-color: #bbb;
+  right: 8px;
+}
+.hdonglist .red{color:red;}
+
+page {
+  background: #f5f5f5;
+}
+
+.producthd {
+  background: #f5f5f5;
+  overflow: hidden;
+  padding-bottom: 15rpx;
+  margin-top: 24rpx;
+}
+
+.hdonglist text {
+  float: right;
+  margin-right: 40rpx;
+  font-size: 28rpx;
+  color: #747474;
+  line-height: 40rpx;
+}
+
+.hdonglist.outlogin{
+  text-align: center;
+  color: #fb1438;
+  border-top: 1rpx solid #f0f0f0;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.hdonglist.outlogin::after, .hdonglist.outlogin::before{
+  display: none;
+}
+
+.middle-info{
+    padding-left: 24rpx;
+    background-color: #fff;
+}
+.middle-info .hdonglist{
+    margin-top: 0;
+    padding-left: 0;
+}
+
+.gslogo {
+  margin-top: 330rpx;
+  text-align: center;
+}
+
+.gslogo image {
+  width: 211rpx;
+  height: 108rpx;
+}

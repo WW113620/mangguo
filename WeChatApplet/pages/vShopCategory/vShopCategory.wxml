@@ -1,0 +1,18 @@
+<vshoptab tabindex='{{1}}' id='{{id}}'></vshoptab>
+
+<view class='category' wx:if='{{!isNoData}}'>
+    <view class='category1' style='width:{{hasSecondCategories&&hasThirdCategories ? "33%": (hasSecondCategories&&!hasThirdCategories ? "50%": "100%")}};'>
+        <view class='category_item {{index==firstCategoryIndex?"active":""}}' wx:for="{{ShopCategories}}" bindtap='bindTapCagegoryItem' data-level='{{1}}' data-index='{{index}}' data-id='{{item.Id}}'>{{item.Name}}</view>
+    </view>
+    <view class='category2' style='width:{{hasThirdCategories?"33%":"50%"}};'  wx:if='{{secondCategories.length > 0}}'>
+        <view class='category_item {{index==secondCategoryIndex?"active":""}}' wx:for="{{secondCategories}}" bindtap='bindTapCagegoryItem' data-level='{{2}}' data-index='{{index}}' data-id='{{item.Id}}'>{{item.Name}}</view>
+    </view>
+    <view class='category3' wx:if='{{thirdCategoryies.length > 0}}'>
+        <view class='category_item {{index==thirdCategoryIndex?"active":""}}' wx:for="{{thirdCategoryies}}" bindtap='bindTapCagegoryItem' data-level='{{3}}' data-id='{{item.Id}}'>{{item.Name}}</view>
+    </view>
+</view>
+
+<view class='no_data' wx:if='{{isNoData}}'>
+    <image src='../../images/no_order.png'></image>
+    <view class='title'>暂无分类</view>
+</view>

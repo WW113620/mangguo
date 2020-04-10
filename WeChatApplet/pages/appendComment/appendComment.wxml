@@ -1,0 +1,35 @@
+<!--pages/appendComment/appendComment.wxml-->
+<form bindsubmit="formSubmit" report-submit="false">
+    <view class='wrap'>
+        <block wx:for="{{ProductList}}">
+            <view class="comentcont">
+                <view class="comenttiltetop">
+                    <view class="comenttilte">
+                        <view class="comtiltepic">
+                            <image src="{{item.ThumbnailsUrl}}"></image>
+                        </view>
+                        <view class="comtright">
+                            <view class="comtrightop">追加评论</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="comenttext">
+                    <textarea class="txtarea" name="txt_{{item.CommentId}}" placeholder="请输入对此商品的评价" />
+                </view>
+                <view class="comentpic">
+                    <view class="uploadImg">
+                        <view class="upload-item" wx:for="{{ScoreGrade[index].Images}}" wx:key="{{imgindex}}" wx:for-item="img" wx:for-index="imgindex">
+                            <image src="{{getRequestUrl}}{{img}}"  bindtap="uploadImg" data-index="{{index}}" data-imgindex="{{imgindex}}" mode="aspectFill"></image>
+                            <text bindtap="delImg" class="iconfont icon-clear" data-index="{{index}}" data-imgindex="{{imgindex}}"></text>
+                        </view>
+                        <view class="upload-btn iconfont icon-camera" bindtap="uploadImg" data-index="{{index}}"></view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view class="comment-btn">
+        <button form-type="submit" class="baseRedBgColor btn-confirm">提交评论</button>
+    </view>
+
+</form>

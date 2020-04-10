@@ -1,0 +1,18 @@
+<view class='tab'>
+    <view class='tab_item {{tabindex == 0 ? "active":""}}' data-index='{{0}}' bindtap='bindselecttab'>
+        <view class='iconfont icon-dianpu'></view>
+        <text class='title'>微店首页</text>
+    </view>
+    <view class='tab_item {{tabindex == 1 ? "active":""}}' data-index='{{1}}' bindtap='bindselecttab'>
+        <view class='iconfont icon-category2'></view>
+        <text class='title'>商品分类</text>
+    </view>
+    <view class='tab_item {{tabindex == 2 ? "active":""}}' data-index='{{2}}' bindtap='bindselecttab'>
+        <view class='iconfont icon-vshopproduct'></view>
+        <text class='title'>全部商品</text>
+    </view>
+    <view class='tab_item {{tabindex == 3 ? "active":""}}' data-index='{{3}}' bindtap='bindselecttab'>
+        <view class='iconfont icon-discount'></view>
+        <text class='title'>店铺简介</text>
+    </view>
+</view>

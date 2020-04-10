@@ -1,0 +1,23 @@
+<view class='list_item' wx:for='{{vshopList}}' wx:key='{{index}}'>
+    <view bindtap='bindVshop' data-shopid='{{item.id}}'>
+        <view class='img'>
+            <image mode='aspectFit' class='icon' src='{{item.image}}'></image>
+        </view>
+        <view class='title'>
+            <view>{{item.name}}</view>
+        </view>
+        <view class='count'>
+            宝贝数
+            <text>{{item.productCount}}</text>　|　关注度
+            <text>{{item.FavoritesCount}}</text>
+        </view>
+        <view class='officialrun'>
+            <text wx:if='{{item.tags}}'>{{item.tags}}</text>
+        </view>
+    </view>
+    <view class='iconfont {{item.favorite?"icon-love":"icon-hollowlove"}}' bindtap='bindFavorite' data-id='{{item.shopId}}'></view>
+</view>
+
+<view class='nomore' wx:if='{{isNoMore}}'>
+    <text>没有更多微店了</text>
+</view>

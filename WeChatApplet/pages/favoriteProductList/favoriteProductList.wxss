@@ -1,0 +1,21 @@
+@import '../vShopProductList/vShopProductList.wxss';
+
+.list{
+    padding-top: 0rpx;
+}
+
+.list_item{
+    position: relative;
+}
+
+.icon-trash{
+    color: #747474;
+    font-size: 43rpx;
+    line-height: 91rpx;
+    width: 91rpx;
+    height: 91rpx;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}

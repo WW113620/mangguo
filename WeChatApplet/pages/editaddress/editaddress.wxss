@@ -1,0 +1,240 @@
+/* pages/raiseaddress/raiseaddress.wxss */
+.placeholderColor,.grayColr{
+    color: #bdbdbd;
+}
+.middle-info {
+    padding-left: 24rpx;
+    background-color: #fff;
+    margin-top: 24rpx;
+}
+
+.hdonglist {
+    padding: 24rpx;
+    font-size: 32rpx;
+    position: relative;
+    background: #fff;
+    margin-top: 0;
+    padding-left: 0;
+    border-bottom: 1rpx solid #f0f0f0;
+    overflow: hidden;
+}
+
+.hdonglist:last-child {
+    border: none;
+}
+
+.hdonglist .label {
+    float: left;
+    width: 160rpx;
+    margin-right: 16rpx;
+    display: inline-block;
+    margin-top: 5rpx;
+    color: #515151;
+    font-size: 32rpx;
+}
+
+.hdonglist input, .hdonglist view {
+    width: 526rpx;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 28rpx;
+}
+
+.rightarrow::after, .rightarrow::before {
+    border: 6px solid transparent;
+    border-left: 6px solid #fff;
+    width: 0;
+    position: absolute;
+    right: 10px;
+    height: 0;
+    top: 38rpx;
+    content: ' ';
+}
+
+.rightarrow::before {
+    border-left-color: #bbb;
+    right: 8px;
+}
+
+.regionname {
+    display: block;
+    overflow: hidden;
+    width: 480rpx;
+    font-size: 32rpx;
+    line-height: 48rpx;
+    float: left;
+}
+
+.regionname-color {
+    color: #808080;
+}
+
+.comment-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.comment-btn button {
+    height: 96rpx;
+    line-height: 96rpx;
+    font-size: 32rpx;
+    border-radius: 0;
+}
+
+.comment-btn button::after {
+    border: 0;
+}
+
+button.btn-confirm:hover {
+    background: #fb1438;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.message {
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    width: 400rpx;
+    height: 80rpx;
+    margin-left: -200rpx;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+    opacity: 0;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: none;
+        transform: none;
+    }
+}
+
+.area-item {
+    line-height: 40px;
+    text-align: center;
+}
+
+.distpicker {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 560rpx;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: #fff;
+}
+
+.distpicker-btn {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 40rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    background-color: #fafafa;
+    color: #586c94;
+}
+
+.distpicker-content {
+    box-sizing: border-box;
+    width: 100%;
+    height: 560rpx;
+    background-color: #fff;
+}
+
+.mask {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 998;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.distpicker-title {
+    width: 100%;
+    font-size: 32rpx;
+}
+
+.distpicker-title-sub {
+    float: left;
+    width: 25%;
+    text-align: center;
+}
+
+/* 详细地址选择层样式 */
+
+.page1, .page2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.page1, .page2 {
+    transition: transform 1s;
+}
+
+.page2 .hdonglist {
+    padding-left: 24rpx;
+    margin-top: 24rpx;
+}
+
+.page2 .hdonglist input {
+    width: 462rpx;
+}
+
+.page2 .hdonglist .icon-clear {
+    float: right;
+    margin-top: 10rpx;
+    color: #bdbdbd;
+}
+.aroundAddr{
+    padding: 0 24rpx;
+}
+.addr-li{
+    padding: 24rpx 0 24rpx 48rpx;
+    position: relative;
+}
+.addr-li:not(:last-child){
+    border-bottom: 1px solid #e0e0e0;
+}
+.addr-li .icon-locationempty{
+    position: absolute;
+    left: 0;
+    top: 29rpx;
+    color: #515151;
+}
+.addr-li .name{
+    font-size: 32rpx;
+    color: #212121;
+    line-height: 40rpx;
+}
+.addr-li .detail{
+    font-size: 28rpx;
+    color: #747474;
+    margin-top: 8rpx;
+}

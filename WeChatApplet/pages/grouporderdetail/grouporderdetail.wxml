@@ -1,0 +1,63 @@
+<!--pages/grouporderdetail/grouporderdetail.wxml-->
+<import src="../wxParse/wxParse.wxml" />
+<view class="merge-personal">
+    <view class="list">
+        <view class="merge-personal-hd">
+            <view class="thumb">
+                <image mode="aspectFill" src="{{OrderDetail.IconUrl}}"></image>
+            </view>
+            <view class="info">
+                <view class="name">{{OrderDetail.ProductName}}</view>
+                <view class="price">火拼价<view class="unit">￥</view><view>{{OrderDetail.MiniGroupPrice}}</view></view>
+                <view class="time">
+                    <view class="hmui-before"><text class="iconfont icon-clock-1"></text>{{OrderDetail.OverTime}}</view>
+                    <text wx:if="{{OrderDetail.GroupStatus==0}}">后组团结束</text>
+                    <text wx:elif="{{OrderDetail.GroupStatus==1}}">成团成功</text>
+                    <text wx:else>成团失败</text>
+                </view>
+            </view>
+        </view>
+        <view class="detail-bd">
+            <view wx:if="{{OrderDetail.GroupStatus==1}}" class="merge-success-sign"></view>
+            <view wx:if="{{OrderDetail.GroupStatus==-1}}" class="merge-fail-sign"></view>
+            <view class="merge-personal-go">
+                <view class="merge-go-tip">
+                    已参团的小伙伴
+                    <view wx:if="{{OrderDetail.GroupStatus==0}}">，还差<view class="merge-highlight">{{OrderDetail.LimitedNumber - OrderDetail.JoinedNumber}}</view>人</view>
+                </view>
+                <view class="merge-detail-user">
+                    <view class="user">
+                        <view class="info" wx:for="{{OrderDetail.UserInfo}}">
+                            <view class="avatar">
+                                <image mode="aspectFill" src="{{item.Photo}}"></image>
+                            </view>
+                            <view class="leader">{{index==0?'团长':'参团'}}</view>
+                            <view class="name">{{item.UserName}}</view>
+                            <view class="time">{{item.JoinTime}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="merge-rule">活动规则：当您在{{OrderDetail.LimitedHour}}小时内成功邀请{{OrderDetail.LimitedNumber}}位好友参团，则火拼成功；若火拼失败，系统会自动将金额退还到预存款余额或原路退回。</view>
+            <view class="item detail-comment" bindtap="showComment" data-id="{{OrderDetail.ProductId}}">
+                商品评价
+                <view class="sub">{{ComCount}}</view>
+                <view class="iconfont icon-arrow_right"></view>
+            </view>
+
+            <view class="productxq">
+                <view class="xqtitle pt24 pb24 pl24 font32">
+                    <text>商品详情</text>
+                </view>
+                <view class="xqcont">
+                    <view class="wxParse">
+                        <template is="wxParse" data="{{wxParseData:ProductDescription.nodes}}" />
+                    </view>
+                </view>
+            </view>
+        </view>
+        
+    </view>
+</view>
+
+<view class="fixed-btn"><button class="baseRedBgColor btn-confirm button-hover" bindtap="bottomTap" open-type="{{OrderDetail.GroupStatus==0?'share':''}}">{{OrderDetail.GroupStatus==0?'邀请好友':'更多拼团'}}</button></view>

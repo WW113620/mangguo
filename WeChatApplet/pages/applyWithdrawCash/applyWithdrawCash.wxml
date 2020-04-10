@@ -1,0 +1,63 @@
+<view class='nav'>
+    <view class="{{'nav_item' + (navIndex == 0 ? ' active' : '')}}" bindtap='bindNavitemChanged' data-index='{{0}}'>申请提现</view>
+    <view class="{{'nav_item' + (navIndex == 1 ? ' active' : '')}}" bindtap='bindNavitemChanged' data-index='{{1}}'>提现记录</view>
+</view>
+
+<form class='withdraw' hidden='{{navIndex != 0}}' bindsubmit='bindSubmitApplyWithdraw'>
+    <view class='form_item'>
+        <label for='amount'>提现金额</label>
+        <input id='amount' placeholder='填写您的提现金额' name='Amount' value='{{amount}}'></input>
+    </view>
+    <view class='help'>
+        最多可提现{{withdrawInfo.MaxLimit}}元，最少提现{{withdrawInfo.MinLimit}}元
+        <text class='help_btn' bindtap='bindSetAmout'>全部提现</text>
+    </view>
+    <view class='form_item has_indicator' bindtap='bindChooseWithdrawMethod'>
+        <label for='withdrawMethod'>提现方式</label>
+        <input id='withdrawMethod' placeholder='请选择提现方式' name='Type' disabled value='{{withdrawMethod}}'></input>
+    </view>
+    <view class='form_item'>
+        <label for='password'>交易密码</label>
+        <input id='password' password='true' placeholder='请输入交易密码' name='Password' bindtap='bindPasswordFocus' disabled='{{!withdrawInfo.IsSetPassword}}'></input>
+    </view>
+    <block wx:if="{{withdrawMethod == '支付宝'}}">
+        <view class='form_item'>
+            <label for='alipayId'>支付宝账号</label>
+            <input id='alipayId' placeholder='请输入支付宝账号' name='WithdrawAccount'></input>
+        </view>
+        <view class='form_item'>
+            <label for='realName'>真实姓名</label>
+            <input id='realName' placeholder='请输入您的真实姓名' name='WithdrawName'></input>
+        </view>
+    </block>
+    <view class='help align_right'>
+        忘记密码？
+        <text class='help_btn' bindtap='bindChangePassword'>点击重置</text>
+    </view>
+    <button form-type='submit'>申请提现</button>
+</form>
+
+<passwordset showPop='{{showPop}}' focusFlag='{{focus}}' bindsubmitsuccess='bindPasswordSubmitSuccess' />
+
+<view hidden='{{navIndex != 1}}'>
+    <view class='list'>
+        <view class='list_item' wx:for='{{records}}' wx:key='index'>
+            <view class='amount'>
+                <view>
+                    <text>￥</text>{{item.Amount}}</view>
+                <view class='status'>{{item.WithdrawStatus}}</view>
+            </view>
+            <view class='order_num'>
+                {{item.WithdrawType}}
+                <text>（单号：{{item.Id}}）</text>
+            </view>
+            <view class='time'>{{item.Time}}</view>
+        </view>
+    </view>
+
+    <view class='no_data' wx:if="{{showEmpty}}">
+        <image src='../../images/no_commision.png'></image>
+        <view class='title'>暂无记录</view>
+        <view class='des'>您还没有提现记录哦</view>
+    </view>
+</view>

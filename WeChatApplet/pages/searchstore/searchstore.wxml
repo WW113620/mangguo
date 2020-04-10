@@ -1,0 +1,103 @@
+<!--pages/search/search.wxml-->
+<view class="container">
+    <view class='search-box'>        
+        <view  class="search">
+            <text class='iconfont icon-searchempty'></text>
+            <input class="text" type="text" focus="true" bindinput="onInputKeyword" bindconfirm="onConfirmSearch" confirm-type="search" placeholder-style="color:#fff" placeholder="搜索商铺、商品名称" value="{{KeyWord}}"></input>
+        </view>
+        <text class='srtxt' bindtap="onConfirmSearch">搜索</text>
+    </view>
+    <view class='page-content'>
+        <view hidden='{{isHidePage1}}' class='history-search page1' style="transform:translate({{currentPage=='page1'?0:100}}%, 0%) translateZ(0px);">
+            <view wx:if="{{historyList.length>0}}" class='title'>
+                历史搜索
+                <text class="iconfont icon-delete fr" bindtap='deleHistory'></text>
+            </view>
+            <view wx:if="{{historyList.length>0}}" class='keywords'>
+                <text wx:for="{{historyList}}" wx:key="{{index}}" bindtap='goSearch' data-keyword="{{item}}">{{item}}</text>
+            </view>
+        </view>
+        <view hidden='{{!isHidePage1}}' class='page2' style="transform:translate({{currentPage=='page2'?0:100}}%, 0%) translateZ(0px);">
+            <view class='no-search' wx-if="{{showNoSearch}}">
+                <image src='../../images/no-search.png'></image>
+                <text class='t1'>没有搜索结果</text>
+                <text class='t2'>换个关键词试试吧</text>
+            </view>
+            <view class="store-container bg-white {{showNoSearch?'pt30':''}}">
+                <view wx-if="{{showNoSearch}}" class="aroundStores line_height32 font24"><view>附近门店</view></view>
+                <block wx:for="{{storeList}}" wx:for-index="storeidx" wx:for-item="item" wx:key="{{storeidx}}">
+                <view class="store clearfix {{storeidx==0?'borNone':''}}">
+                    <image wx:if="{{item.ShopBranch.IsRecommend && item.ShopBranch.ServeRadius >= item.ShopBranch.Distance}}" class='remm-bg' src="../../images/remm.png"></image>
+                    <text wx:if="{{item.CartQuantity>0}}" class='cart-num'>{{item.CartQuantity}}</text>
+                    <image mode='aspectFit' class='store-img' data-id="{{item.ShopBranch.Id}}" bindtap='showStoreDetail' src="{{item.ShopBranch.ShopImages||'../../images/noimage200.png'}}"></image>
+                    <view class='right-content'>
+                        <view class='store-name clearfix' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                            <view class='fl'>{{item.ShopBranch.ShopBranchName}}</view>
+                            <view class='fr'>{{item.ShopBranch.DistanceUnit}}</view>
+                        </view>
+                        <view class='rowline'>
+                            <view class="hdstars">
+                                <view class="hdstars-active" style="width:{{item.CommentScore/5*100}}%"></view>
+                            </view>
+                            <text class='grade'>{{item.CommentScore}}</text>
+                            <view class="space-line" hidden='{{!ProductSaleCountOnOff}}'></view>
+                            <text class='' hidden='{{!ProductSaleCountOnOff}}'>月售 {{item.SaleCountByMonth}}</text>
+                        </view>
+                        <view class='rowline' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                            {{item.ShopBranch.DeliveTotalFee}}元起送, 配送费{{item.ShopBranch.DeliveFee}}元
+                        </view>
+                        <view class='rowline clearfix' wx:if="{{item.ShopBranch.IsStoreDelive||item.ShopBranch.IsAboveSelf}}" bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                            <view class='tag' wx:if="{{item.ShopBranch.IsStoreDelive}}">门店配送</view>
+                            <view class='tag' wx:if="{{item.ShopBranch.IsAboveSelf}}">上门自提</view>
+                        </view>
+                        <view class="sales {{setCss[storeidx]?'active':''}}"  wx:if="{{item.ShopBranch.count>0}}">
+                            <block>
+                                <view hidden="{{setCss[storeidx]}}" class='single all-sales' wx:if="{{item.ShopBranch.count>1}}">
+                                    <view wx:if="{{item.ShopBranch.types1}}" class='sale-icon type1'></view>
+                                    <view wx:if="{{item.ShopBranch.types2.MinCouponPrice}}" class='sale-icon type2'></view>
+                                    <view wx:if="{{item.ShopBranch.types3}}" class='sale-icon type3'></view>
+                                </view>
+                                <view wx:if="{{item.ShopBranch.types1}}" class='single'>
+                                    <view class='sale-icon type1'></view>
+                                    <text>{{item.ShopBranch.types1}}</text>
+                                </view>
+                                <view wx:if="{{item.ShopBranch.types2.MinCouponPrice}}" class='single'>
+                                    <view class='sale-icon type2'></view>
+                                    <text>进店领{{item.ShopBranch.types2.MinCouponPrice}}<text wx:if="{{item.ShopBranch.types2.MaxCouponPrice>item.ShopBranch.types2.MinCouponPrice}}">~{{item.ShopBranch.types2.MaxCouponPrice}}</text>元优惠券</text>
+                                </view>
+                                <view wx:if="{{item.ShopBranch.types3}}" class='single'>
+                                    <view class='sale-icon type3'></view>
+                                    <text>{{item.ShopBranch.types3}}</text>
+                                </view>
+                            </block>
+                            <view class='sale-num' data-idx="{{storeidx}}" bindtap="setActive">
+                                {{item.ShopBranch.count}}个活动<text class="iconfont {{setCss[storeidx]?'icon-up':'icon-down'}}"></text>
+                            </view>
+                        </view>
+                        <view class="products {{setProCss[storeidx]?'active':''}}" wx:if="{{!showNoSearch&&item.ShowProducts.length>0}}">
+                            <view class='pro-li clearfix' wx:for="{{item.ShowProducts}}" wx:for-index="i"  wx:key="{{i}}" wx:for-item="pro" bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}" data-proid="{{pro.Id}}">
+                                <image src="{{pro.DefaultImage}}"></image>
+                                <view class='right-con'>
+                                    <view class='rowline proname text-overflow'>{{pro.ProductName}}</view>
+                                    <view class='rowline'><text hidden='{{!ProductSaleCountOnOff}}'>销量 {{pro.SaleCount}}</text><view hidden='{{!ProductSaleCountOnOff}}' class='place-holder w26'></view>好评 {{pro.HighCommentCount}}</view>
+                                    <view class='rowline price'>¥ {{pro.MinSalePrice}}</view>
+                                </view>
+                            </view>
+                            <view wx:if="{{item.ShowProducts.length>2}}" class='pro-num' data-idx="{{storeidx}}" bindtap="setProActive">{{setProCss[storeidx]?'收起':'展开其他'+(item.ShowProducts.length-2)+'个商品'}}
+                                <text class="iconfont {{setProCss[storeidx]?'icon-twoup':'icon-twodown'}}"></text>
+                            </view>
+                        </view>
+                        <view class='products' wx:if="{{showNoSearch&&item.ShowProducts.length>0}}">
+                            <view class='single-pro'  wx:for="{{item.ShowProducts}}" wx:for-index="i" wx:key="{{i}}" wx:for-item="pro" bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}" data-proid="{{pro.Id}}">
+                                <image mode='aspectFit' src="{{pro.DefaultImage}}"></image>
+                                <text>¥ {{pro.MinSalePrice}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                </block>
+            </view> 
+            <view wx-if="{{isDataEnd}}" class="nomore line_height32 font24"><view>没有更多门店了</view></view>
+        </view> 
+    </view>   
+</view>

@@ -1,0 +1,17 @@
+<view class='content'>
+  <!-- <image src="../../images/distributor_bg.jpg" class='banner'></image> -->
+
+  <view class='qalist'>
+    <view class='qalist_item'>
+      <view class='answer'>
+        <import src="../wxParse/wxParse.wxml" />
+        <view class="container">
+          <!-- 这一块是富文本 显示的内容区 -->
+          <template is="wxParse" data="{{wxParseData:distributorPageContent.nodes}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <button bindtap='bindApplyForDistributor'>我要开店</button>
+</view>

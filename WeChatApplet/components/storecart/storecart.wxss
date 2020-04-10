@@ -1,0 +1,329 @@
+/* components/storecart/storecart.wxss */
+@import '/app.wxss';
+.iconfont{
+    display: inline-block;
+}
+view{
+    box-sizing: border-box;
+}
+.dialog .choose-bot .buy-num{
+    position:relative;
+    background:#f7f7f7;
+}
+
+.choose-bot .buy-num{
+    width:144rpx;
+    float:right;
+    position:absolute;
+    padding:0 48rpx;
+    text-align:center;
+    color:#212121;
+    right:0;
+    background:#fff;
+    margin-top:10rpx;
+    line-height: 48rpx;
+}
+
+.choose-bot .buy-num .iconfont{
+    position: absolute;
+    top: 0;
+    font-size: 48rpx;
+    color: #03a9f4;
+}
+.choose-bot .buy-num .icon-fullminus{
+    left: 0;
+}
+.choose-bot .buy-num .icon-fullplus{
+    right: 0;
+}
+
+.shop-bottom{
+    background: #fff;
+    position: absolute;
+    width: 100%;
+    height: 99rpx;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    border-top: 1rpx solid #f0f0f0;
+}
+.cart-total{
+    float: left;
+    position: relative;
+}
+
+.cart-total .cart-btn{
+    position: relative;
+    float: left;
+    width: 104rpx;
+    height: 104rpx;
+    border: 4rpx solid #fff;
+    border-radius: 100%;
+    background: #03a9f4;
+    color: #fff;
+    box-shadow: 0 -8rpx 8rpx #bdbdbd;
+    margin: -16rpx 20rpx 0 24rpx;
+    text-align: center;
+}
+.cart-total .cart-btn.empty{
+    background: #bdbdbd;
+}
+.shop-bottom .submit.disabled{
+    background: #bdbdbd;
+}
+
+.cart-total .cart-btn .icon-cart{
+    font-size: 48rpx;
+    line-height: 96rpx;
+}
+.cart-total .cart-btn .num{
+    min-width: 28rpx;
+    padding: 0 8rpx;
+    line-height: 28rpx;
+    text-align: center;
+    border-radius: 28rpx;
+    background: #f44336;
+    font-size: 20rpx;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.cart-total .cart-btn.empty .num{
+    display: none;
+}
+.cart-pay{
+    display: inline-block;
+    position:absolute;
+    white-space: nowrap;
+    left: 148rpx;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.cart-total .cart-price{
+    color: #ff1744;
+    font-size: 36rpx;
+    margin-top: 6rpx;
+}
+.cart-total .cart-price .unit{
+    font-size: 28rpx;
+    display: inline-block;
+}
+.cart-total .cart-freight{
+    font-size: 24rpx;
+    color:#515151;
+    vertical-align: middle;
+
+}
+.shop-bottom .submit{
+    padding: 0 48rpx;
+    line-height: 96rpx;
+    color: #fff;
+    background: #fb1438;
+    font-size: 32rpx;
+    text-align: center;
+    float: right;
+}
+
+
+.cart{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    padding-bottom: 99rpx;
+    z-index: 8;
+    background: #fff;
+    transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transition: all 0.4s;
+    opacity: 0;
+}
+.cart.active{
+    transform: translateY(0%);
+    -webkit-transform: translateY(0%);
+    opacity: 1;
+}
+.cart-head{
+    padding: 24rpx;
+    line-height: 48rpx;
+    background: #f7f7f7;
+}
+
+.cart-head .check-all{
+    font-size: 32rpx;
+    color: #515151;
+    float: left;
+}
+.cart-head.lose{
+    background: #f0f0f0;
+}
+.cart-head.lose .check-all{
+    color: #bdbdbd;
+}
+.cart-head .check-all icon{
+    vertical-align: middle;
+    height: 48rpx;
+    position: relative;
+    top: -4rpx;
+    margin-right: 16rpx;
+}
+.cart-head .cart-del{
+    float: right;
+    color: #bdbdbd;
+    font-size: 28rpx;
+}
+.cart-head .cart-del .iconfont{
+    margin-right: 8rpx;
+}
+.cart-product{
+    max-height: 765rpx;
+    min-height:560rpx;
+    overflow-y: auto;
+    
+}
+.cart-pro-list{
+    background: #fff;
+    padding:0 24rpx;
+}
+.cart-pro-list .pro-item view{
+    display: inline-block;
+    vertical-align: middle;
+}
+.cart-pro-list icon{
+    vertical-align: middle;
+    margin-right: 16rpx;
+}
+.cart-pro-list .name{
+    white-space: nowrap;
+    width: 312rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 32rpx;
+    color: #212121;
+    line-height: 48rpx;
+}
+.cart-pro-list .pro-item{
+    border-bottom: 1rpx solid #f0f0f0;
+    padding: 24rpx 0;
+}
+
+.cart-pro-list .pro-item .spec{
+    width:312rpx;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    color: #747474;
+    font-size: 24rpx;
+    display: block;
+    line-height: 40rpx;
+}
+.cart-pro-list .price{
+    width: 128rpx;
+    text-align: right;
+    color: #fb1438;
+    font-size: 32rpx;
+}
+.cart-pro-list .buy-num{
+    width: 144rpx;
+    margin-left: 56rpx;
+    position: relative;
+    padding: 0 48rpx;
+    text-align: center;
+    line-height: 48rpx;
+    font-size: 28rpx;
+    color: #212121;
+}
+.cart-pro-list .buy-num .iconfont{
+    position: absolute;
+    top: 0;
+    font-size: 48rpx;
+    color: #03a9f4;
+}
+.cart-pro-list .buy-num .icon-fullminus{
+    left: 0;
+}
+.cart-pro-list .buy-num .icon-fullplus{
+    right: 0;
+}
+
+.cart-pro-list.lose{
+    background: #f7f7f7;
+    color: #bdbdbd;
+}
+.cart-pro-list.lose .name,.cart-pro-list.lose .spec,.cart-pro-list.lose .price{
+    color: #bdbdbd;
+}
+.cart-pro-list.lose .price{
+    margin-left: 62rpx;
+}
+.cart-pro-list .sale_out{
+    font-size: 32rpx;
+    text-align: center;
+    width: 144rpx;
+    margin-left: 56rpx;
+}
+
+.choose-sku{
+    padding-bottom: 32rpx;
+    border-top: 1rpx solid #f0f0f0;
+    max-height:650rpx;
+    overflow-y:auto;
+}
+.choose-sku .sku-type{
+    padding-top: 32rpx;
+    line-height: 48rpx;
+    font-size: 28rpx;
+    color: #212121;
+}
+.choose-sku .sku-arr{
+    padding-top: 16rpx;
+    overflow: hidden;
+}
+.choose-sku .sku-arr view{
+    font-size: 24rpx;
+    line-height: 60rpx;
+    border: 2rpx solid #eee;
+    background: #eee;
+    color: #515151;
+    display: inline-block;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    border-radius: 34rpx;
+    padding: 0 24rpx;
+    margin: 16rpx 16rpx 0 0;
+}
+.choose-sku .sku-arr view.active{
+    background: transparent;
+    border-color: #03a9f4;
+    color: #03a9f4;
+}
+.choose-sku .sku-arr view.disabled{
+    background: #f7f7f7;
+    border-color: #ebebeb;
+    color: rgba(81, 81, 81, 0.2);
+}
+.choose-bot{
+    margin: 0 -32rpx -32rpx;
+    padding: 24rpx 32rpx;
+    background: #f7f7f7;
+    line-height: 64rpx;
+}
+.choose-bot .price{
+    display: inline-block;
+    color: #fb1438;
+    font-size: 32rpx;
+}
+.choose-bot .choose-btn{
+    float: right;
+    padding: 0 24rpx;
+    background: #03a9f4;
+    color: #fff;
+    font-size: 28rpx;
+    border-radius: 32rpx;
+}
+.choose-bot .choose-btn .iconfont{
+    font-size: 28rpx;
+    margin-right: 8rpx;
+}

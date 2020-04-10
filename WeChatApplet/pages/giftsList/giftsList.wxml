@@ -1,0 +1,12 @@
+<view class='grid'>
+  <view class='grid_item' wx:for='{{gifts}}'  wx:key="{{index}}" data-id='{{item.Id}}' bindtap='bindGiftDetail'>
+    <image mode='aspectFit' src='{{item.DefaultShowImage}}'></image>
+    <view class='name'>{{item.GiftName}}</view>
+    <view class='sale-out' wx:if='{{!item.StockQuantity}}'>已兑完</view>
+    <view class='points'>
+      <view class='fl'>
+        <text>{{item.NeedIntegral}}</text>积分</view>
+      <view class='fr'>￥{{item.GiftValue}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+<view class='container {{pageLoaded?"":"transparent"}}'>
+    <view class='list'>
+        <view class='list_item' wx:for='{{orders}}' wx:key="{{index}}">
+            <view class='order_num'>
+                {{item.OrderId}}<text class='refund iconfont icon-tuihuo' wx:if='{{item.IsRefundCloseOrder}}'></text>
+                <text class='status'>{{item.StatusText}}</text>
+            </view>
+            <view class='inner_list_item' wx:for='{{item.Items}}' wx:key="{{idx}}" wx:for-index='idx' wx:for-item='product' bindtap='bindToProductDetail' data-id='{{product.ProductId}}'>
+                <image src='{{product.ProductDefaultImage}}'></image>
+                <view class='des'>
+                    <view class='title'><text class='refund iconfont icon-tuihuo' wx:if='{{product.IsHasRefund && !item.IsRefundCloseOrder}}'></text>{{product.ProductName}}</view>
+                    <view class='sku'>{{product.Sku}}
+                        <text>×{{product.Quantity}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class='amount'>
+                共{{item.QuantitySum}}件商品 订单金额：
+                <text>￥{{item.OrderAmount}}</text>
+            </view>
+            <view class='time'>
+                {{item.OrderDateText}}
+                <text class='commision'>￥{{item.BrokerageAmount}}</text>
+                <text class='label'>{{item.Status?'结算佣金':'预计佣金'}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='no_data' wx:if='{{!orders || orders.length == 0}}'>
+        <image src='../../images/no_order.png'></image>
+        <view class='title'>暂无订单</view>
+        <view class='des'>您还没有订单哦</view>
+    </view>
+</view>

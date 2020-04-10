@@ -1,0 +1,117 @@
+<!--home.wxml-->
+<view class="container {{pageLoaded?'':'transparent'}}">
+    <view class='search-box'>
+        <view class='locate' bindtap="toChooseAddr">
+            <text class="iconfont icon-locationempty"></text>
+            <text class='location'>{{location}}</text>
+            <text class='iconfont icon-right'></text>
+        </view>
+        <view class="search" bindtap="toSearch">
+            <text class='iconfont icon-searchempty'></text>
+            <text class="text">搜索商铺、商品名称</text>
+        </view>
+    </view>
+
+    <swiper wx:if="{{TopSlide&&TopSlide.length>0}}" class='ads-swiper' indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-color="#6F6F6F" indicator-active-color="#FF4757">
+        <swiper-item wx:for="{{TopSlide}}" wx:key="id" catchtap="bindNavTap" data-url="{{item.Url}}">
+            <image src="{{item.ImageUrl}}" class="slide-image" />
+        </swiper-item>
+    </swiper>
+    <scroll-view wx:if="{{Menu&&Menu.length>0}}" scroll-x="true" scroll-with-animation="true" class='fast-nav bg-white' scroll-into-view="{{scrolltoview}}">
+        <view wx:for="{{Menu}}" id="v{{index}}" wx:key="id" class="scroll-view-item {{Menu.length>4?'w22p':''}}" catchtap="bindNavTap" data-url="{{item.Url}}">
+            <image src="{{item.ImageUrl}}"></image>
+            <text>{{item.Description}} </text>
+        </view>
+    </scroll-view>
+
+    <view class='index-topic clearfix' wx:if="{{ADImg1.ImageUrl||ADImg2.ImageUrl||ADImg3.ImageUrl||ADImg4.ImageUrl||ADImg5.ImageUrl}}">
+        <image class='t-left' src="{{ADImg1.ImageUrl}}" catchtap="bindNavTap" data-url="{{ADImg1.Url}}"></image>
+        <view class='t-right'>
+            <view class='t-top'>
+                <image src="{{ADImg2.ImageUrl}}" catchtap="bindNavTap" data-url="{{ADImg2.Url}}"></image>
+                <image src="{{ADImg3.ImageUrl}}" catchtap="bindNavTap" data-url="{{ADImg3.Url}}"></image>
+            </view>
+            <view class='t-bottom'>
+                <image src="{{ADImg4.ImageUrl}}" catchtap="bindNavTap" data-url="{{ADImg4.Url}}"></image>
+                <image src="{{ADImg5.ImageUrl}}" catchtap="bindNavTap" data-url="{{ADImg5.Url}}"></image>
+            </view>
+        </view>
+    </view>
+
+    <swiper wx:if="{{MiddleSlide.length>0}}" class='middle-swiper' indicator-dots="true" autoplay="true" interval="5000" duration="1000" indicator-color="#6F6F6F" indicator-active-color="#FF4757">
+        <swiper-item wx:for="{{MiddleSlide}}" wx:key="id" catchtap="bindNavTap" data-url="{{item.Url}}">
+            <image src="{{item.ImageUrl}}" class="slide-image" />
+        </swiper-item>
+    </swiper>
+
+    <view class='store-container bg-white'>
+        <view class='title'>附近门店</view>
+        <block wx:for="{{storeList}}" wx:for-index="storeidx" wx:for-item="item" wx:key="{{storeidx}}">
+            <view class='store clearfix'>
+                <image wx:if="{{item.ShopBranch.IsRecommend && (item.ShopBranch.ServeRadius >= item.ShopBranch.Distance || item.ShopBranch.IsAboveSelf)}}" class='remm-bg' src="../../images/remm.png"></image>
+                <text wx:if="{{item.CartQuantity>0}}" class='cart-num'>{{item.CartQuantity}}</text>
+                <image mode='aspectFit' class='store-img' data-id="{{item.ShopBranch.Id}}" src="{{item.ShopBranch.ShopImages||'../../images/noimage200.png'}}" bindtap='showStoreDetail'></image>
+                <view class='right-content'>
+                    <view class='store-name clearfix' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                        <view class='fl'>{{item.ShopBranch.ShopBranchName}}</view>
+                        <view class='fr'>{{item.ShopBranch.DistanceUnit}}</view>
+                    </view>
+                    <view class='rowline' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                        <view class="hdstars">
+                            <view class="hdstars-active" style="width:{{item.CommentScore/5*100}}%"></view>
+                        </view>
+                        <text class='grade'>{{item.CommentScore}}</text>
+                        <view hidden='{{!ProductSaleCountOnOff}}' class="space-line"></view>
+                        <text class='' hidden='{{!ProductSaleCountOnOff}}'>月售 {{item.SaleCountByMonth}}</text>
+                    </view>
+                    <view class='rowline' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                        {{item.ShopBranch.DeliveTotalFee}}元起送, 配送费{{item.ShopBranch.DeliveFee}}元
+                    </view>
+                    <view class='rowline clearfix' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}" wx:if="{{item.ShopBranch.IsStoreDelive||item.ShopBranch.IsAboveSelf}}">
+                        <view class='tag' wx:if="{{item.ShopBranch.IsStoreDelive}}">门店配送</view>
+                        <view class='tag' wx:if="{{item.ShopBranch.IsAboveSelf}}">上门自提</view>
+                    </view>
+                    <view class="sales {{setCss[storeidx]?'active':''}}" wx:if="{{item.ShopBranch.count>0}}">
+                        <block>
+                            <view hidden="{{setCss[storeidx]}}" class='single all-sales' wx:if="{{item.ShopBranch.count>1}}">
+                                <view wx:if="{{item.ShopBranch.types1}}" class='sale-icon type1'></view>
+                                <view wx:if="{{item.ShopBranch.types2.MinCouponPrice}}" class='sale-icon type2'></view>
+                                <view wx:if="{{item.ShopBranch.types3}}" class='sale-icon type3'></view>
+                            </view>
+                            <view wx:if="{{item.ShopBranch.types1}}" class='single'>
+                                <view class='sale-icon type1'></view>
+                                <text>{{item.ShopBranch.types1}}</text>
+                            </view>
+                            <view wx:if="{{item.ShopBranch.types2.MinCouponPrice}}" class='single'>
+                                <view class='sale-icon type2'></view>
+                                <text>进店领{{item.ShopBranch.types2.MinCouponPrice}}<text wx:if="{{item.ShopBranch.types2.MaxCouponPrice>item.ShopBranch.types2.MinCouponPrice}}">~{{item.ShopBranch.types2.MaxCouponPrice}}</text>元优惠券</text>
+                            </view>
+                            <view wx:if="{{item.ShopBranch.types3}}" class='single'>
+                                <view class='sale-icon type3'></view>
+                                <text>{{item.ShopBranch.types3}}</text>
+                            </view>
+                        </block>
+                        <view class='sale-num' data-idx="{{storeidx}}" bindtap="setActive">
+                            {{item.ShopBranch.count}}个活动
+                            <text class="iconfont {{setCss[storeidx]?'icon-up':'icon-down'}}"></text>
+                        </view>
+                    </view>
+                    <view class='products'>
+                        <view class='single-pro' wx:for="{{item.ShowProducts}}" wx:key="{{storeidx}}_{{i}}" wx:for-index="i" wx:for-item="pro" bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}" data-proid="{{pro.Id}}">
+                            <image mode='aspectFit' src="{{pro.DefaultImage}}" data-index='{{i}}' data-parent='{{storeidx}}' binderror="imageError"></image>
+                            <text>¥ {{pro.MinSalePrice}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view wx:if="{{isLoading||isDataEnd}}" class="nomore line_height32 font24">
+        <view>{{isLoading?'正在加载...':'没有更多门店了'}}</view>
+    </view>
+    <view class='no-locate' wx:if="{{showNoLocate}}">
+        <image src='../../images/no-locate.png'></image>
+        <text>未能获取地理位置，您也可手动输入</text>
+        <button class="redBg" type='warn' catchtap="reGetLocation">重新获取</button>
+    </view>
+</view>

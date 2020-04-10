@@ -1,0 +1,53 @@
+@import "../../style/common.wxss";
+
+image{
+  width: 200rpx;
+  height: 200rpx;
+  margin: 120rpx auto 32rpx;
+}
+
+view.title{
+  font-size: 32rpx;
+  text-align: center;
+  line-height: 48rpx;
+  font-weight: bold;
+  color: #212121;
+}
+
+view.des{
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 40rpx;
+  color: #515151;
+  margin-top: 8rpx;
+}
+
+.round_btn{
+  width: 224rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 64rpx;
+  font-size: 28rpx;
+  margin: 32rpx auto;
+  background: #fb1438;
+}
+
+.rejected .btn{
+  width: 702rpx;
+  height: 88rpx;
+  border-radius: 8rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+  font-size: 32rpx;
+  margin: 32rpx auto;
+  background: #fb1438;
+  border: 1rpx solid #fff;
+}
+
+.rejected .btn.white{
+  color: #515151;
+  background: #fff;
+}

@@ -1,0 +1,16 @@
+<view class='list {{listStyle}}'>
+    <view class='list_item' wx:for='{{productList}}' wx:key='{{index}}'>
+        <image mode='aspectFill' src='{{item.Image}}' bindtap='bindProductDetail' data-id='{{item.Id}}'></image>
+        <view class='des'>
+            <view class='title two-text-overflow'>{{item.ProductName}}</view>
+            <view class='price'>
+                <text>￥</text>{{item.SalePrice}}</view>
+            <view class='commentcount'>{{item.Evaluation}}人评价</view>
+        </view>
+        <view class='iconfont icon-trash' data-id='{{item.Id}}' bindtap='bindFavorite'></view>
+    </view>
+</view>
+
+<view class='nomore' wx:if='{{isNoMore}}'>
+    <text>没有更多收藏了</text>
+</view>

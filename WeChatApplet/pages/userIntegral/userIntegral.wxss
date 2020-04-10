@@ -1,0 +1,91 @@
+/* pages/userIntegral/userIntegral.wxss */
+
+page {
+  background: #f0f0f0;
+}
+
+view, scroll-view {
+  box-sizing: border-box;
+}
+
+view.container{
+  position: relative;
+}
+
+.integral_order {
+  position: absolute;
+  font-size: 28rpx;
+  right: 24rpx;
+  top: 48rpx;
+  color: #fb1438;
+  background: #fbe9e7;
+  border-radius: 64rpx;
+  display: block;
+  line-height: 64rpx;
+  width: 216rpx;
+  text-align: center;
+}
+
+.asset-total {
+  color: #fff;
+  background: #fb1438;
+  line-height: 80rpx;
+  font-size: 64rpx;
+  padding: 24rpx;
+  padding-top: 88rpx;
+}
+
+.asset-total view {
+  display: inline-block;
+  font-size: 36rpx;
+  margin-left: 8rpx;
+}
+
+.asset-total .p {
+  font-size: 32rpx;
+  padding: 8rpx 0 24rpx;
+  line-height: 48rpx;
+}
+
+.asset-list {
+  margin-top: 24rpx;
+  background: #fff;
+  padding-left: 24rpx;
+  margin-bottom: 100rpx;
+}
+
+.asset-list .item {
+  padding: 24rpx 24rpx 24rpx 0;
+  border-bottom: 1rpx solid #f0f0f0;
+  position: relative;
+}
+
+.asset-list .item .desc {
+  line-height: 36rpx;
+  font-size: 24rpx;
+  margin-top: 12rpx;
+}
+
+.asset-list .item .desc view {
+  font-size: 28rpx;
+  display: inline;
+}
+
+.asset-list .item .time {
+  color: #bdbdbd;
+  margin-top: 2rpx;
+}
+
+.asset-list .item .price {
+  color: #212121;
+  font-weight: bold;
+  margin-left: 10rpx;
+}
+
+.asset-list .item .price.out {
+  color: #fb1438;
+}
+
+.info .text {
+  font-size: 32rpx;
+}

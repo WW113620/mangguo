@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "门店首页",
+    "usingComponents": {
+        "store-cart": "/components/storecart/storecart"
+    }
+}

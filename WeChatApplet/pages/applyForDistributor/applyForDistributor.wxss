@@ -1,0 +1,47 @@
+@import "../../style/common.wxss";
+
+view{background-color: #fff;font-size: 30rpx;color: #212121;}
+
+.store_logo{
+  margin-top: 24rpx;
+  height: 145rpx;
+  border-bottom: 1rpx #f0f0f0 solid;
+  padding: 24rpx;
+  line-height: 96rpx;
+  box-sizing: border-box;
+}
+
+.store_logo image{
+  height: 96rpx;
+  width: 96rpx;
+  border-radius: 50%;
+  float: right;
+}
+
+.store_name{
+  height: 96rpx;
+  padding: 24rpx;
+  line-height: 48rpx;
+  box-sizing: border-box;
+}
+
+.store_name text{
+  float: left;
+  margin-right: 16rpx;
+}
+
+.store_name input{
+  float: left;
+  width: 512rpx;
+}
+
+button{
+  margin-top: 48rpx;
+  border: 1rpx #fff solid;
+  height: 88rpx;
+  width: 702rpx; 
+  background-color: #fb1438;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 88rpx;
+}

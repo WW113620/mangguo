@@ -1,0 +1,23 @@
+<view class='list_item' wx:for='{{vshopList}}' wx:key='{{index}}'>
+    <view bindtap='bindVshop' data-shopid='{{item.Id}}'>
+        <view class='img'>
+            <image mode='aspectFit' class='icon' src='{{item.Logo}}'></image>
+        </view>
+        <view class='title'>
+            <view>{{item.Name}}</view>
+        </view>
+        <view class='count'>
+            关注人数
+            <text>{{item.ConcernCount}}</text>
+        </view>
+        <view class='count'>
+            关注时间
+            <text>{{item.ConcernTimeStr}}</text>
+        </view>
+    </view>
+    <view class='iconfont icon-trash' data-id='{{item.ShopId}}' bindtap='bindFavorite'></view>
+</view>
+
+<view class='nomore' wx:if='{{isNoMore}}'>
+    <text>没有更多收藏了</text>
+</view>

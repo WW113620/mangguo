@@ -1,0 +1,15 @@
+<view class='list'>
+    <view class='list_item' wx:for="{{integralCoupons}}" wx:key="{{index}}">
+        <image mode='aspectFit' class='fl' src='{{item.ShowIntegralCover?item.ShowIntegralCover : "../../images/logo-bg.png"}}'></image>
+        <view class='center fl'>
+            <view class='store_name'>{{item.ShopName}}</view>
+            <view class='des'>{{item.UseArea == 1 ? item.Remark : '全场通用'}}</view>
+            <view class='price'>
+                <text>￥{{item.Price}}</text>{{item.OrderAmount != 0 ? ('满'+item.OrderAmount+'可用') : '无门槛'}}</view>
+        </view>
+        <view class='right fr'>
+            {{item.NeedIntegral}}分
+            <button class='status' style="{{item.StockQuantity == 0 ? 'background-color:#e0e0e0;' : 'background-color:#fb1438;'}}" disabled='{{item.StockQuantity == 0}}' data-item='{{item}}' bindtap='bindGetUserCoupon'>{{item.StockQuantity == 0 ? '已兑完' : '兑换'}}</button>
+        </view>
+    </view>
+</view>

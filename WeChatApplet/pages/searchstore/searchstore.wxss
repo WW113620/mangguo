@@ -1,0 +1,158 @@
+/* pages/search/search.wxss */
+.search-box{
+    height: 64rpx;
+    padding: 0 24rpx 24rpx 24rpx;
+    background-color: #fb1438;
+    color: #fff;
+    box-sizing: content-box;
+    line-height:64rpx;
+}
+.search-box text{
+    color: #fff;
+}
+.search{
+    width: 622rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    border-radius: 32rpx;
+    background-color: #e00022;
+    font-size: 28rpx;
+    float: left;
+}
+.search .icon-searchempty{
+    margin-right: 16rpx;
+    float: left;
+}
+.search input{
+    height: 64rpx;
+    line-height: 64rpx;
+}
+.search-box text{
+    margin-left: 16rpx;
+    font-size: 32rpx;
+
+}
+
+.page1,.page2{
+    position:absolute;
+    width:100%;
+}
+.page1,.page2{
+    transition: transform 1s;
+}
+
+.history-search{
+    background-color: #fff;
+}
+.history-search .title{
+    height: 72rpx;
+    padding: 24rpx 24rpx 8rpx 24rpx;
+    background-color: #f0f0f0;
+    color: #515151;
+    box-sizing: border-box;
+    font-size: 28rpx;
+}
+.history-search .keywords{
+    padding:0 24rpx 24rpx;
+}
+.history-search .keywords text{
+    margin-top:24rpx;
+    margin-right:24rpx;
+    padding:18rpx 32rpx;
+    background-color:#f0f0f0;
+    border-radius:42rpx;
+    display:inline-block;
+    font-size: 28rpx;
+}
+.store{
+    margin:0 24rpx;
+}
+.pro-li{
+    margin-bottom: 24rpx;
+}
+.pro-li image{
+    float:left;
+    width:120rpx;
+    height:120rpx;
+    border:1rpx solid #f0f0f0;
+    border-radius:4px;
+    margin-right:16rpx;
+}
+.right-con{
+    float: left;
+    width: calc(100% - 140rpx);
+    font-size: 24rpx;
+    color: #747474;
+}
+.right-con .rowline{
+    line-height: 42rpx;
+}
+.right-con .proname{
+    font-size: 28rpx;
+    font-weight: bold;
+    color: #212121;
+}
+.right-con .price{
+    font-size: 28rpx;
+    color: #fb1438;
+}
+.pro-num{
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    background-color: #f7f7f7;
+    color: #747474;
+    font-size: 24rpx;
+    text-align: center;
+    border-radius: 18rpx;
+}
+.products .pro-li{
+    display: none;
+}
+.products.active .pro-li{
+    display: block;
+}
+.products .pro-li:first-child,.products .pro-li:nth-child(2) {
+    display: block;
+}
+.no-search{
+    width: 100%;
+    padding: 88rpx 0;
+    text-align: center;
+}
+.no-search image{
+    width: 144rpx;
+    height: 144rpx;
+    display: block;
+    margin: auto;
+    margin-bottom: 16rpx;
+}
+.no-search text.t1{
+    font-size: 28rpx;
+    color: #515151;
+    display: block;
+}
+.no-search text.t2{
+    font-size: 24rpx;
+    color: #747474;
+}
+.aroundStores{ 
+    height:14rpx;
+    border-bottom:1rpx solid #f0f0f0;
+    width:700rpx;
+    margin:0 24rpx 42rpx 24rpx;
+    text-align:center;
+    line-height:24rpx;
+    font-size:32rpx;
+    font-weight: bold;
+ }
+.aroundStores view{
+    width:180rpx;
+    margin:0 auto;
+    background:#fff;
+    color:#212121;
+}
+.icon-twodown,.icon-twoup{
+    margin-left: 4rpx;
+    font-size: 24rpx;
+}

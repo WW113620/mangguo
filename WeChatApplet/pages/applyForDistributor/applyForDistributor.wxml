@@ -1,0 +1,13 @@
+<form bindsubmit='bindCommitApply'>
+  <view class='store_logo' bindtap='bindChooseLogo'>
+    <text>小店logo</text>
+    <image src='{{logoPath}}'></image>
+  </view>
+
+  <view class='store_name'>
+    <text>小店名称</text>
+    <input type='text' placeholder='小店名称不能超过10个字符' name='shopName'></input>
+  </view>
+
+  <button form-type='submit'>提交申请</button>
+</form>

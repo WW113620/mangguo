@@ -1,0 +1,50 @@
+<vshoptab tabindex='{{2}}' id='{{id}}'></vshoptab>
+
+<view class='content'>
+    <form class='search' bindsubmit='bindSearchSubmit'>
+        <view class='search_wrapper'>
+            <image src='../../images/icon_search.png'></image>
+            <input type='text' placeholder='搜索商品...' placeholder-style='color:#bdbdbd;' confirm-type='搜索' name='keywords' bindconfirm='bindSearchSubmit' focus='{{focus}}'></input>
+        </view>
+    </form>
+    <view class='tab'>
+        <view class='tab_item {{orderKey==1?"active":""}}' data-orderkey='{{1}}' bindtap='bindChangeOrderKey'>默认</view>
+        <view class='tab_item {{orderKey==3?"active":""}}' data-orderkey='{{3}}' bindtap='bindChangeOrderKey'>价格
+            <view class="triangle {{orderType==1?'up':'down'}}">
+                <view class="triangle-up"></view>
+                <view class="triangle-down"></view>
+            </view>
+        </view>
+        <view class='tab_item {{orderKey==2?"active":""}}' data-orderkey='{{2}}' bindtap='bindChangeOrderKey'>销量
+            <view class="triangle {{orderType==1?'up':'down'}}">
+                <view class="triangle-up"></view>
+                <view class="triangle-down"></view>
+            </view>
+        </view>
+        <view class='tab_item {{orderKey==4?"active":""}}' data-orderkey='{{4}}' bindtap='bindChangeOrderKey'>评价数
+            <view class="triangle {{orderType==1?'up':'down'}}">
+                <view class="triangle-up"></view>
+                <view class="triangle-down"></view>
+            </view>
+        </view>
+        <view class='tab_item' bindtap='bindChangeListStyle'>
+            <view class='iconfont {{listStyle=="table"?"icon-list1":"icon-list"}}'></view>
+        </view>
+    </view>
+
+    <view class='list {{listStyle}}'>
+        <view class='list_item' wx:for='{{productList}}' data-productid='{{item.Id}}' bindtap='bindProductDetail'>
+            <image mode='aspectFill' src='{{item.ImageUrl}}'></image>
+            <view class='des'>
+                <view class='title two-text-overflow'>{{item.Name}}</view>
+                <view class='price'>
+                    <text>￥</text>{{item.SalePrice}}</view>
+                <view class='commentcount'>{{item.CommentsCount}}人评价</view>
+            </view>
+        </view>
+    </view>
+
+    <view class='nomore' wx:if='{{isNoMore}}'>
+        <text>没有更多商品了</text>
+    </view>
+</view>

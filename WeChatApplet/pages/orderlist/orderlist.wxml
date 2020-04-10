@@ -1,0 +1,88 @@
+<view class="coupontitle">
+    <view class="coupontitlel">
+        <view class="{{Status==0?'active':''}}" data-status="0" bindtap="onTabClick">全部</view>
+    </view>
+    <view class="coupontitlel">
+        <view class="{{Status==1?'active':''}}" data-status="1" bindtap="onTabClick">待付款</view>
+    </view>
+    <view class="coupontitlel">
+        <view class="{{Status==2?'active':''}}" data-status="2" bindtap="onTabClick">待发货</view>
+    </view>
+    <view class="coupontitlel">
+        <view class="{{Status==3?'active':''}}" data-status="3" bindtap="onTabClick">待收货/消费</view>
+    </view>
+    <view class="coupontitlel">
+        <view class="{{Status==5?'active':''}}" data-status="5" bindtap="onTabClick">待评价</view>
+    </view>
+</view>
+
+<block wx:for="{{OrderList}}" wx:key="{{index}}" wx:if="{{OrderList.length>0}}">
+    <view class="orderlist mt24">
+        <view class="orderlisttile padding24" data-orderid="{{item.OrderId}}" bindtap="goToOrderDetail">
+            <view class="orderhao">
+                <view class="iconfont {{item.StoreName?'icon-store':'icon-dianpu'}}"></view>{{item.StoreName?item.StoreName:item.shopname}}</view>
+            <view class="orderzt">{{item.StatusText}}</view>
+        </view>
+        <block wx:for="{{item.LineItems}}" wx:for-item="pro" wx:key="{{i}}" wx:for-index="i">
+            <view class="orderlistcont {{(i+1)==item.LineItems.length?'lastitem':''}}" data-orderid="{{item.OrderId}}" bindtap="goToOrderDetail">
+                <image src="{{pro.Image}}" class="mr16"></image>
+                <view class="orderlisc">
+                    <view class="ordername">{{pro.Name}}</view>
+                    <view class="ordersize">
+                        <block wx:if="{{pro.size}}">
+                            {{pro.SizeAlias}}:{{pro.size}}
+                        </block>
+                        <block wx:if="{{pro.color}}">
+                            {{pro.ColorAlias}}:{{pro.color}}
+                        </block>
+                        <block wx:if="{{pro.version}}">
+                            {{pro.VersionAlias}}:{{pro.version}}
+                        </block>
+                    </view>
+                </view>
+                <view class="orderlistright">
+                    <text>￥{{pro.Price}}</text>
+                    <view>
+                        × {{pro.Amount}}</view>
+                    <view class="orderzt" wx:if="{{pro.StatusText!=''}}">{{pro.StatusText}}</view>
+                </view>
+            </view>
+        </block>
+        <view class="orderlistzong">共{{item.Quantity}}件商品
+            <text></text> 总价￥
+            <text class="font28 price">{{item.Amount}}</text>
+        </view>
+        <view class="orderlistbt" hidden="{{item.StatusText=='交易关闭'&&!item.IsShowCreview}}">
+            <button class="qxdd" data-orderid="{{item.OrderId}}" data-money="{{item.Amount}}" bindtap="RefundOrder" wx:if="{{(item.IsShowRefund || item.RefundStats == 4)}}" data-refundmoney="{{item.EnabledRefundAmount}}">申请退款</button>
+
+            <button class="qxdd" data-orderid="{{item.OrderId}}" bindtap="closeOrder" hidden="{{(item.Status!=1 && !(item.Status==2 && item.PaymentTypeValue==3))|| item.orderType==3 }}">取消订单</button>
+            <button class="fukuan" data-orderid="{{item.OrderId}}" hidden="{{item.Status!=1}}" bindtap="orderPay">付款</button>
+            <button class="qxdd" data-orderid="{{item.OrderId}}" data-deliverytype="{{item.DeliveryType}}" bindtap="showLogistics" hidden="{{item.Status==1 || item.Status==2||item.Status==-1 || item.Status==4 || item.Status==6 || item.orderType==4||item.pickupCode}}">查看物流</button>
+            <button class="fukuan" data-orderid="{{item.OrderId}}" hidden="{{!item.IsShowFinishOrder}}" bindtap="orderFinish">确认收货</button>
+            <button class="fukuan" data-orderid="{{item.OrderId}}" data-commentcount="{{item.commentCount}}" bindtap="showReview" hidden="{{!item.IsShowCreview}}">{{item.CreviewText}}</button>
+            <button class="fukuan" data-pickupcodestr="{{item.pickupCode}}" bindtap="showPickCode" hidden="{{!item.IsShowTakeCodeQRCode||item.Status==4||item.Status==5}}">提货码</button>
+            <button class="fukuan" data-orderid="{{item.OrderId}}" bindtap="goVirtualCode" wx:if="{{item.orderType==4 && item.Status==8}}">消费码</button>
+        </view>
+    </view>
+</block>
+
+<!--无订单-->
+<view class='null-content' wx-if="{{isEmpty}}">
+    <image src='../../images/no-order.png'></image>
+    <text>还没有相关订单哦</text>
+    <button type='warn' class='redBg' catchtap="toproduct">去下单</button>
+</view>
+
+<!--提货码弹框-->
+<view class='pickupcodePop {{codeHide?"":"active"}}'>
+    <image mode="aspectFill" src="{{pickupcode}}"></image>
+    <view class='content'>
+        <view class="nomore line_height32 font24">
+            <view>提货码</view>
+        </view>
+        <view class='h3'>{{pickupcodeStr}}</view>
+        <view class='h6'>提货时, 请出示该二维码给门店收银员</view>
+    </view>
+    <image catchtap='hideCode' class='ic_close' src='../../images/ic_close.png'></image>
+</view>
+<view class='cover' hidden='{{codeHide}}' bindtap='hideCode'></view>

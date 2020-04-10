@@ -1,0 +1,135 @@
+/* pages/comment/comment.wxss */
+
+page {
+    background: #f5f5f5;
+}
+.wrap{
+    padding-bottom: 100rpx;
+}
+.comentcont {
+    margin-top: 24rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.comenttilte {
+    display: flex;
+    background: #fff;
+}
+
+.comentpic {
+    display: flex;
+    padding: 24rpx;
+    background-color: #fafafa;
+}
+
+.comentpic .uploadImg{
+    max-width:600rpx;
+}
+
+.comenttilte {
+    background: #fff;
+    height: 96rpx;
+}
+
+.comtiltepic {
+    width: 95rpx;
+    overflow: hidden;
+    margin-right: 15rpx;
+    border: 1rpx solid #e0e0e0;
+}
+
+.comtiltepic image {
+    width: 95rpx;
+    height: 95rpx;
+}
+
+.comtrightop {
+    font-size: 32rpx;
+    line-height: 48rpx;
+}
+
+.comtrightcout {
+    color: #ff9800;
+    line-height: 48rpx;
+}
+
+.comtrightcout image {
+    width: 44rpx;
+    height: 40rpx;
+}
+
+.comenttext {
+    padding: 24rpx;
+    font-size: 28rpx;
+    background: #fafafa;
+}
+
+.comenttext .txtarea {
+    height: 132rpx;
+    width: 702rpx;
+    background: #fafafa;
+    line-height: 44rpx;
+    padding: 0;
+}
+
+.comentstpic {
+    padding: 24rpx 24rpx 15rpx 24rpx;
+    background: #fff;
+    font-size: 32rpx;
+}
+
+
+.comenttiltetop {
+    padding: 24rpx;
+    background: #fff;
+}
+.commentstore{
+    background-color: #fff;
+    padding: 24rpx;
+    margin-top: 24rpx;
+}
+.commentstore .title{
+    font-size: 32rpx;
+}
+.commentstore .line{
+    margin-top: 24rpx;
+    color: #747474;
+}
+.commentstore .name{
+    display: inline-block;
+}
+.commentstore .comtrightcout{
+    display: inline-block;
+    margin-left: 24rpx;
+}
+
+.icon-star {
+    width: 45rpx;
+    height: 41rpx;
+    overflow: hidden;
+    color: #ff9800;
+    margin-right: 23rpx;
+}
+
+.icon-color {
+    color: #e0e0e0;
+}
+
+.comment-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.comment-btn button {
+    height: 96rpx;
+    line-height: 96rpx;
+    font-size: 36rpx;
+    border-radius: 0;
+}
+.comment-btn button::after {
+    border: 0;
+}
+button.btn-confirm:hover {
+    background: #ff1f00;
+}

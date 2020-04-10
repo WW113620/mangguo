@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "微店首页",
+    "usingComponents": {
+        "vshoptab": "/components/vshoptab/vshoptab"
+    }
+}

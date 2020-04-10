@@ -1,0 +1,63 @@
+<!--pages/tag/tag.wxml-->
+<view class="container">
+    <view class='store-container bg-white'>
+        <block wx:for="{{storeList}}" wx:for-index="storeidx" wx:for-item="item" wx:key="{{storeidx}}">
+            <view class='store clearfix'>
+                <image wx:if="{{item.ShopBranch.IsRecommend && item.ShopBranch.ServeRadius >= item.ShopBranch.Distance}}" class='remm-bg' src="../../images/remm.png"></image>
+                <image mode='aspectFit' class='store-img' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}" src="{{item.ShopBranch.ShopImages||'../../images/noimage200.png'}}"></image>
+                <view class='right-content'>
+                    <view class='store-name clearfix' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                        <view class='fl'>{{item.ShopBranch.ShopBranchName}}</view>
+                        <view class='fr'>{{item.ShopBranch.DistanceUnit}}</view>
+                    </view>
+                    <view class='rowline' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                        <view class="hdstars">
+	                    	<view class="hdstars-active" style="width:{{item.CommentScore/5*100}}%"></view>
+	                    </view>
+                        <text class='grade'>{{item.CommentScore}}</text>
+                        <view class="space-line"></view>
+                        <text hidden='{{!ProductSaleCountOnOff}}'>月售 {{item.SaleCountByMonth}}</text>
+                    </view>
+                    <view class='rowline' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}">
+                        {{item.ShopBranch.DeliveTotalFee}}元起送, 配送费{{item.ShopBranch.DeliveFee}}元
+                    </view>
+                    <view class='rowline clearfix' bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}" wx:if="{{item.ShopBranch.IsStoreDelive||item.ShopBranch.IsAboveSelf}}">
+                        <view class='tag' wx:if="{{item.ShopBranch.IsStoreDelive}}">门店配送</view>
+                        <view class='tag' wx:if="{{item.ShopBranch.IsAboveSelf}}">上门自提</view>
+                    </view>
+                    <view class="sales {{setCss[storeidx]?'active':''}}"  wx:if="{{item.ShopBranch.count>0}}">
+                        <block>
+                            <view hidden="{{setCss[storeidx]}}" class='single all-sales' wx:if="{{item.ShopBranch.count>1}}">
+                                <view wx:if="{{item.ShopBranch.types1}}" class='sale-icon type1'></view>
+                                <view wx:if="{{item.ShopBranch.types2.MinCouponPrice}}" class='sale-icon type2'></view>
+                                <view wx:if="{{item.ShopBranch.types3}}" class='sale-icon type3'></view>
+                            </view>
+                            <view wx:if="{{item.ShopBranch.types1}}" class='single'>
+                                <view class='sale-icon type1'></view>
+                                <text>{{item.ShopBranch.types1}}</text>
+                            </view>
+                            <view wx:if="{{item.ShopBranch.types2.MinCouponPrice}}" class='single'>
+                                <view class='sale-icon type2'></view>
+                               <text>进店领{{item.ShopBranch.types2.MinCouponPrice}}<text wx:if="{{item.ShopBranch.types2.MaxCouponPrice>item.ShopBranch.types2.MinCouponPrice}}">~{{item.ShopBranch.types2.MaxCouponPrice}}</text>元优惠券</text>
+                            </view>
+                            <view wx:if="{{item.ShopBranch.types3}}" class='single'>
+                                <view class='sale-icon type3'></view>
+                                <text>{{item.ShopBranch.types3}}</text>
+                            </view>
+                        </block>
+                        <view class='sale-num' data-idx="{{storeidx}}" bindtap="setActive">
+                            {{item.ShopBranch.count}}个活动<text class="iconfont {{setCss[storeidx]?'icon-up':'icon-down'}}"></text>
+                        </view>
+                    </view>
+                    <view class='products'>
+                        <view class='single-pro' wx:for="{{item.ShowProducts}}" wx:key="{{i}}" wx:for-index="i" wx:for-item="pro" bindtap='showStoreDetail' data-id="{{item.ShopBranch.Id}}" data-proid="{{pro.Id}}">
+                            <image mode='aspectFit' src="{{pro.DefaultImage}}"></image>
+                            <text>¥ {{pro.MinSalePrice}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+    <view wx-if="{{isDataEnd}}" class="nomore line_height32 font24"><view>没有更多门店了</view></view>
+</view>

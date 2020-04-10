@@ -1,0 +1,83 @@
+<!--components/storecart/storecart.wxml-->
+
+<view class='shop-bottom clearfix' hidden='{{shopBuyHide}}'>
+    <view class='cart-total'>
+        <view class='cart-btn {{!cartData.TotalCount?"empty":""}}' bindtap='cartShowHide'><view class='iconfont icon-cart'></view><view class='num'>{{cartData.TotalCount}}</view></view>
+        <view class='cart-pay'>
+            <view class='cart-price' hidden='{{!cartData.TotalCount}}'><view class='unit'>￥</view>{{cartData.Amount||'0.00'}}</view>
+            <view class='cart-freight' wx:if="{{cartData.DeliveFee>0}}">{{cartData.FreeMailFee>0 ?'配送费'+cartData.DeliveFee+'元, 满'+cartData.FreeMailFee+'元包邮':'配送费'+cartData.DeliveFee+'元'}}</view>
+            <view class='cart-freight' wx:else>免配送费</view>
+        </view>
+    </view>
+    
+    <view class='submit disabled' wx:if='{{!cartData.TotalCount}}'>￥{{cartData.DeliveTotalFee}}起送</view>
+    <view bindtap="submitCart" data-disabled="{{cartData.Amount<cartData.DeliveTotalFee?'1':''}}" class='submit {{cartData.Amount<cartData.DeliveTotalFee?"disabled":""}}' wx:else>{{cartData.Amount<cartData.DeliveTotalFee?"差¥"+(pricegap)+"起送":"结算"}}</view>
+</view>
+
+<!--门店购物车弹框-->
+<view class='cart {{!cartHide?"active":""}}'>
+    <view class='cart-head clearfix'>
+        <view class='check-all'><icon type="{{cartData.selectedAll?'success':'circle'}}" color="{{cartData.selectedAll?'#fb1438':''}}"  bindtap='selectAllChange'/>全选</view>
+        <view class='cart-del' bindtap='clearCartProduct'><view class='iconfont icon-delete'></view>清空购物车</view>
+    </view>
+    <view class='cart-product'>
+        <view class='cart-pro-list'>
+            <view class='pro-item' wx:for='{{cartData.normalProducts}}' wx:if='{{item.Count>0}}' wx:key="{{index}}">
+                <icon type="{{item.selected?'success':'circle'}}" color="{{item.selected?'#fb1438':''}}"  bindtap="selectList" data-cartid='{{item.CartItemId}}' data-index='{{index}}' />
+                <view class='pro-info'>
+                    <view class='name'>{{item.ProductName}}</view>
+                    <view class='spec'>{{item.SkuDetails}}</view>
+                </view>
+                <view class='price'>¥{{item.Price}}</view>
+                <view class='buy-num'>
+                    <view class='iconfont icon-fullminus' data-index='{{index}}' bindtap='cartNumChange'></view>
+                    {{item.Count||''}}
+                    <view class='iconfont icon-fullplus' data-index='{{index}}' bindtap='cartNumChange' data-type='1'></view>
+                </view>
+            </view>
+            
+        </view>
+        <block wx:if='{{cartData.loseProducts.length>0}}'>
+            <view class='cart-head lose clearfix'>
+                <view class='check-all'>失效商品</view>
+                <view class='cart-del' bindtap='clearLoseProduct'><view class='iconfont icon-delete'></view>清空失效商品</view>
+            </view>
+            <view class='cart-pro-list lose'>
+                <view class='pro-item' wx:for='{{cartData.loseProducts}}' wx:key="{{index}}">
+                    <view class='pro-info'>
+                        <view class='name'>{{item.ProductName}}</view>
+                        <view class='spec'>{{item.SkuDetails}}</view>
+                    </view>
+                    <view class='price'>¥{{item.Price}}</view>
+                    <view class='sale_out'>{{item.Status==1?'已失效':(item.Status==2?'已售罄':'已下架')}}</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+<view class='cover zindex-s' hidden='{{cartHide}}' bindtap='cartShowHide'></view>
+
+<!--商品规则选择弹框-->
+<view class='dialog {{chooseSkuHide?"":"active"}}'>
+    <view class='dialog-title'><view class='text'>{{skuData.ProductName}}</view><view class='iconfont icon-close' bindtap='hideChooseSku'></view></view>
+    <view class='dialog-content'>
+        <view class='choose-sku'>
+            <block wx:for='{{skuData.SkuItems}}' wx:for-index="parentindex" wx:key="{{parentindex}}">
+                <view class='sku-type'>{{item.AttributeName}}</view>
+                <view class='sku-arr'>
+                    <view wx:for='{{item.AttributeValue}}' wx:for-item="sku" wx:key="{{index}}" bindtap='{{sku.disabled?"":"swithSku"}}' class='{{sku.ValueId==skuArr[item.AttributeIndex+1]?"active":""}} {{sku.disabled?"disabled":""}}' data-id='{{sku.ValueId}}' data-index='{{item.AttributeIndex}}' data-parentindex="{{parentindex}}">{{sku.Value}}</view>
+                </view>
+            </block>
+        </view>
+        <view class='choose-bot'>
+            <view class='price'>￥{{curSkuData.SalePrice}}</view>
+            <view class='choose-btn' hidden='{{curSkuData.CartQuantity}}' data-skuid='{{curSkuData.SkuId}}' bindtap='cartSkuCountChange' data-type='1'><view class='iconfont icon-cartsmall'></view>加入购物车</view>
+            <view class='buy-num' hidden='{{!curSkuData.CartQuantity}}'>
+                <view class='iconfont icon-fullminus' hidden='{{!curSkuData.CartQuantity}}' data-skuid='{{curSkuData.SkuId}}' bindtap='cartSkuCountChange'></view>
+                {{curSkuData.CartQuantity||''}}
+                <view class='iconfont icon-fullplus' data-skuid='{{curSkuData.SkuId}}' bindtap='cartSkuCountChange' data-type='1'></view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class='cover' hidden='{{chooseSkuHide}}' bindtap='hideChooseSku'></view>

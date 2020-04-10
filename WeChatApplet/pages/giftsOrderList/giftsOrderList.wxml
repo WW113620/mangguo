@@ -1,0 +1,48 @@
+<view class='nav'>
+  <view class='nav_item' style="{{currentStatus == 0 ? 'color: #212121;border-bottom: solid #212121 4rpx;' : ''}}" bindtap='bindLoadOrders' data-status='{{0}}'>
+    全部
+    <!-- <text class='count'>{{orderCount.AllCount}}</text> -->
+  </view>
+  <view class='nav_item' style="{{currentStatus == 2 ? 'color: #212121;border-bottom: solid #212121 4rpx;' : ''}}" bindtap='bindLoadOrders' data-status='{{2}}'>
+    待发货
+    <text class='count' wx:if='{{orderCount.WaitDeliveryCount > 0}}'>{{orderCount.WaitDeliveryCount}}</text>
+  </view>
+  <view class='nav_item' style="{{currentStatus == 3 ? 'color: #212121;border-bottom: solid #212121 4rpx;' : ''}}" bindtap='bindLoadOrders' data-status='{{3}}'>
+    待收货
+    <text class='count' wx:if='{{orderCount.WaitReceivingCount > 0}}'>{{orderCount.WaitReceivingCount}}</text>
+  </view>
+  <view class='nav_item' style="{{currentStatus == 5 ? 'color: #212121;border-bottom: solid #212121 4rpx;' : ''}}" bindtap='bindLoadOrders' data-status='{{5}}'>
+    已完成
+  </view>
+</view>
+
+<view class='list'>
+  <view class='list_item' wx:for='{{orders}}' wx:key="{{index}}">
+    <view class='order_num'>
+      <text class='iconfont icon-article'></text>{{item.Id}}
+      <text class='fr'>{{item.ShowOrderStatus}}</text>
+    </view>
+    <view class='inner_list_item' wx:for='{{item.Items}}' wx:key="{{innerindex}}" wx:for-index="innerindex" bindtap='bindOrderDetail' data-id='{{item.Id}}' wx:for-item='innerItem'>
+      <image mode='aspectFit' src='{{innerItem.DefaultImage}}'></image>
+      <view class='title webkit_box fl'>{{innerItem.GiftName}}</view>
+      <view class='amount fr'>
+        <text>{{innerItem.SaleIntegral + '积分'}}</text>
+        <text>{{'×' + innerItem.Quantity}}</text>
+      </view>
+    </view>
+    <view class='amount'>
+      共{{item.Items[0].Quantity}}件礼品 花费积分：
+      <text>{{item.TotalIntegral}}</text>
+    </view>
+    <view class='more_operation' wx:if='{{item.OrderStatus == 3}}'>
+      <text class='confirm_order' bindtap='bindConfirmOrder' data-id='{{item.Id}}'>确认收货</text>
+      <text class='express' data-id='{{item.Id}}' bindtap='bindShowLogistics'>查看物流</text>
+    </view>
+  </view>
+</view>
+
+<view class='no_data' wx:if='{{showEmpty}}'>
+  <image src='../../images/no_order.png'></image>
+  <view class='title'>暂无订单</view>
+  <view class='des'>您还没有订单哦</view>
+</view>

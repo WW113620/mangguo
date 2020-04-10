@@ -1,0 +1,128 @@
+@import "../../style/common.wxss";
+.nav{
+  display: flex;
+  justify-content: space-around;
+  height: 97rpx;
+  background: #fff;
+  border-bottom: solid 1rpx #f0f0f0;
+  box-sizing: border-box;
+}
+
+.nav .nav_item{
+  font-size: 30rpx;
+  line-height: 96rpx;
+  box-sizing: border-box;
+  color: #616161;
+  text-align: center;
+  height: 96rpx;
+  padding: 0 16rpx;
+}
+
+.nav .nav_item text.count{
+  position: relative;
+  height: 32rpx;
+  line-height: 32rpx;
+  border-radius: 16rpx;
+  background: #fb1438;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 0 8rpx; 
+  min-width: 32rpx;
+  box-sizing: border-box;
+  top: -16rpx;
+  display: inline-block;
+}
+
+.list{
+  padding-bottom: 98rpx;
+}
+
+.list_item .order_num{
+  padding: 24rpx;
+  font-size: 28rpx;
+  color: #212121;
+  line-height: 48rpx;
+}
+
+.list_item .order_num text{
+  color: #fb1438;
+}
+
+.list_item .order_num text.iconfont{
+  margin-right: 8rpx;
+  vertical-align: middle;
+}
+
+.list .list_item{
+  background: #fff;
+  margin-top: 24rpx;
+}
+
+.list .inner_list_item{
+  font-size: 28rpx;
+  color: #212121;
+  line-height: 40rpx;
+  background: #f7f7f7;
+  height: 192rpx;
+  box-sizing: border-box;
+  padding: 32rpx 24rpx;
+}
+
+.list .inner_list_item image{
+  height: 128rpx;
+  width: 128rpx;
+  border: 1rpx solid #f0f0f0;
+  float: left;
+  box-sizing: border-box;
+}
+
+.list .inner_list_item .title{
+  margin-left: 16rpx;
+  width: 378rpx;
+}
+
+.list .inner_list_item .amount{
+  text-align: right;
+}
+
+.list .inner_list_item .amount text{
+  display: block;
+}
+
+.list_item .amount{
+  padding: 24rpx 24rpx 30rpx;
+  font-size: 28rpx;
+  text-align: right;
+  line-height: 34rpx;
+  color: #515151;
+}
+
+.list_item .amount text{
+  color: #212121;
+}
+
+.list .list_item .more_operation{
+  height: 114rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.list .list_item .more_operation text{
+  font-size: 28rpx;
+  line-height: 64rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
+  padding: 0 32rpx;
+  color: #424242;
+  border: 1rpx solid #424242;
+  box-sizing: border-box;
+  float: right;
+  display: block;
+  margin-top: 24rpx;
+  margin-right: 24rpx;
+}
+
+.list .list_item .more_operation text.confirm_order{
+  color: #fb1438;
+  border-color:#fb1438; 
+}

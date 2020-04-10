@@ -1,0 +1,155 @@
+.search_container {
+    padding: 24rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+    position: absolute;
+    top: 0;
+}
+
+.search_bar {
+    width: 702rpx;
+    height: 64rpx;
+    border-radius: 8rpx;
+    background: #f0f0f0;
+}
+
+.search_bar image {
+    height: 32rpx;
+    width: 32rpx;
+    margin: 16rpx;
+    float: left;
+}
+
+.search_bar input {
+    font-size: 28rpx;
+    line-height: 64rpx;
+    height: 64rpx;
+    float: left;
+}
+
+.category {
+    position: absolute;
+    left: 0;
+    top: 114rpx;
+    bottom: 0;
+    background: #f7f7f7;
+    width: 192rpx;
+    overflow-y: auto;
+}
+
+.category .category_item {
+    height: 89rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+    border-right: 1rpx solid #f0f0f0;
+    padding: 24rpx 0;
+    box-sizing: border-box;
+}
+
+.category .category_item text {
+    display: block;
+    text-align: center;
+    font-size: 24rpx;
+    line-height: 40rpx;
+    color: #747474;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 24rpx;
+}
+
+.category .category_item.active {
+    background: #fff;
+    border-right-color: #fff;
+}
+
+.category .category_item.active text {
+    color: #212121;
+    border-left: solid 4rpx #fb1438;
+}
+
+scroll-view {
+    position: absolute;
+    left: 192rpx;
+    top: 114rpx;
+    bottom: 0;
+    width: 558rpx;
+    padding-left:24rpx;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+scroll-view .list_item {
+    border-bottom: 1rpx solid #f0f0f0;
+    height: 195rpx;
+    box-sizing: border-box;
+    padding-top: 24rpx;
+    margin-right: 24rpx;
+}
+
+scroll-view .list_item image.product_img {
+    height: 128rpx;
+    width: 128rpx;
+    border: 1rpx solid #f0f0f0;
+    float: left;
+    box-sizing: border-box;
+}
+
+scroll-view .list_item view.des {
+    float: left;
+    margin-left: 16rpx;
+    position: relative;
+    width: 366rpx;
+}
+
+scroll-view .list_item view.des .title {
+    font-size: 26rpx;
+    line-height: 32rpx;
+    color: #212121;
+    max-height: 64rpx;
+    overflow: hidden;
+}
+
+scroll-view .list_item view.des .amount {
+    font-size: 26rpx;
+    color: #fb1438;
+    line-height: 32rpx;
+    margin: 8rpx 0;
+}
+
+scroll-view .list_item view.des .amount text {
+    color: #747474;
+    padding-left: 28rpx;
+}
+
+scroll-view .list_item view.des .stock {
+    font-size: 22rpx;
+    line-height: 32rpx;
+    color: #747474;
+}
+
+scroll-view .list_item view.des .stock text {
+    color: #212121;
+    font-weight: bold;
+}
+
+scroll-view .list_item view.des .share_img {
+    display: block;
+    width: 56rpx;
+    height: 40rpx;
+    border-radius: 20rpx;
+    box-sizing: border-box;
+    border: 1rpx solid #fb1438;
+    background-color: #fff;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    bottom: 0;
+}
+
+scroll-view .list_item view.des .share_img image {
+    display: block;
+    width: 26rpx;
+    height: 22rpx;
+    margin: 9rpx auto;
+}
+@import "../../style/common.wxss";

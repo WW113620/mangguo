@@ -1,0 +1,10 @@
+<view class='recharge-list'>
+    <view class="item {{amount==item.ChargeAmount?'active':''}}" wx:for="{{rule}}" wx:key="{{index}}" catchtap="checkAmount" data-amount="{{item.ChargeAmount}}">
+        <view class='price'>{{item.ChargeAmount}}元</view>
+        <view>送{{item.PresentAmount}}元</view>
+    </view>
+</view>
+<view class='recharge'>
+    <button class="redBg" type='warn' bindtap="submitRecharge">立即充值</button>
+    <view>参与充值及赠送的金额仅用于商城消费不能提现</view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/orderqrcode/orderqrcode.wxml-->
+
+<view class="vericode-text">共 {{r.total}} 张, {{r.validityDate?'有效期 '+r.validityDateStart+'至 '+r.validityDate:'长期有效'}}</view>
+
+<swiper class="qrcode-swiper" indicator-dots previous-margin="48rpx" next-margin="48rpx">
+    <swiper-item wx:for="{{r.orderVerificationCodes}}">
+        <view class="qrcode-slide">
+            <image src="{{item.QRCode}}" class="slide-image"></image>
+            <view class="h3">核销码</view>
+            <view class="p">{{item.VerificationCode}}</view>
+            <view class="layer" wx:if="{{item.Status!=1&&item.Status!=3}}"><text style="background-image: url({{getRequestUrl}}/images/qr-status.png)" class="status{{item.Status}}"></text></view>
+        </view>
+    </swiper-item>
+</swiper>

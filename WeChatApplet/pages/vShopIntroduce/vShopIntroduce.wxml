@@ -1,0 +1,33 @@
+<vshoptab tabindex='{{3}}' id='{{id}}'></vshoptab>
+
+<view class='head'>
+    <view class='logo'>
+        <image class='bg' src="../../images/dianpu_bg.png"></image>
+        <view>
+            <image mode='aspectFit' class='iconlogo' src='{{vshopInfo.Logo}}'></image>
+            <view class='name'>{{vshopInfo.Name}}</view>
+        </view>
+        <view class='iconfont {{vshopInfo.IsFavorite?"icon-love":"icon-hollowlove"}}' bindtap='bindFavorite' data-id='{{vshopInfo.ShopId}}'></view>
+    </view>
+    <view class='comment'>
+        <view class='comment_item'>
+            <view>{{vshopInfo.ProductAndDescription}}</view>
+            店铺
+        </view>
+        <view class='comment_item'>
+            <view>{{vshopInfo.SellerDeliverySpeed}}</view>
+            发货
+        </view>
+        <view class='comment_item'>
+            <view>{{vshopInfo.SellerServiceAttitude}}</view>
+            服务
+        </view>
+    </view>
+</view>
+<view class='code'>
+    <image class='bg' src="../../images/code_bg.png"></image>
+    <view>
+        <image class='qrcode' src='{{qrcode}}'></image>
+        <view>店铺二维码</view>
+    </view>
+</view>

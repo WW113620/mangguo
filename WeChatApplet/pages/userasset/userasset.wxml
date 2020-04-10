@@ -1,0 +1,65 @@
+<!--pages/userasset/userasset.wxml-->
+<view class="container">
+    <view class='asset-total'>
+        <view class='h3'><view>￥</view>{{total.Balance}}</view>
+        <view class='p'>当前可用</view>
+    </view>
+    <view class='asset-addup'>
+        <view class='item'>
+            <view class='h3'><view>￥</view>{{total.RedPacketAmount}}</view>
+            <view class='p'>累计收到红包</view>
+        </view>
+        <view class='item'>
+            <view class='h3'><view>￥</view>{{total.ChargeAmount}}</view>
+            <view class='p'>累计充值金额</view>
+        </view>
+        <view class='item'>
+            <view class='h3'><view>￥</view>{{total.PresentAmount}}</view>
+            <view class='p'>累计赠送金额</view>
+        </view>
+    </view>
+    <view class='asset-list {{isEnd?"isEnd":""}}'>
+        <view class='item' wx:for='{{list}}' wx:key="{{index}}">
+            <view class='price'>{{item.Amount>0?"+":""}}{{item.Amount}}</view>
+            <view class='desc'>
+                {{item.Remark}}
+                
+            </view>
+            <view class='time'>{{item.CreateTime}}</view>
+        </view>
+    </view>
+</view>
+<view class='asset-bot'>
+    <view bindtap='showCashChange' data-type='1' wx:if='{{showCashChange}}'>提现</view>
+    <view bindtap='showrechargeChange' data-type='1' class='recharge'>充值</view>
+</view>
+
+<!-- 提现申请 -->
+<view class="inputPopBox {{cashHide?'':'active'}}">
+    <view class='contents'>
+        <view class='title'>提现申请</view>
+        <view class='desc'>小程序内只可提现到微信</view>
+        <input type='digit' value='{{outAmount}}' placeholder='提现金额{{total.WithDrawMinimum}}~{{total.WithDrawMaximum}}元' bindinput='onInputOutAmount'></input>
+        <input type='text' password='true' value='{{pwd}}' placeholder='请输入交易密码' bindinput='onInputPwd'></input>
+    </view>
+    <view class='btns'>
+        <view class='cancel' bindtap='showCashChange'>取消</view>
+        <view class='space-line'></view>
+        <view class='confirm' catchtap='confirmCash'>确认</view>
+    </view>
+</view>
+<view class='cover' hidden='{{cashHide}}' bindtap='showCashChange'></view>
+
+<!-- 账户充值 -->
+<view class="inputPopBox  {{rechargeHide?'':'active'}}">
+    <view class='contents'>
+        <view class='title'>账户充值</view>
+        <input type='digit' value='{{inAmount}}' placeholder='请输入充值金额' bindinput='onInputInAmount'></input>
+    </view>
+    <view class='btns'>
+        <view class='cancel' bindtap='showrechargeChange'>取消</view>
+        <view class='space-line'></view>
+        <view class='confirm' catchtap='confirmCharge'>确认</view>
+    </view>
+</view>
+<view class='cover' hidden='{{rechargeHide}}' bindtap='showrechargeChange'></view>

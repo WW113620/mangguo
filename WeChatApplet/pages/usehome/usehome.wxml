@@ -1,0 +1,79 @@
+<!--pages/usehome/usehome.wxml-->
+<view class="uselogos baseRedBgColor">
+    <image bindtap='bindUserTap' src="{{isLogin?userInfo.Photo:'../../images/avatar-null.png'}}" class="uselogo"></image>
+    <view wx:if="{{isLogin}}" bindtap='goLogin' class="username">{{userInfo.Nick?userInfo.Nick:userInfo.UserName}}</view>
+    <view wx:else="{{isLogin}}" bindtap='goLogin' class="username">未登录</view>
+    <view class='favorite'>
+        <view bindtap='bindFavorite' data-index='0'>
+            <text wx:hidden='{{!isLogin}}'>{{userInfo.FavoriteProduct}}</text>收藏的商品
+        </view> |
+        <view bindtap='bindFavorite' data-index='1'>
+            <text wx:hidden='{{!isLogin}}'>{{userInfo.FavoriteShop}}</text>收藏的店铺
+        </view>
+    </view>
+</view>
+<view class="hdonglist" style="margin-top:0">我的订单
+    <text bindtap="bindUserTap" data-url="../orderlist/orderlist?status=0">全部订单</text>
+</view>
+<view class="usecd">
+
+    <view class="usecdlist" bindtap="bindUserTap" data-url="../orderlist/orderlist?status=1">
+        <view class="iconfont icon-wallet"></view>
+        <text>待付款</text>
+        <view class="order_num" hidden="{{!isLogin||userInfo.WaitingForPay==0}}">
+            <text>{{userInfo.WaitingForPay}}</text>
+        </view>
+    </view>
+    <view class="usecdlist" bindtap="bindUserTap" data-url="../orderlist/orderlist?status=2">
+        <view class="iconfont icon-package"></view>
+        <text>待发货</text>
+        <view class="order_num" hidden="{{!isLogin||userInfo.WaitingForDelivery==0}}">
+            <text>{{userInfo.WaitingForDelivery}}</text>
+        </view>
+    </view>
+    <view class="usecdlist" bindtap="bindUserTap" data-url="../orderlist/orderlist?status=3">
+        <view class="iconfont icon-shipping"></view>
+        <text>待收货/消费</text>
+        <view class="order_num" hidden="{{!isLogin||userInfo.WaitingForRecieve==0}}">
+            <text>{{userInfo.WaitingForRecieve}}</text>
+        </view>
+    </view>
+    <view class="usecdlist" bindtap="bindUserTap" data-url="../orderlist/orderlist?status=5">
+        <view class="iconfont icon-comments"></view>
+        <text>待评论</text>
+        <view class="order_num" hidden="{{!isLogin||userInfo.WaitingForComments==0}}">
+            <text>{{userInfo.WaitingForComments}}</text>
+        </view>
+    </view>
+    <view class="usecdlist" bindtap="bindUserTap" data-url="../applylist/applylist">
+        <view class="iconfont icon-service "></view>
+        <text>售后</text>
+        <view class="order_num" hidden="{{!isLogin||userInfo.RefundOrders==0}}">
+            <text>{{userInfo.RefundOrders}}</text>
+        </view>
+    </view>
+</view>
+<view class="producthd">
+    <view class='middle-info'>
+
+        <view class="hdonglist" bindtap="bindUserTap" data-url="../coupon/coupon">我的优惠券
+            <text wx:if="{{isLogin&&userInfo.couponsCount>0}}">{{userInfo.couponsCount}}张未使用</text>
+        </view>
+        <view class="hdonglist" bindtap="bindUserTap" data-url="../userIntegral/userIntegral?integral={{userInfo.Integral}}">我的积分
+            <text hidden="{{!isLogin}}">{{userInfo.Integral}}分</text>
+        </view>
+        <view class="hdonglist" bindtap="bindUserTap" data-url="../userasset/userasset">我的资产
+            <text hidden="{{!isLogin}}" class='{{userInfo.ShowBalanceClass}}'>{{userInfo.ShowBalance}}</text>
+        </view>
+        <view class="hdonglist" bindtap="bindUserTap" data-url="../grouporder/grouporder">我的拼团
+        </view>
+    </view>
+    <view class="hdonglist" bindtap="bindUserTap" data-url="../address/address">我的收货地址</view>
+    <view class="hdonglist" bindtap='bindApplyDistributorTap' wx:if='{{distributorInfo.DistributionIsEnable}}'>{{distributionTitle}}</view>
+    <view class="hdonglist" bindtap="bindTelPhone" data-tel="{{userInfo.ServicePhone}}">客服电话
+        <text>{{userInfo.ServicePhone}}</text>
+    </view>
+    <view hidden='{{!isLogin}}' class="hdonglist outlogin" bindtap="ExitLoginout">
+        退出登录
+    </view>
+</view>

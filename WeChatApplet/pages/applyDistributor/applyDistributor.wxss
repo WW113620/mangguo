@@ -1,0 +1,46 @@
+@import "../../style/common.wxss";
+
+.content{
+  padding: 24rpx;
+  margin-bottom: 88rpx;
+}
+
+.content .banner{
+  width: 702rpx;
+  height: 360rpx;
+}
+
+.content .qalist{
+  margin-top: 48rpx;
+  font-size: 28rpx;
+  line-height: 40rpx;
+}
+
+.content .qalist .qalist_item{
+  margin-bottom: 48rpx;
+}
+
+.content .qalist .qalist_item .question{
+  margin-bottom: 16rpx;
+}
+
+.content .qalist .qalist_item image{
+  width: 28rpx;
+  height: 27rpx;
+  margin-right: 16rpx;
+  display: inline-block; 
+}
+
+button{
+  position: fixed; 
+  border: 1rpx #fff solid;
+  height: 88rpx;
+  width: 702rpx; 
+  background-color: #fb1438;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 88rpx;
+  bottom: 24rpx;
+}
+
+@import "../wxParse/wxParse.wxss";

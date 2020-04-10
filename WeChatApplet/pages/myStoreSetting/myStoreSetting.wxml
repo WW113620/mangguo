@@ -1,0 +1,18 @@
+<form bindsubmit='bindSaveInformation'>
+  <view class='store_logo' bindtap='bindChooseLogo'>
+    <text>小店logo</text>
+    <image src='{{logoPath}}'></image>
+  </view>
+
+  <view class='store_logo logo_switch'>
+    <text>展示首页logo</text>
+    <switch checked='{{isShowLogo}}' bindchange='bindSwitchChange'></switch>
+  </view>
+
+  <view class='store_name'>
+    <text>小店名称</text>
+    <input type='text' placeholder='小店名称不能超过10个字符' value='{{shopName}}' name='shopName'></input>
+  </view>
+
+  <button form-type='submit'>保存信息</button>
+</form>

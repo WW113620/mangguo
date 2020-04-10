@@ -1,0 +1,143 @@
+
+.header image.bg{
+  width: 750rpx;
+  height: 296rpx;
+}
+
+.header .header_content{
+  position: absolute;
+  top: 0;
+  color: #fff;
+  padding: 48rpx 24rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header .header_content .title{
+  font-size:32rpx;
+  line-height: 48rpx; 
+}
+
+.header .header_content .amount{
+  font-size: 80rpx;
+  line-height: 80rpx;
+  font-weight: bold;
+  margin-top: 16rpx;
+}
+
+.header .header_content .btn{
+  width: 104rpx;
+  height: 64rpx;
+  border-radius: 32rpx;
+  background: #fbe9e7;
+  border: 1rpx solid #fff;
+  color: #fb1438;
+  font-size: 28rpx;
+  line-height: 64rpx;
+  float: right;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.flex_container{
+  display: flex;
+  height: 136rpx;
+  width: 100%;
+  justify-content: space-around;
+  background: #fff;
+  padding-top: 24rpx;
+  box-sizing: border-box;
+}
+
+.flex_container .flex_item{
+  height: 100%;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #212121;
+  text-align: center;
+}
+
+.flex_container .flex_item .amount text{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.flex_container .flex_item .description{
+  line-height: 40rpx;
+  color: #747474;
+}
+
+.list{
+  margin-top: 24rpx;
+}
+
+.list .list_item{
+  padding-left: 24rpx;
+  padding-top: 24rpx;
+  box-sizing: border-box;
+  height: 128rpx;
+  position: relative;
+  background: #fff;
+}
+
+.list .list_item .order_num{
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #212121;
+}
+
+.list .list_item .order_num text{
+  font-size: 24rpx;
+  color: #747474;
+}
+
+.list .list_item .time{
+  font-size: 24rpx;
+  line-height: 32rpx;
+  color: #bdbdbd;
+  margin-top: 8rpx;
+}
+
+.list .list_item .amount{
+  position: absolute;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #212121;
+  top: 0;
+  right: 24rpx;
+  bottom: 0;
+  margin: auto;
+  height: 48rpx;
+}
+
+.list .list_item .amount text{
+  font-size: 24rpx;
+}
+
+.list .list_item::after{
+  content: '';
+  display: block;
+  width: 100%;
+  border-bottom: 1rpx solid #f0f0f0;
+  position: absolute;
+  bottom: 0;
+}
+
+.list .list_footer{
+  margin-top: 42rpx;
+  height: 12rpx; 
+  border-bottom: 1rpx solid #e0e0e0;
+  padding: 0 24rpx;
+  text-align: center;
+}
+
+.list .list_footer view{
+  font-size: 24rpx;
+  line-height: 26rpx;
+  color: #bdbdbd;
+  background: #f7f7f7;
+  width: 190rpx;
+  margin: 0 auto;
+}
+
+@import "../../style/common.wxss";

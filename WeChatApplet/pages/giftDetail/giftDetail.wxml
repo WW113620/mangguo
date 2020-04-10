@@ -1,0 +1,50 @@
+<view class="container {{pageLoaded?'':'transparent'}}">
+    <swiper indicator-dots autoplay circular interval="{{4000}}" duration="{{500}}" indicator-color='#424242' indicator-active-color='#fb1438'>
+        <block wx:for="{{detail.Images}}" wx:key='item'>
+            <swiper-item>
+                <image mode='aspectFill' src="{{item}}" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class='content'>
+        <view class='title webkit_box'>{{detail.GiftName}}</view>
+
+        <view class='integal'>
+            <text class='integal_num'>{{detail.NeedIntegral}}</text>
+            <text class='jifen'>积分</text>
+            <text class='price'>￥{{detail.GiftValue}}</text>
+            <text class='grade'>{{detail.NeedGradeName}}</text>
+        </view>
+
+        <view class='amount'>
+            数量
+            <view class='num'>
+                <button class='sub' bindtap='changeCount' id='sub'>-</button>
+                <input type='number' value='{{count}}' bindinput="inputCount" />
+                <button class='plus' bindtap='changeCount' id='plus'>+</button>
+            </view>
+            <view class='stock'>
+                <text>已兑 {{detail.SumSales}} 件　<text wx:if="{{detail.LimtQuantity}}">限兑 {{detail.LimtQuantity}}件</text></text>
+                <text>剩余 {{detail.StockQuantity}} 件</text>
+            </view>
+        </view>
+
+        <view class='time'>有效期至 {{detail.EndDateStr}}</view>
+
+        <view class='more'>
+            <text>下拉查看更多</text>
+        </view>
+
+        <import src="../wxParse/wxParse.wxml" />
+        <view class="container">
+            <!-- 这一块是富文本 显示的内容区 -->
+            <template is="wxParse" data="{{wxParseData:description.nodes}}" />
+        </view>
+
+        <view class='description'></view>
+    </view>
+
+    <button wx:if="{{detail.CanBuy}}" class='convert' bindtap='bindConvert'>我要兑换</button>
+    <button wx:else class='convert disabled'>{{detail.CanNotBuyDes}}</button>
+</view>

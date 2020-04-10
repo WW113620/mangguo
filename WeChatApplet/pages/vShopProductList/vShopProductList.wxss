@@ -1,0 +1,182 @@
+view.content{
+    padding-bottom: 100rpx;
+}
+
+form.search{
+    width: 100%;
+    position: fixed;
+    height: 88rpx;
+    background: #fb1438;
+    padding: 0 24rpx;
+    z-index: 99;
+}
+
+form.search .search_wrapper{
+    height: 64rpx;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 8rpx 16rpx;
+    border-radius: 6rpx;
+    width: 702rpx;
+}
+
+form.search .search_wrapper image{
+    height: 48rpx;
+    width: 48rpx;
+    float: left;
+    margin-right: 16rpx;
+}
+
+form.search .search_wrapper input{
+    font-size:30rpx; 
+    height: 48rpx;
+    line-height: 48rpx;
+}
+
+.tab{
+    display: flex;
+    justify-content: space-around;
+    height: 88rpx;
+    width: 100%;
+    position: fixed;
+    top: 88rpx;
+    background: #fff;
+}
+
+.tab .tab_item{
+    font-size: 28rpx;
+    line-height: 88rpx;
+    color: #333333;
+    text-align: center;
+}
+
+.tab .tab_item.active{
+    color: #fb1438;
+}
+
+.tab .tab_item .triangle{
+    width: 28rpx;
+    height: 32rpx; 
+    float: right;
+    position: relative;
+    margin-top: 32rpx;
+    margin-left: 8rpx;
+}
+
+.tab .tab_item .triangle .triangle-up{
+    border: transparent 7rpx solid;
+    border-bottom-color: #bdbdbd;
+    position: absolute;
+}
+
+.tab .tab_item .triangle .triangle-down{
+    border: transparent 7rpx solid;
+    border-top-color: #bdbdbd;
+    top: 16rpx;
+    position: absolute;
+}
+
+.tab .tab_item.active .triangle.up .triangle-up{
+    border-bottom-color: #fb1438;
+}
+
+.tab .tab_item.active .triangle.down .triangle-down{
+    border-top-color: #fb1438;
+}
+
+.tab .tab_item .iconfont{
+    font-size: 48rpx;
+    height: 88rpx;
+    width: 48rpx;
+    float: right;
+}
+
+.list{
+    padding-top: 176rpx;
+    height: auto;
+    overflow: hidden;
+}
+
+.list .list_item{
+    height: 515rpx;
+    width: 339rpx;
+    background: #fff;
+    margin: 24rpx 24rpx 0;
+    float: left;
+    box-sizing: border-box;
+}
+
+.list .list_item:nth-child(2n){
+    margin-left: 0;
+}
+
+.list .list_item image{
+    width: 339rpx;
+    height: 339rpx;
+}
+
+.list .list_item .des{
+    padding: 16rpx;
+}
+
+.list .list_item .des .title{
+    font-size: 28rpx;
+    color: #212121;
+    max-height: 64rpx;
+    line-height: 32rpx;
+}
+
+.list .list_item .des .price{
+    color: #fb1438;
+    font-size: 30rpx;
+    line-height: 32rpx;
+    margin: 8rpx 0;
+}
+
+.list .list_item .des .price text{
+    font-size: 24rpx;
+}
+
+.list .list_item .des .commentcount{
+    font-size: 24rpx;
+    line-height: 32rpx;
+    color: #bdbdbd;
+}
+
+.list.table .list_item{
+    height: 217rpx;
+    width: 100%;
+    padding: 24rpx;
+    margin: 0;
+    float: none;
+    border-bottom: solid 1rpx #f0f0f0;
+}
+
+.list.table .list_item image{
+    width: 168rpx;
+    height: 168rpx;
+    float: left;
+}
+
+.list.table .list_item .des{
+    padding: 0 0 0 16rpx;
+    width: 518rpx;
+    box-sizing: border-box;
+    float: left;
+}
+
+.list.table .list_item .des .title{
+    font-size: 30rpx;
+    max-height: 80rpx;
+    line-height: 40rpx;
+}
+
+.list.table .list_item .des .price{
+    font-size: 32rpx;
+    line-height: 48rpx;
+    margin: 0;
+}
+
+.list.table .list_item .des .commentcount{
+    line-height: 40rpx;
+}

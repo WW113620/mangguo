@@ -1,0 +1,132 @@
+@import "../../style/common.wxss";
+@import "header_bg.wxss";
+
+.header image.logo{
+  height: 121rpx;
+  width: 121rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #fff;
+  float: left;
+  margin: 56rpx 16rpx 56rpx 24rpx;
+  border-radius: 60rpx;
+}
+
+.header view.title{
+  padding-top: 72rpx;
+  font-size: 36rpx;
+  line-height: 48rpx;
+  color: #fff;
+}
+
+.header view.title text{
+  position: relative;
+  top: -8rpx;
+  margin-left: 16rpx;
+  display: inline-block;
+  font-size: 20rpx; 
+  line-height: 32rpx;
+  width: 60rpx;
+  height: 32rpx;
+  text-align: center;
+  border-radius: 16rpx;
+  color: #fff;
+  background: linear-gradient(-90deg,#ffc107,#ff9800);
+}
+ 
+.header view.des{
+  margin-top: 8rpx;
+  color: #fff;
+  font-size: 26rpx;
+  line-height: 48rpx;
+}
+
+.header view.des text{
+  font-weight: bold;
+}
+
+.header .share_store{
+  position: absolute;
+  top: 24rpx;
+  right: 0;
+  width: 144rpx;
+  height: 56rpx;
+  color: #fff;
+  font-size: 24rpx;
+  line-height: 56rpx;
+  text-align: center;
+  border-top-left-radius: 28rpx;
+  border-bottom-left-radius: 28rpx;
+  background: linear-gradient(-90deg,#673ab7,#9c27b0);
+}
+
+.flex_container{
+  display: flex;
+  height: 136rpx;
+  width: 100%;
+  justify-content: space-around;
+  background: #fff;
+  padding-top: 24rpx;
+  box-sizing: border-box;
+}
+
+.flex_container .flex_item{
+  height: 100%;
+  font-size: 24rpx;
+  line-height: 48rpx;
+  color: #212121;
+  text-align: center;
+}
+
+.flex_container .flex_item .amount text{
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.flex_container .flex_item .description{
+  line-height: 40rpx;
+  color: #747474;
+}
+
+.list{
+  margin-top: 24rpx;
+  padding:0 24rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.list_item {
+  padding: 24rpx;
+  line-height: 48rpx;
+  font-size: 30rpx;
+  position: relative;
+  background: #fff;
+  border-bottom: 1rpx solid #f0f0f0;
+  color: #212121;
+}
+
+.list_item:last-child{
+  border: none;
+}
+
+.list_item::after, .list_item::before {
+  border: 6px solid transparent;
+  border-left: 6px solid #fff;
+  width: 0;
+  position: absolute;
+  right: 10px;
+  height: 0;
+  top: 38rpx;
+  content: ' ';
+}
+
+.list_item::before {
+  border-left-color: #bbb;
+  right: 8px;
+}
+
+.list_item image{
+  width: 48rpx;
+  height: 48rpx;
+  margin-right: 16rpx;
+  float: left;
+}

@@ -1,0 +1,16 @@
+<view class='waiting_for_review' wx:if="{{status == '1'}}">
+  <image src='../../images/submit_apply.png'></image>
+  <view class='title'>申请已提交</view>
+  <view class='des'>您提交的审核正在审核中，请耐心等待...</view>
+  <view class='round_btn' bindtap='bindReturnUserhome'>返回个人中心</view>
+</view>
+
+<view class='rejected' wx:if="{{status != '1'}}">
+  <image src='../../images/confuse_apply.png'></image>
+  <view class='title'>{{statusMsg}}</view>
+  <block wx:if='{{status == 3}}'>
+    <view class='des'>拒绝理由：小店名称不规范</view>
+    <view class='red btn' bindtap='bindReapplyDistribution'>重新申请</view>
+  </block>
+  <view class='white btn' bindtap='bindReturnUserhome'>返回</view>
+</view>

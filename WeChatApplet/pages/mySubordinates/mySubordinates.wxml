@@ -1,0 +1,38 @@
+<view class='nav'>
+  <view class="nav_item" style="{{navIndex == index ? 'color: #212121;border-bottom: solid #212121 4rpx;' : ''}}" bindtap='bindNavitemChanged' data-index='{{index}}' wx:for='{{mySubordinatesLevel}}'>{{item.Name}}<text style="{{navIndex == index ? 'color: #fb1438;' : ''}}">({{item.Count}})</text>
+  </view>
+</view>
+
+<view class='gotop' bindtap='bindGotop' wx:if='{{showGotop}}'>
+  <text class='iconfont icon-gotop'></text>
+</view>
+
+<view class='list' wx:if='{{!showEmpty}}'>
+  <view class='list_item' wx:for='{{records}}' wx:key='{{index}}'>
+    <view class='user'>
+      <image src='{{item.Photo}}'></image>
+      <text class='phone'>{{item.MemberName}}</text>
+      <text class='register_time'>注册时间：{{item.RegTime}}</text>
+    </view>
+    <view class='business'>
+      <view class='business_item'>
+        <view class='amount'>{{item.TotalCount}}</view>
+        <view class='des'>成交件数</view>
+      </view>
+      <view class='business_item'>
+        <view class='amount'>￥{{item.TotalAmount}}</view>
+        <view class='des'>成交金额</view>
+      </view>
+    </view>
+  </view>
+
+  <view class='list_footer' wx:if="{{records.length == total}}">
+    <view>别拉了，快去分享吧</view>
+  </view>
+</view>
+
+<view class='no_data' wx:if='{{showEmpty}}'>
+  <image src='../../images/no_subordinates.png'></image>
+  <view class='title'>暂无记录</view>
+  <view class='des'>还没有对应的会员哦</view>
+</view>

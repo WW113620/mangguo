@@ -1,0 +1,110 @@
+/* pages/orderqrcode/orderqrcode.wxss */
+
+.vericode-text {
+    width: 100%;
+    height: 86rpx;
+    line-height: 86rpx;
+    background-color: #fff2f4;
+    font-size: 28rpx;
+    border: 1rpx solid #fb1438;
+    text-align: center;
+}
+
+.qrcode-swiper {
+    background: transparent;
+    margin: 48rpx 0;
+    height: 900rpx;
+}
+
+.qrcode-slide {
+    background: #fff;
+    border-radius: 16rpx;
+    box-shadow: 0 8rpx 16rpx rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    margin: 12rpx;
+    position:relative;
+}
+
+.qrcode-slide image{
+    width: 630rpx;
+    height: 630rpx;
+}
+
+.qrcode-slide .h3 {
+    margin-top: -20rpx;
+    position: relative;
+    padding: 0 64rpx;
+    font-size: 32rpx;
+    color: #515151;
+}
+
+.qrcode-slide .h3:before, .qrcode-slide .h3:after {
+    content: '';
+    height: 1rpx;
+    width: 25%;
+    border-top: 4rpx solid #e0e0e0;
+    border-bottom: 1rpx solid #e0e0e0;
+    position: absolute;
+    top: 20rpx;
+}
+
+.qrcode-slide .h3:before {
+    left: 64rpx;
+}
+
+.qrcode-slide .h3:after {
+    right: 64rpx;
+}
+
+.qrcode-slide .p {
+    font-size: 48rpx;
+    color: #212121;
+    margin: 24rpx 0 70rpx;
+}
+
+.qrcode-slide .layer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.qrcode-slide .layer text {
+    width: 120px;
+    height: 110px;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+}
+
+.qrcode-slide .layer text.status2 {
+    background-position: 0 -110px;
+}
+
+.qrcode-slide .layer text.status5 {
+    background-position: 0 -220px;
+}
+
+.qrcode-slide .layer text.status4 {
+    background-position: 0 0;
+}
+
+
+.qrcode-swiper .wx-swiper-dot {
+    width: 24rpx;
+    height: 8rpx;
+    margin: 0 4rpx;
+    background: #949494;
+    border: 1rpx solid #fff;
+    border-radius: 0;
+}
+
+.qrcode-swiper .wx-swiper-dot-active {
+    background: #fb1438;
+}

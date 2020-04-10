@@ -1,0 +1,7 @@
+<!--pages/groupcall/groupcall.wxml-->
+<view class="merge-empty">
+    <image src="{{getRequestUrl}}Areas/Mobile/Templates/Default/images/merge-call.jpg" ></image>
+    <view class="btn" bindtap="goGrouplist"><button class="button-hover"  plain="true" bindtap="goGroupDetail" open-type="{{OrderDetail.GroupStatus==0?'share':''}}">{{OrderDetail.GroupStatus==0?'去呼朋唤友':'查看拼团详情'}}</button></view>
+    <view class="p" wx:if="{{OrderDetail.GroupStatus==0}}">您已{{OrderDetail.IsFirstOrder?'开团':'参团'}}成功，再邀请{{OrderDetail.LimitedNumber-OrderDetail.JoinedNumber}}人就可以组团成功了！</view>
+    <view class="p" wx:else>恭喜已成团，等待卖家发货！</view>
+</view>

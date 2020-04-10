@@ -1,0 +1,55 @@
+<!--pages/address/address.wxml-->
+<view class='address-content'>
+    <block wx:for="{{CanDeliveAddressList}}" wx:for-item="item" wx:for-index="idx" wx:key="address-box">
+        <view class="addresslist" catchtap='setAddr' data-addressdata="{{item}}">
+            <view class='addr-con'>
+                <view class="addressname">
+                    <view class="addressnamel">{{item.ShipTo}}，{{item.Phone}}</view>
+                </view>
+                <view class="addresscont font28 line-height36 pb24">{{item.RegionFullName}} {{item.Address}}{{item.AddressDetail?item.AddressDetail:''}}</view>
+                <view class='toUpdate {{item.NeedUpdate?"":"hide"}}' catchtap='bindEditAddressTap' data-addressdata="{{item}}" data-isupdate="1">
+                    <image src='../../images/ic_upgrade.png'></image>
+                    <view class='h6'>需要升级</view>
+                </view>
+            </view>
+            <view class="addressmor">
+                <view class='fl' catchtap='bindEditAddressTap' data-addressData="{{item}}">
+                    <text class='iconfont icon-edit'></text>编辑</view>
+                <view class='space-line'></view>
+                <view class='fl' catchtap='bindDeleteAddressTap' data-shippingid="{{item.Id}}">
+                    <text class='iconfont icon-delete'></text>删除</view>
+            </view>
+        </view>
+    </block>
+    <view class='disabled' wx:if="{{CanNotDeliveAddressList.length>0}}">
+        <view class='title'>以下地址超出配送范围或需要升级</view>
+        <block wx:for="{{CanNotDeliveAddressList}}" wx:for-item="item" wx:for-index="idx" wx:key="address-box">
+            <view class="addresslist" data-addressdata="{{item}}">
+                <view class='addr-con'>
+                    <view class="addressname">
+                        <view class="addressnamel">{{item.ShipTo}}，{{item.Phone}}</view>
+                    </view>
+                    <view class="addresscont font28 line-height36 pb24">{{item.RegionFullName}} {{item.Address}}{{item.AddressDetail?item.AddressDetail:''}}</view>
+                    <view class='toUpdate {{item.NeedUpdate?"":"hide"}}' catchtap='bindEditAddressTap' data-addressdata="{{item}}" data-isupdate="1">
+                        <image src='../../images/ic_upgrade.png'></image>
+                        <view class='h6'>需要升级</view>
+                    </view>
+                </view>
+                <view class="addressmor">
+                    <view class='fl' catchtap='bindEditAddressTap' data-addressData="{{item}}">
+                        <text class='iconfont icon-edit'></text>编辑</view>
+                    <view class='space-line'></view>
+                    <view class='fl' catchtap='bindDeleteAddressTap' data-shippingid="{{item.Id}}">
+                        <text class='iconfont icon-delete'></text>删除</view>
+                </view>
+            </view>
+        </block>
+    </view>
+</view>
+<view class='null-content' wx-if="{{addressData.length<1}}">
+    <image src='../../images/no-address.png'></image>
+    <text>还没有添加收货地址哦</text>
+</view>
+<view class="addAddr" catchtap="gotoAddAddress" data-value="{{addressData.length}}" hidden="{{addressData.length>20}}">
+    <text class='iconfont icon-plus'></text>新增收货地址
+</view>

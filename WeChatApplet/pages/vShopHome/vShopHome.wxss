@@ -1,0 +1,6 @@
+@import '../wxParse/wxParse.wxss';
+@import '../common/templeates.wxss';
+
+.container{
+    padding-bottom: 100rpx;
+}

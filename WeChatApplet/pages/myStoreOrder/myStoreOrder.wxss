@@ -1,0 +1,102 @@
+.list_item{
+  background: #fff;
+  margin-top: 24rpx;
+}
+
+.list_item .order_num{
+  padding: 24rpx;
+  font-size: 28rpx;
+  color: #212121;
+  line-height: 48rpx;
+}
+
+.list_item .order_num .status{
+  float: right;
+  color: #fb1438;
+}
+
+.list_item .inner_list_item{
+  background: #f7f7f7;
+  padding: 32rpx 24rpx;
+  height: auto;
+  overflow: hidden;
+}
+
+.list_item .inner_list_item image{
+  width: 120rpx;
+  height: 120rpx;
+  border: 1rpx solid #f0f0f0;
+  box-sizing: border-box;
+  float: left;
+}
+
+.list_item .inner_list_item .des{
+  margin-left: 16rpx;
+  width: 558rpx;
+  float: left;
+  font-size: 28rpx;
+  line-height: 40rpx;
+  color: #212121;
+}
+
+.list_item .inner_list_item .des .title{
+  max-height: 80rpx;
+}
+
+.list_item .inner_list_item .des .sku{
+  margin-top: 8rpx;
+  color: #747474;
+}
+
+.list_item .inner_list_item .des .sku text{
+  float: right;
+}
+
+.list_item .amount{
+  padding: 24rpx 24rpx 30rpx;
+  font-size: 28rpx;
+  text-align: right;
+  line-height: 34rpx;
+  color: #515151;
+  border-bottom: 1rpx solid #f0f0f0;
+}
+
+.list_item .amount text{
+  font-weight: bold;
+}
+
+.list_item .time{
+  padding: 24rpx;
+  font-size: 28rpx;
+  line-height: 48rpx;
+  color: #212121;
+}
+
+.list_item .time text{
+  float: right;
+}
+
+.list_item .time text.label{
+  display: block;
+  width: 120rpx;
+  height: 40rpx;
+  border-radius: 8rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 40rpx;
+  margin-top: 4rpx;
+  background: #fb1438;
+  font-size: 24rpx;
+}
+
+.list_item .time text.commision{
+  color: #fb1438;
+  padding-left: 16rpx;
+}
+
+.refund{
+    color: #fb1438;
+    margin:0 8rpx
+}
+
+@import "../../style/common.wxss";

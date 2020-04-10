@@ -1,0 +1,83 @@
+page{
+  background: #f7f7f7;
+}
+
+form .form_item{
+  background: #fff;
+  height: 97rpx;
+  box-sizing: border-box;
+  border-bottom: solid 1rpx #f0f0f0;
+  padding: 0 24rpx;
+  color: #212121;
+  font-size: 30rpx;
+  line-height: 96rpx;
+  position: relative;
+}
+
+form .form_item:first-child{
+  margin-top: 24rpx;
+}
+
+form .form_item label{
+  float: left;
+  width: 174rpx;
+}
+
+form .form_item input{
+  float: left;
+  height: 97rpx;
+  width: 300rpx;
+}
+
+form .form_item image,form .form_item #sendCode{
+  width: 192rpx;
+  height: 64rpx;
+  position: absolute;
+  top: 16rpx;
+  right: 24rpx;
+}
+
+form .form_item image{
+  background-repeat: no-repeat;
+  background-size: 192rpx 64rpx;
+  background-position: center;
+}
+
+form .form_item #sendCode{
+  color: #fb1438;
+  font-size: 24rpx;
+  line-height: 64rpx;
+}
+
+form .help{
+  height: 64rpx;
+  font-size: 26rpx;
+  color: #747474;
+  line-height: 32rpx;
+  padding: 8rpx 32rpx;
+  box-sizing: border-box;
+}
+
+form #bindPhone,form #changePwd{
+  margin-top: 48rpx;
+  border: 1rpx #fff solid;
+  height: 88rpx;
+  width: 702rpx; 
+  background-color: #fb1438;
+  color: #fff;
+  font-size: 32rpx;
+  line-height: 88rpx;
+}
+
+form .phone{
+  margin: 24rpx 0;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #747474;
+  height: 48rpx;
+  padding: 0 24rpx;
+}
+
+form .phone text{
+  font-weight: bold;
+}

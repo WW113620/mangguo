@@ -1,0 +1,76 @@
+@import "../../style/common.wxss";
+
+.list{
+  margin-top: 24rpx;
+  font-size: 28rpx;
+  color: #212121;
+  line-height: 40rpx;
+  padding-bottom: 98rpx;
+}
+
+.list .list_item{
+  background: #fff;
+  height: 192rpx;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #f0f0f0;
+  padding: 32rpx 24rpx;
+}
+
+.list .list_item:last-child{
+  border-bottom: none;
+}
+
+.list .list_item image{
+  height: 128rpx;
+  width: 128rpx;
+  border: 1rpx solid #f0f0f0;
+  float: left;
+  box-sizing: border-box;
+}
+
+.list .list_item .title{
+  margin-left: 16rpx;
+  width: 378rpx;
+}
+
+.list .list_item .amount{
+  text-align: right;
+}
+
+.list .list_item .amount text{
+  display: block;
+}
+
+.bottom{
+  position: fixed;
+  bottom: 0;
+  height: 98rpx;
+  width: 100%;
+  line-height: 98rpx;
+  box-sizing: border-box;
+  border-top: 1rpx solid #f0f0f0;
+}
+
+.bottom .fl{
+  color: #212121;
+  font-size: 30rpx;
+  width: 480rpx;
+  padding: 0 24rpx;
+  box-sizing: border-box;
+}
+
+.bottom .fl text{
+  color: #fb1438;
+  font-weight: bold;
+}
+
+.bottom button.fr{
+  width: 240rpx;
+  height: 98rpx;
+  position: relative;
+  top: -1rpx;
+  color: #fff;
+  font-size: 34rpx;
+  line-height: 98rpx;
+  background: #fb1438;
+}

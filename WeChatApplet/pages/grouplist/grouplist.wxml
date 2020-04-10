@@ -1,0 +1,17 @@
+<!--pages/grouplist/grouplist.wxml-->
+<view class="group-list {{isEnd?'isEnd':''}}">
+    <view class="group-item" wx:for="{{list}}" wx:key="{{index}}" bindtap="showDetail" data-id="{{item.Id}}">
+        <view class="thumb">
+            <view class="hmui-img-full">
+                <image mode="aspectFill" src="{{item.IconUrl}}"></image>
+            </view>
+            <view wx:if="{{item.ActiveStatus>0}}" class="mask">{{item.ShowActiveStatus}}</view>
+        </view>
+        <view class="price">
+            <view class="merge-price"><view class="icon">拼团价:</view> <text> ¥ </text>{{item.MiniGroupPrice}}</view>
+            <view class="old-price">¥{{item.MiniSalePrice}}</view>
+        </view>
+        <view class="name">{{item.ProductName}}</view>
+        <view class="merge-size"><view>{{item.LimitedNumber}}</view> 人团</view>
+    </view>
+</view>

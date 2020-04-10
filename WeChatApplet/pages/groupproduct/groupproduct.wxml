@@ -1,0 +1,314 @@
+<!--pages/ProductDetails/ProductDetails.wxml-->
+<scroll-view class="full-scroll container {{pageLoaded?'':'transparent'}}" scroll-y="true" scroll-top="{{scrollTop}}" bindscroll="scroll" bindscrolltolower="reachBottom" style="bottom:100rpx">
+    <import src="../wxParse/wxParse.wxml" />
+    <swiper class="swiper-box" indicator-dots autoplay>
+        <block wx:for="{{ProductImgs}}" wx:key="*this">
+            <swiper-item>
+                <image src="{{item}}" data-src="{{item}}" class="slide-image" mode="aspectFit" bindtap="previewImage"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+    <view class="merge-size">
+        <view>{{FightGroupData.LimitedNumber}}</view> 人团</view>
+    <view class="merge-state-bar {{isEnd?'disabled':''}}">
+        <view class="text-left">
+            <text class="iconfont icon-icon-3"></text>成团时限：{{FightGroupData.LimitedHour
+            <1?FightGroupData.LimitedHour*60+ '分钟':FightGroupData.LimitedHour+ '小时'}}</view>
+                <view class="text-right" wx:if="{{!grouId}}">活动截止：{{FightGroupData.EndTime}}</view>
+                <view class="text-right" wx:if="{{status==0}}">距离结束：{{countDown}}</view>
+        </view>
+        <view class="productcont">
+            <view class="productjs pl24 pr24">
+                <view class="pricel pb24 pt24">
+                    <button class='distribution' open-type='share' wx:if='{{distributionInfo.IsShowBrokerage}}'>
+                        <view class='share_img'>
+                            <image src='../../images/icon_share.png'></image>
+                        </view>
+                        <view class='brokerage'>最高赚
+                            <text>￥{{distributionInfo.Brokerage}}</text>
+                        </view>
+                    </button>
+                    <view class="saleprice">
+                        ￥
+                        <text class="font48">{{ShowPrice}}</text>
+                    </view>
+                    <view class="oldprice font28" hidden="{{FightGroupData.MiniSalePrice<=0}}">
+                        ￥
+                        <text>{{FightGroupData.MiniSalePrice}}</text>
+                    </view>
+                </view>
+                <view class="name">{{ProductName}}</view>
+                <view class="jjname">{{ShortDescription}}</view>
+                <view style="display:flex;overflow:hidden; color:#757575" class="mt16 line_height32 mb32">
+                    <view class="xiaoliang">
+                        销量
+                        <text>{{SaleCounts}}</text>{{FightGroupData.MeasureUnit}}
+                    </view>
+                    <view class="yunfei">
+                        <text>{{Freight}}</text>
+                    </view>
+                    <view class="fahuo">
+                        <text>{{SendTime}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="producthd">
+                <view class="hdonglist {{(Promotes.freeFreight || Promotes.FullDiscount)?'border-bot':''}}" bindtap="clickCouponList" wx:if="{{Coupons.length>0}}">
+                    <view class="counpon-icon">
+                        <view class="promote_item1">
+                            <view class="houhui_name font24">优惠券</view>
+                        </view>
+                        <text>领取优惠券</text>
+                    </view>
+                    <view class="iconfont icon-arrow_right font32"></view>
+                </view>
+                <view class="hdonglist" bindtap="clickPromoteList" hidden="{{!(Promotes.FreeFreight || FullDiscount)}}">
+                    <view class="counpon-icon">
+                        <view class="promote_item1">
+                            <view class="houhui_name font24">满额优惠</view>
+                        </view>
+                        <text>{{ShowPromotesText}}</text>
+                    </view>
+                    <view class="iconfont icon-arrow_right font32"></view>
+                </view>
+
+                <view class="merge-rule">活动规则：当您在{{FightGroupData.LimitedHour}}小时内成功邀请{{FightGroupData.LimitedNumber}}位好友参团，则火拼成功；若火拼失败，系统会自动将金额退还到预存款余额或原路退回。</view>
+                <block wx:if="{{FightGroupData.CanBuy && !saleOUt}}">
+                    <view class="merge-go" wx:if="{{!grouId}}">
+                        <view class="merge-go-tip" wx:if="{{ShowNewCanJoinGroup.length>0}}">以下小伙伴正在发起拼团，您可直接参与</view>
+                        <view class="group">
+                            <view class="item" wx:for="{{ShowNewCanJoinGroup}}" wx:key="id">
+                                <view class="info">
+                                    <view class="avatar">
+                                        <image src="{{item.HeadUserIcon}}"></image>
+                                    </view>
+                                    <view class="leader">团长</view>
+                                    <view class="name">{{item.HeadUserName}}</view>
+                                </view>
+                                <view class="goto">
+                                    <view class="text-left">
+                                        还差
+                                        <text class="merge-highlight">{{item.LimitedNumber-item.JoinedNumber}}</text> 人
+                                    </view>
+                                    <view class="text-center">
+                                        <text>{{item.EndHourOrMinute}}</text>后结束
+                                    </view>
+                                <view bindtap="changeGroup" class="text-right" data-grouid="{{item.Id}}">
+                                        去参团
+                                        <text> >></text>
+                                    </view>
+                                </view>
+
+                            </view>
+                        </view>
+                    </view>
+                    <view class="merge-do" wx:else>
+                        <view class="merge-go-tip">
+                            已参团的小伙伴
+                            <view>，还差
+                                <text class="merge-highlight">{{differ}}</text>人</view>
+                        </view>
+                        <view class="merge-do-list clearfix">
+                            <view class="item" wx:for="{{userList}}" wx:key="id">
+                                <view class="avatar">
+                                    <image mode="aspectFill" src="{{item.Photo}}"></image>
+                                </view>
+                                <view class="name">{{item.UserName}}</view>
+                            </view>
+                        </view>
+                        <view wx:if="{{status==1}}" class="merge-success-sign"></view>
+                        <view wx:if="{{status==-1}}" class="merge-fail-sign"></view>
+                    </view>
+                </block>
+
+
+                <view wx:if="{{SkuItemList.length>0}}" class="hdonglist other" bindtap="clickSku">
+                    <view class="counpon-icon">选择规格</view>
+                    <view class="iconfont icon-arrow_right font32"></view>
+                </view>
+                <navigator url="../commentlist/commentlist?id={{ProductId}}" class="hdonglist other">
+                    <view class="counpon-icon">商品评价({{ReviewCount||0}})</view>
+                    <view class="iconfont icon-arrow_right font32"></view>
+                </navigator>
+            </view>
+            <view class="shop-wrap">
+                <view class="shop-hd">
+                    <image src="{{ShopScore.VShopLog||'/images/noimage200.png'}}" mode="aspectFill"></image>
+                    <view class="shopName">{{ShopScore.ShopName}}</view>
+                    <view class="shop-hd-info">
+                        <view>宝贝数
+                            <view>{{ShopScore.ProductNum}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="shop-bd clearfix">
+                    <view class="item">商品：
+                        <view>{{ShopScore.ProductAndDescription}}</view>
+                    </view>
+                    <view class="item">发货：
+                        <view>{{ShopScore.SellerDeliverySpeed}}</view>
+                    </view>
+                    <view class="item">服务：
+                        <view>{{ShopScore.SellerServiceAttitude}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="productxq">
+                <view class="xqtitle pt24 pb24 pl24 font32">
+                    <text>详情描述</text>
+                </view>
+                <view class="xqcont">
+                    <view class="wxParse">
+                        <template is="wxParse" data="{{wxParseData:metaDescription.nodes}}" />
+                    </view>
+                </view>
+            </view>
+        </view>
+</scroll-view>
+<view class="btn-area">
+    <block wx:if="{{isEnd || FightGroupData.ActiveStatus!=0 ||saleOUt}}">
+        <view class="btn-empty" bindtap="goProduct">￥{{FightGroupData.MiniSalePrice}}原价买</view>
+        <view class="btn-buy {{saleOUt?'disabled':''}}" bindtap="goGroupList">{{saleOUt?'已抢光':'更多拼团'}}</view>
+    </block>
+    <block wx:else>
+        <view class="btn-empty" data-status="10" data-grouid="0" bindtap="{{status !=10?'goGroupList':'goProduct'}}">
+            <block wx:if="{{status !=10}}">更多拼团</block>
+            <block wx:else>￥{{FightGroupData.MiniSalePrice}}原价买</block>
+        </view>
+        <view class="btn-buy">
+            <text bindtap="clickSku" wx:if="{{status == -1 || status == 1}}">我也要开团</text>
+            <button class="button-hover" plain="true" open-type="{{IsUserEnter?'share':''}}" bindtap="{{IsUserEnter?'share':'clickSku'}}" wx:elif="{{status == 0}}">{{IsUserEnter?'邀请好友':'参加火拼'}}</button>
+            <text bindtap="clickSku" wx:else>￥{{FightGroupData.MiniGroupPrice}}去开团</text>
+        </view>
+    </block>
+
+</view>
+
+<view class="btmbg {{backShow}}" bindtap="clickback"></view>
+<!--领取优惠券-->
+<view class="lqyhq {{couponShow?'':'active'}}" style="background: #f5f5f5;">
+    <view class="lqyhqtitle">
+        <text>领取优惠券</text>
+        <view class="guigecha" bindtap="onCouponHide">
+            <view class="iconfont icon-close1 font40"></view>
+        </view>
+    </view>
+    <view class="gouwqnr">
+        <block wx:for="{{Coupons}}" wx:key="CouponId">
+            <view class="youhuiquan">
+                <view class="nrong">
+                    <view class="nrje">
+                        ￥
+                        <text>{{item.Price}}</text>
+                    </view>
+                    <view class="nrtimelist">{{item.CanUseProduct }}</view>
+                </view>
+
+                <view class="nrtimelqan">
+                    <view class="nrtimelist-con">
+                        <view class="nrtimelist">
+                            <view class="dian">■</view>
+                            <view>{{item.LimitText}}</view>
+                        </view>
+                        <view class="nrtimelist" wx:if="{{item.Remark}}">
+                            <view class="dian">■</view>
+                            <view>{{item.Remark}}</view>
+                        </view>
+                        <view class="nrtimelist">
+                            <view class="dian">■</view>
+                            <view>{{item.StartTimeText}}-{{item.ClosingTimeText}}</view>
+                        </view>
+                    </view>
+                    <button id="{{item.CouponId}}" bindtap="getCoupon">领取</button>
+                </view>
+
+            </view>
+        </block>
+    </view>
+</view>
+
+<!--优惠活动-->
+<view class="lqyhq {{promoteShow?'':'active'}}">
+    <view class="lqyhqtitle">
+        <text>优惠活动</text>
+        <view class="guigecha" bindtap="onPromoteHide">
+            <view class="iconfont icon-close1 font40"></view>
+        </view>
+    </view>
+    <view class="promote_con">
+        <view class="promote_item" wx:if="{{Promotes.FreeFreight}}">
+            <view class="promote_item1">
+                <view class="houhui_name font24">满额包邮</view>
+            </view>
+            <text>满￥{{Promotes.FreeFreight}}免运费</text>
+        </view>
+        <view class="promote_item clearfix" wx:if="{{FullDiscount}}">
+            <view class="promote_item1">
+                <view class="houhui_name font24">满额减</view>
+            </view>
+            <view class='content'>
+                <view wx:for="{{FullDiscount.Rules}}" wx:key="item">满￥{{item.Quota}}减￥{{item.Discount}};</view>
+            </view>
+
+        </view>
+        <!--<block wx:for="{{Promotes.FullAmountSentGiftList}}" wx:key="ActivityId">
+            <view class="promote_item">
+                <view class="promote_item1">
+                    <view class="houhui_name font24">满额送</view>
+                </view>
+                <text>{{item.ActivityName}}</text>
+            </view>
+        </block>-->
+
+    </view>
+</view>
+
+<!--选择规格-->
+<view class="lqyhq skuchoose {{SkuShow?'':'active'}}">
+    <view class="positionre">
+        <view class="guige">
+            <image src="{{skuImg}}" class="lqicon guigeimg" mode="aspectFill"></image>
+            <view class="guigecont">
+                <view class="saleprice">￥
+                    <text>{{skuPrice}}</text>
+                </view>
+
+                <view class="guigeyxhs" hidden="{{SkuItemList==''||SkuItemList.length==0}}">已选：{{selectedSkuContent}}</view>
+            </view>
+            <view class="guigecha" bindtap="onSkuHide">
+                <view class="iconfont icon-close1 font40"></view>
+            </view>
+        </view>
+        <view class="nronggaodu">
+            <block wx:for="{{SkuItemList}}" wx:for-index="parentindex" wx:key="{{parentindex}}">
+                <view class="sezhi">
+                    <view class="sezhititle font28 line_height40">{{item.AttributeName}}</view>
+                    <view class="sezhicont mt8">
+                        <text wx:for='{{item.AttributeValue}}' wx:for-item="sku" wx:key="{{index}}" bindtap='{{sku.disabled?"":"swithSku"}}' class='{{sku.ValueId==skuArr[item.AttributeIndex+1]?"SKUSelectValueClass":""}} {{sku.disabled?"disabled":""}}' data-id='{{sku.ValueId}}' data-index='{{item.AttributeIndex}}'
+                            data-parentindex="{{parentindex}}" data-imgurl="{{sku.ImageUrl}}" data-skuvalue="{{sku.Value}}">{{sku.Value}}</text>
+                    </view>
+                </view>
+            </block>
+            <view class="sezhi_last_child" hidden="{{SkuItemList==''||SkuItemList.length==0}}"></view>
+            <view class="goumaisl">
+                <text>数量</text>
+                <view class="goumkuang">
+                    <view class="jian" bindtap="reduceAmount">
+                        <view class="iconfont icon-minus_L  font24"></view>
+                    </view>
+                    <input placeholder="{{buyAmount}}" value="{{buyAmount}}" bindinput="changeAmount" bindconfirm="changeAmount" type="number" />
+                    <view class="jia" bindtap="addAmount">
+                        <view class="iconfont icon-plus_L  font24"></view>
+                    </view>
+                </view>
+                <view hidden="{{!skuStock}}" class="guigeconkc">库存 {{skuStock}}</view>
+                <view class="ml16 mt5" wx:if="{{MaxBuyCount>0}}">(限购{{MaxBuyCount}}件)</view>
+            </view>
+            <view class="sezhi_last_child" hidden="{{SkuItemList.length==0}}"></view>
+        </view>
+        <button class="lijigoumai" data-option="buy" bindtap="doCommit">确认</button>
+    </view>
+</view>
+<view class="goTop" bindtap="goTop" hidden="{{gotopVal}}">
+    <view class="iconfont icon-gotop"></view>
+</view>

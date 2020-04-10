@@ -1,0 +1,60 @@
+<block wx:if="{{myStoreInfo}}">
+  <view class='header'>
+    <image mode='aspectFill' class='logo' src='{{myStoreInfo.ShopLogo}}'></image>
+    <view class='title'>{{myStoreInfo.ShopName}}
+      <text wx:if='{{myStoreInfo.GradeName}}'>{{myStoreInfo.GradeName}}</text>
+    </view>
+    <view class='des' wx:if='{{myStoreInfo.NextGradeName&&myStoreInfo.NextGradeName.length>0}}'>再获得
+      <text>{{myStoreInfo.UpgradeNeedAmount}}</text> 元{{myStoreInfo.DistributorRenameBrokerage}}升级为
+      <text>{{myStoreInfo.NextGradeName}}</text>
+    </view>
+    <button class='share_store' open-type='share'>{{myStoreInfo.DistributorRenameSpreadShop}}</button>
+  </view>
+
+  <view class='flex_container'>
+    <view class='flex_item'>
+      <view class='amount'>
+        ￥
+        <text>{{myStoreInfo.NoSettlementAmount}}</text>
+      </view>
+      <view class='description'>未结算</view>
+    </view>
+    <view class='flex_item'>
+      <view class='amount'>
+        ￥
+        <text>{{myStoreInfo.SettlementAmount}}</text>
+      </view>
+      <view class='description'>历史赚取</view>
+    </view>
+    <view class='flex_item'>
+      <view class='amount'>
+        ￥
+        <text>{{myStoreInfo.Balance}}</text>
+      </view>
+      <view class='description'>可提现</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='list_item' bindtap='bindDistributionMarket'>
+      <image src='../../images/store_icon1.png'></image>
+      <text>{{myStoreInfo.DistributorRenameMarket}}</text>
+    </view>
+    <view class='list_item' bindtap='bindMyStoreOrder'>
+      <image src='../../images/store_icon2.png'></image>
+      <text>{{myStoreInfo.DistributorRenameShopOrder}}</text>
+    </view>
+    <view class='list_item' bindtap='bindMycommision'>
+      <image src='../../images/store_icon3.png'></image>
+      <text>{{myStoreInfo.DistributorRenameMyBrokerage}}</text>
+    </view>
+    <view class='list_item' bindtap='bindMySubordinates'>
+      <image src='../../images/store_icon4.png'></image>
+      <text>{{myStoreInfo.DistributorRenameMySubordinate}}</text>
+    </view>
+    <view class='list_item' bindtap='bindMyStoreSetting'>
+      <image src='../../images/store_icon5.png'></image>
+      <text>{{myStoreInfo.DistributorRenameShopConfig}}</text>
+    </view>
+  </view>
+</block>

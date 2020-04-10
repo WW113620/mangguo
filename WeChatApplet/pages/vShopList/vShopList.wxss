@@ -1,0 +1,85 @@
+.list_item{
+    margin-top: 24rpx;
+    height: 176rpx;
+    background: #fff;
+    padding: 24rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.list_item .img{
+    height: 128rpx;
+    width: 128rpx;
+    float: left;
+    position: relative;
+    margin-right: 16rpx;
+}
+
+.list_item .img .recommend{
+    height: 56rpx;
+    width: 56rpx;
+    position: absolute;
+    z-index: 1;
+}
+
+.list_item .img .icon{
+    height: 100%;
+    width: 100%;
+}
+
+.list_item .title view{
+    line-height: 48rpx;
+    height: 48rpx;
+    width: 486rpx;
+    color: #212121;
+    font-size: 32rpx;
+    font-weight: bold;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.list_item .title image{
+    width: 44rpx;
+    height: 40rpx;
+    float: right;
+    margin-top: 2rpx;
+}
+
+.list_item .count{
+    line-height: 40rpx;
+    color: #747474;
+    font-size: 24rpx;
+}
+
+.list_item .count text{
+    color: #fb1438;
+}
+
+.list_item .officialrun text{
+    color: #fff;
+    font-size: 20rpx;
+    height: 28rpx;
+    line-height: 48rpx;
+    padding: 0 8rpx;
+    background: #fb1438;
+    margin-top: 6rpx;
+    border-radius: 3rpx;
+    margin-right: 16rpx;
+}
+
+.list_item .iconfont{
+    color: #747474;
+    font-size: 43rpx;
+    line-height: 91rpx;
+    width: 91rpx;
+    height: 91rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+}
+
+.list_item .iconfont.icon-love{
+    color: #fb1438;
+}

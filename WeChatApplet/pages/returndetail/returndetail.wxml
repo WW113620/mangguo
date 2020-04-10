@@ -1,0 +1,162 @@
+<!--returndetail.wxml-->
+<view class="returndetail">
+
+    <view class="returndetail-con">
+
+        <view class="item">
+            <view class="hd">
+                <view class="num">售后编号：
+                    <text class="font-arial">{{RefundInfo.ReturnId}}</text>
+                </view>
+                <view class="state">{{RefundInfo.StatusText}}</view>
+                <view class="state" hidden="{{!(RefundInfo.CanResetActive && !RefundInfo.IsOrderRefundTimeOut && RefundInfo.Status==4)}}">
+                    <navigator url="../ApplyReturns/ApplyReturns?orderid={{RefundInfo.OrderId}}&skuId={{RefundInfo.SkuId}}&pro={{RefundInfo.ProductInfo[0].ProductName}}&returnId={{RefundInfo.ReturnId}}">【激活售后】</navigator>
+                </view>
+            </view>
+            <view class="bd">
+                <block wx:for="{{RefundInfo.ProductInfo}}">
+                    <view class="comm" data-productid="{{item.ProductId}}" bindtap="goToProductDetail">
+                        <view class="pic">
+                            <image src="{{item.ThumbnailsUrl}}"></image>
+                        </view>
+                        <view class="info">
+                            <view class="name">{{item.ProductName}}</view>
+                            <view class="para">{{item.SKUContent}}</view>
+                        </view>
+                        <view class="price">
+                            <view class="sell">¥
+                                <text class="font-arial">{{item.Price}}</text>
+                            </view>
+                            <view class="num">×
+                                <text class="font-arial">{{item.Quantity}}</text>
+                            </view>
+                        </view>
+                    </view>
+                </block>
+            </view>
+            <view class="fd">
+                <view class="li">
+                    <view class="title">订单编号：</view>
+                    <view class="con">
+                        <text class="font-arial">{{RefundInfo.OrderId}}</text>
+                    </view>
+                </view>
+                <view class="li">
+                    <view class="title">退款理由：</view>
+                    <view class="con">{{RefundInfo.Reason}}</view>
+                </view>
+                <view class="li">
+                    <view class="title">退款说明：</view>
+                    <view class="con">{{RefundInfo.Remark==null?"":RefundInfo.Remark}}</view>
+                </view>
+                <view class="li">
+                    <view class="title">联系人：</view>
+                    <view class="con">{{RefundInfo.ContactPerson}}</view>
+                </view>
+                <view class="li">
+                    <view class="title">联系方式：</view>
+                    <view class="con">{{RefundInfo.ContactCellPhone}}</view>
+                </view>
+                <view class="li" hidden="{{RefundInfo.IsOnlyRefund}}">
+                    <view class="title">退货数量：</view>
+                    <view class="con">
+                        <text class="font-arial">{{RefundInfo.Quantity}}</text>
+                    </view>
+                </view>
+                <view class="li">
+                    <view class="title">退款金额：</view>
+                    <view class="con">¥
+                        <text class="font-arial">{{RefundInfo.RefundMoney}}</text>
+                    </view>
+                </view>
+                <view class="li">
+                    <view class="title">退款方式：</view>
+                    <view class="con">{{RefundInfo.RefundType}}</view>
+                </view>
+                <view class="li" hidden="{{Credentials.length<=0}}">
+                    <view class="title">售后凭证：</view>
+                    <view class="con"></view>
+                </view>
+                <view class="li2" wx:for="{{Credentials}}">
+                    <image src="{{item}}" bindtap="prevImage" data-src="{{item}}" />
+                </view>
+            </view>
+            <view class="fd">
+                <view class="customer" bindtap="ExpendProgress">
+                    <view class="title">售后进度</view>
+                    <view class="con iconfont icon-more icon-arrow_down {{!isExpend?'rotate':''}} font48">
+
+                    </view>
+                </view>
+                <view class="schedule" hidden="{{!isExpend}}">
+                    <view class="dl">
+                        <view wx:if="{{ProgressStatue.SellerAuditStatusValue==5}}" class="dd">
+                            <view class="lis">
+                                <view class='top clearfix'>
+                                    <text class="time">{{ProgressStatue.ManagerConfirmDate}}</text>
+                                    <text class='fr'>平台</text>
+                                </view>
+                                <view class='name'>{{ProgressStatue.ManagerConfirmStatus}}</view>
+                                <view wx:if="{{ProgressStatue.ManagerRemark}}" class="remark">备注{{ProgressStatue.ManagerRemark?ProgressStatue.ManagerRemark:''}}</view>
+                            </view>
+                        </view>
+                        <view wx:if="{{ProgressStatue.SellerConfirmArrivalDate&&ProgressStatue.SellerAuditStatusValue>3}}" class="dd">
+                            <view class="lis">
+                                <view class='top clearfix'>
+                                    <text class="time">{{ProgressStatue.SellerConfirmArrivalDate}}</text>
+                                    <text class='fr'>商家</text>
+                                </view>
+                                <view class='name'>商家确认收货</view>
+                            </view>
+                        </view>
+                        <view wx:if="{{ProgressStatue.BuyerDeliverDate&&ProgressStatue.SellerAuditStatusValue>2}}" class="dd">
+                            <view class="lis">
+                                <view class='top clearfix'>
+                                    <text class="time">{{ProgressStatue.BuyerDeliverDate}}</text>
+                                    <text class='fr'>买家</text>
+                                </view>
+                                <view class='name'>买家回寄商品</view>
+                                <view class="remark">备注: {{ProgressStatue.ExpressCompanyName?ProgressStatue.ExpressCompanyName:''}} {{ProgressStatue.ShipOrderNumber?ProgressStatue.ShipOrderNumber:''}}</view>
+                            </view>
+                        </view>
+                        <view wx:if="{{ProgressStatue.SellerAuditStatusValue!=1}}" class="dd">
+                            <view class="lis">
+                                <view class='top clearfix'>
+                                    <text class="time">{{ProgressStatue.SellerAuditDate}}</text>
+                                    <text class='fr'>商家</text>
+                                </view>
+                                <view wx:if="{{ProgressStatue.SellerAuditStatusValue==4}}" class='name'>{{ProgressStatue.SellerAuditStatus}}</view>
+                                <view wx:else class='name'>商家同意退款{{ProgressStatue.isDiscard?'并弃货':''}}</view>
+                                <view class="remark">{{ProgressStatue.SellerRemark?ProgressStatue.SellerRemark:''}}</view>
+                            </view>
+                        </view>
+                        <view class="dd">
+                            <view class="lis">
+                                <view class='top clearfix'>
+                                    <text class="time">{{ProgressStatue.ApplyForTime}}</text>
+                                    <text class='fr'>系统</text>
+                                </view>
+                                <view class='name'>您的服务单已申请成功，待商家审核中</view>
+                            </view>
+                        </view>
+                        <block wx:for="{{ProgressStatue.RefundLogs}}">
+                            <view class="dd">
+                                <view class="lis">
+                                    <view class='top clearfix'>
+                                        <text class="time">{{item.ShowOperateDate}}</text>
+                                        <text class='fr'>{{item.Operator}}</text>
+                                    </view>
+                                    <view class='name'>{{item.OperateContent}}</view>
+                                </view>
+                            </view>
+                        </block>
+                    </view>
+                </view>
+            </view>
+            <view class="comment-btn" hidden="{{RefundInfo.Status!=2}}">
+                <button form-type="submit" class="btn-confirm" bindtap="SendGood" data-id="{{RefundInfo.ReturnId}}" data-skuid="{{RefundInfo.SkuId}}">退货发货</button>
+            </view>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,174 @@
+/* pages/chooseAddress/chooseaddr.wxss */
+page{
+    background:#f0f0f0;
+}
+.search-box {
+    height: 64rpx;
+    line-height: 56rpx;
+    padding: 0 24rpx 24rpx 24rpx;
+    background-color: #fb1438;
+    color: #fff;
+}
+
+.search {
+    width: 560rpx;
+    height: 64rpx;
+    line-height: 64rpx;
+    border-radius: 32rpx;
+    background-color: #e00022;
+    font-size: 28rpx;
+    float: right;
+    padding: 0 17rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.search .icon-clear{
+    position: absolute;
+    right: 0;
+    width: 48rpx;
+}
+
+.search .icon-searchempty {
+    margin-right: 16rpx;
+    float: left;
+}
+
+.search input {
+    height: 64rpx;
+    line-height: 64rpx;
+    float: left;
+    width: 446rpx;
+}
+
+.search-box .city {
+    display: inline-block;
+    width: 124rpx;
+    font-size: 32rpx;
+    vertical-align: middle;
+    position: relative;
+    padding-right: 20rpx;
+    box-sizing: border-box;
+}
+
+.showall .icon-down {
+    position: relative;
+}
+
+.icon-down {
+    position: absolute;
+    right: 0;
+}
+
+.title {
+    padding: 30rpx 24rpx 16rpx 24rpx;
+    background-color: #f0f0f0;
+    font-size: 28rpx;
+    color: #515151;
+    line-height:46rpx;
+}
+
+.currentAddr .bg-white {
+    padding: 24rpx;
+    font-size: 32rpx;
+    color: #212121;
+    line-height: 48rpx;
+}
+
+.currentAddr .addrtxt {
+    width: 68%;
+    display: inline-block;
+}
+
+.currentAddr .btn {
+    float: right;
+    font-size: 28rpx;
+}
+
+.deliverAddr .title .fr {
+    float: right;
+    font-size: 28rpx;
+}
+
+.deliverAddr .bg-white, .aroundAddr .bg-white {
+    padding: 0 24rpx;
+}
+
+.deliverAddr .showall {
+    height: 64rpx;
+    line-height: 64rpx;
+    background-color: #f7f7f7;
+    font-size: 28rpx;
+    color: #bdbdbd;
+    text-align: center;
+}
+
+.addr-li {
+    padding: 24rpx 0;
+}
+
+.addr-li:not(:last-child) {
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.addr-li .name {
+    font-size: 32rpx;
+    color: #212121;
+    line-height: 48rpx;
+}
+
+.addr-li .detail {
+    font-size: 28rpx;
+    color: #747474;
+    margin-top: 8rpx;
+}
+
+
+
+.icon-position {
+    color: #03a9f4;
+    vertical-align: bottom;
+    margin-right: 16rpx;
+    position: relative;
+    top: 2rpx;
+}
+
+.icon-add {
+    font-size: 32rpx;
+    color: #03a9f4;
+    margin-right: 16rpx;
+    position:relative;
+    top:2rpx;
+}
+
+.disabled {
+    color: #bdbdbd;
+}
+
+.notLogin {
+    padding: 24rpx;
+    font-size: 28rpx;
+    color: #212121;
+    background-color: #fff;
+}
+
+.notLogin .fr {
+    color: #03a9f4;
+}
+
+.deliverAddr .bg-white .addr-li {
+    display: none;
+}
+
+.deliverAddr .bg-white.active .addr-li {
+    display: block;
+}
+
+.deliverAddr .bg-white .addr-li:first-child,
+.deliverAddr .bg-white .addr-li:nth-child(2) {
+    display: block;
+}
+
+picker-view-column {
+    text-align: center;
+}

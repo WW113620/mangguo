@@ -1,0 +1,72 @@
+<!--pages/chooseAddress/chooseaddr.wxml-->
+<view class="container">
+    <view class='search-box'>    
+        <view class='city text-overflow' bindtap="bindAddressTap">{{cityname}} <text class='iconfont icon-down'></text></view>    
+        <view class="search">
+            <text class='iconfont icon-searchempty' catchtap='searchKeyword'></text>
+            <input class="text" type="text" focus="true" bindinput="onInputKeyword" bindconfirm="searchKeyword" confirm-type="search" placeholder-style="color:#fff" placeholder="请输入地址" value='{{KeyWord}}'></input>
+            <text class='iconfont icon-clear' catchtap='clearKeyword'></text>
+        </view>
+    </view>
+    <view class='currentAddr'>
+        <view class='title'>当前地址</view>
+        <view class='bg-white'>
+            <view class="addrtxt {{fromLatLng?'':'disabled'}}">{{location}}</view>
+            <view class='btn' bindtap='reGetLocation'><text class='iconfont icon-position'></text><text class='relo'>重新定位</text></view>
+        </view>
+    </view>
+    <view class='aroundAddr' hidden="{{!showSearch}}">
+        <view class='title'>搜索结果</view>
+        <view class='bg-white'>
+            <view class='addr-li' wx:for="{{searchList}}" wx:key="{{index}}" data-fromLatLng="{{item.location.lat}},{{item.location.lng}}" bindtap='setAddr'>
+                <view class='name'>{{item.title}}</view>
+                <view class='detail'>{{item.address}}</view>
+            </view>           
+        </view>
+    </view>
+    <view class='deliverAddr'>
+        <view class='title'>收货地址<view wx:if="{{isLogin}}" class='fr' catchtap='goAddAddr'><text class='iconfont icon-add'></text>新增地址</view></view>
+        <view class='notLogin' wx:if="{{!isLogin}}">
+            <text class="disabled">未登录,无法获取地址信息</text>
+            <text class='fr' bindtap="goLogin">去登录</text>
+        </view>
+        <view class='notLogin' wx:if="{{deliverAddrList.length==0}}">
+            <text class="disabled">暂无收货地址</text>
+        </view>
+        <view class="bg-white {{isShowAll?'active':''}}" wx:if="{{deliverAddrList.length>0}}">
+            <view class='addr-li' wx:for="{{deliverAddrList}}" data-fromLatLng="{{item.LatLng}}" bindtap='setAddr'>
+                <view class='name'>{{item.FullAddress}}</view>
+                <view class='detail'>{{item.ShipTo}}, {{item.CellPhone}}</view>
+            </view>
+        </view>
+        <view wx:if="{{deliverAddrList.length>2}}" class='showall' hidden="{{!isLogin||isShowAll}}" bindtap="setShowAll">展开所有地址 <text class='iconfont icon-down'></text></view>
+    </view>
+    <view class='aroundAddr' hidden="{{showSearch}}">
+        <view class='title'>附近地址</view>
+        <view class='bg-white'>
+            <view class='addr-li' wx:for="{{aroundAddrList}}" data-fromLatLng="{{item.location.lat}},{{item.location.lng}}" bindtap='setAddr'>
+                <view class='name'>{{item.title}}</view>
+                <view class='detail'>{{item.address}}</view>
+            </view>           
+        </view>
+    </view>
+</view>
+<block wx:if="{{showDistpicker}}" wx:key="show-picker">
+  <view class="distpicker {{showDistpicker ? '' : 'hidden'}}">
+    <view class="distpicker-btn">
+      <view class="distpicker-cancel-btn" bindtap="distpickerCancel">取消</view>
+      <view class="distpicker-sure-btn" catchtap="distpickerSure">确定</view>
+    </view>
+    <picker-view indicator-style="height: 40px;" class="distpicker-content" value="{{value}}" bindchange="changeArea">
+      <!-- 省 -->
+      <picker-view-column>
+        <view wx:for="{{provinceName}}" wx:key="province" class="area-item">{{item}}</view>
+      </picker-view-column>
+      <!-- 市 -->
+      <picker-view-column>
+        <view wx:for="{{cityName}}" wx:key="city" class="area-item">{{item}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</block>
+<view class="mask" catchtap="distpickerCancel" hidden="{{!showDistpicker}}"></view>

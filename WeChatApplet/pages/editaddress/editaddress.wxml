@@ -1,0 +1,82 @@
+<!--pages/raiseaddress/raiseaddress.wxml-->
+<view class="container">
+    <view hidden='{{isHidePage1}}' class='page1' style="transform:translate({{currentPage=='page1'?0:100}}%, 0%) translateZ(0px);">
+        <view class='middle-info'>
+            <view class="hdonglist">
+                <text class='label'>收货人</text>
+                <input placeholder-class="placeholderColor" bindinput="bindShipToTap" placeholder="请填写收货人姓名" value="{{addressData.ShipTo}}" type="text" />
+            </view>
+            <view class="hdonglist">
+                <text class='label'>联系电话</text>
+                <input placeholder-class="placeholderColor" bindinput="bindCellPhoneTap" maxlength="11" placeholder="请填写联系方式" value="{{cellPhone}}" type="number" />
+            </view>
+            <view class="hdonglist rightarrow">
+                <text class='label'>所在地区</text>
+                <view class='inputText' catchtap="bindFullAddressTap" class="{{FullRegionName?'':'grayColr'}}">{{FullRegionName?FullRegionName:'选择省、市、区/街道'}}</view>
+            </view>
+            <view class="hdonglist rightarrow">
+                <text class='label'>详细地址</text>
+                <view class='inputText' catchtap="bindDetailAddressTap" class="{{detailAddress?'':'grayColr'}}">{{detailAddress?detailAddress:'请输入所在小区/大厦/学校'}}</view>
+            </view>
+            <view class="hdonglist">
+                <text class='label'>楼牌号</text>
+                <input placeholder-class="placeholderColor" bindinput="bindInputBuilding" placeholder="请输入楼号/门牌号" value="{{building}}" type="text" />
+            </view>
+        </view>
+        <view class="comment-btn" bindtap="bindSaveTap">
+            <button class="baseRedBgColor btn-confirm">保存收货地址</button>
+        </view>
+    </view>
+    <view hidden='{{!isHidePage1}}' class='page2' style="transform:translate({{currentPage=='page2'?0:100}}%, 0%) translateZ(0px);">
+        <view class="hdonglist">
+            <text class='label'>详细地址</text>
+            <input placeholder-class="placeholderColor" focus='{{showPage2}}' bindinput="searchKeyword" placeholder="请输入所在小区/大厦/学校" value="{{detailAddress}}" type="text" />
+            <text class='iconfont icon-clear' catchtap='delDetailAddr'></text>
+        </view>
+        <view class='aroundAddr'>
+            <view class='addr-li' wx:for="{{searchList}}"  wx:key="{{index}}" data-name="{{item.title}}" data-lat="{{item.location.lat}}" data-lng="{{item.location.lng}}" data-fromLatLng="{{item.location.lat}},{{item.location.lng}}" bindtap='setAddr'>
+                <text class='iconfont icon-locationempty'></text>
+                <view class='name'>{{item.title}}</view>
+                <view class='detail'>{{item.address}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+
+
+<block wx:if="{{showDistpicker}}" wx:key="show-picker">
+    <view class="distpicker {{showDistpicker ? '' : 'hidden'}}">
+        <view class="distpicker-btn">
+            <view class="distpicker-cancel-btn" bindtap="distpickerCancel">取消</view>
+            <view class="distpicker-sure-btn" catchtap="distpickerSure">确定</view>
+        </view>
+        <view class='distpicker-title'>
+            <view class='distpicker-title-sub'>省</view>
+            <view class='distpicker-title-sub'>市</view>
+            <view class='distpicker-title-sub'>区/县</view>
+            <view class='distpicker-title-sub'>乡/镇</view>
+        </view>
+        <picker-view indicator-style="height: 40px;" class="distpicker-content" value="{{value}}" bindchange="changeArea">
+            <!-- 省 -->
+            <picker-view-column>
+                <view wx:for="{{provinceName}}" wx:key="province" class="area-item">{{item}}</view>
+            </picker-view-column>
+            <!-- 市 -->
+            <picker-view-column>
+                <view wx:for="{{cityName}}" wx:key="city" class="area-item">{{item}}</view>
+            </picker-view-column>
+            <!-- 区 -->
+            <picker-view-column>
+                <view wx:for="{{districtName}}" wx:key="district" class="area-item">{{item}}</view>
+            </picker-view-column>
+            <!--街道 -->
+            <picker-view-column>
+                <view wx:for="{{streetName}}" wx:key="street" class="area-item">{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+</block>
+
+
+<view class="mask" catchtap="distpickerCancel" hidden="{{!showDistpicker}}"></view>
+<view class="message {{showMessage ? 'fade-in' : ''}}" hidden="{{!showMessage}}">{{messageContent}}</view>

@@ -1,0 +1,35 @@
+/* pages/userrecharge/userrecharge.wxss */
+page{
+    background:#f0f0f0;
+}
+.recharge-list{
+    padding: 24rpx;
+}
+.recharge-list .item{
+    text-align: center;
+    line-height: 40rpx;
+    display: inline-block;
+    border: 1rpx solid #ddd;
+    border-radius: 8rpx;
+    background: #fff;
+    color: #212121;
+    padding: 16rpx 0;
+    width: 30%;
+    margin: 16rpx 1.3%;
+    font-size: 24rpx;
+}
+.recharge-list .item .price{
+    font-size: 32rpx;
+}
+.recharge-list .item.active{
+    background: #fb1438;
+    border-color: #fb1438;
+    color: #fff;
+}
+.recharge{
+    padding:0 40rpx;
+}
+.recharge view{
+    color: #747474;
+    margin-top: 16rpx;
+}

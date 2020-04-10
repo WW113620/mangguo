@@ -1,0 +1,39 @@
+<view class='search_container'>
+  <view class='search_bar'>
+    <image src='../../images/icon_search.png'></image>
+    <input type='text' placeholder='搜索分销商品' bindconfirm='bindSearchSubmit'></input>
+  </view>
+</view>
+
+<view class='category'>
+  <view class="category_item" style="{{categoryIndex == index ? 'background: #fff;border-right-color:#fff;' : ''}}" wx:for='{{categories}}' wx:key='{{index}}' data-id='{{item.Id}}' data-index='{{index}}' bindtap='bindCategoryItemTap'>
+    <text style="{{categoryIndex == index ? 'color: #212121;border-left: solid 4rpx #fb1438;' : ''}}">{{item.Name}}</text>
+  </view>
+</view>
+
+<scroll-view bindscrolltolower='bindScrollToLower' scroll-y>
+  <view class='list_item' wx:for='{{products}}' wx:key='{{index}}' bindtap='bindToProductDetail' data-id='{{item.ProductId}}'>
+    <image mode='aspectFill' class='product_img' src='{{item.DefaultImage}}'></image>
+    <view class='des'>
+      <view class='title webkit_box'>{{item.ProductName}}</view>
+      <view class='amount'>¥ {{item.MinSalePrice}}
+        <text>最高赚</text>￥{{item.MaxBrokerage}}</view>
+      <view class='stock'>库存
+        <text>{{item.Stock}}</text> 已分销
+        <text>{{item.SaleCount}}</text>件</view>
+      <button class='share_img' open-type='share' data-id='{{item.ProductId}}' data-title='{{item.ProductName}}' data-imgurl='{{item.DefaultImage}}' catchtap='catchTap'>
+         <image src='../../images/icon_share.png'></image> 
+      </button>
+    </view>
+  </view>
+
+  <view class='no_data' wx:if='{{products.length == 0}}'>
+    <image src='../../images/no_order.png'></image>
+    <view class='title'>暂无商品</view>
+    <view class='des'>没有找到您要找的商品哦</view>
+  </view>
+</scroll-view>
+
+<view class='gotop' bindtap='bindGotop' wx:if='{{showGotop}}'>
+  <text class='iconfont icon-gotop'></text>
+</view>

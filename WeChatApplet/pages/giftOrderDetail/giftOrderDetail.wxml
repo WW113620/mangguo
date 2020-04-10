@@ -1,0 +1,46 @@
+<view class="address-info">
+  <view class="address-outer">
+    <text class="iconfont icon-locate"></text>
+    <view class="infos">
+      <text class="name">{{orderDetail.ShipTo}}，{{orderDetail.CellPhone}}</text>
+      <text class="address"> {{orderDetail.RegionFullName+' ' +orderDetail.Address}}</text>
+    </view>
+    <text class="iconfont icon-arrow_right"></text>
+  </view>
+  <view class="addr-xuanbg">
+    <image src="/images/order_06.jpg"></image>
+  </view>
+</view>
+
+<view class='list'>
+  <view class='list_item'>
+    <view class='order_num'>
+      <text class='iconfont icon-article'></text>{{orderDetail.Id}}
+      <text class='fr'>{{orderDetail.ShowOrderStatus}}</text>
+    </view>
+    <view class='inner_list_item' wx:for='{{orderDetail.Items}}' wx:key='index'>
+      <image mode='aspectFit' src='{{item.DefaultImage}}'></image>
+      <view class='title webkit_box fl'>{{item.GiftName}}</view>
+      <view class='amount fr'>
+        <text>{{item.SaleIntegral + '积分'}}</text>
+        <text>{{'×' + item.Quantity}}</text>
+      </view>
+    </view>
+    <view class='amount'>
+      共{{orderDetail.Items[0].Quantity}}件礼品 花费积分：
+      <text>{{orderDetail.TotalIntegral}}</text>
+    </view>
+    <view class='more_operation' wx:if='{{orderDetail.OrderStatus == 3}}'>
+      <text class='confirm_order' bindtap='bindConfirmOrder' data-id='{{orderDetail.Id}}'>确认收货</text>
+      <text class='express' data-id='{{orderDetail.Id}}' bindtap='bindShowLogistics'>查看物流</text>
+    </view>
+  </view>
+</view>
+
+<view class='express'>
+  <view class='express_item'>兑换时间：{{orderDetail.OrderDateStr}}</view>
+  <block wx:if='{{orderDetail.OrderStatus == 3 || orderDetail.OrderStatus == 5}}'>
+    <view class='express_item'>运单号码：{{orderDetail.ShipOrderNumber}}</view>
+    <view class='express_item'>物流公司：{{orderDetail.ShowExpressCompanyName}}</view>
+  </block>
+</view>

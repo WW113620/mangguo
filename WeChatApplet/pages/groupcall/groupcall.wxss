@@ -1,0 +1,39 @@
+/* pages/groupcall/groupcall.wxss */
+.merge-empty{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    text-align: center
+}
+.merge-empty image{
+    margin: 0 auto;
+    height: 580rpx;
+    width: 500rpx;
+}
+.merge-empty .p{
+    margin-top: 48rpx;
+    color: #212121;
+}
+
+.merge-empty .btn{
+    background: #fb1438;
+    color: #fff;
+    border-radius: 12rpx;
+    box-shadow: 0px 2px 2px rgba(240, 120, 129, .5);
+    padding: 16rpx 64rpx;
+    margin-top: 48rpx;
+    display: inline-block;
+    font-size: 32rpx;
+}
+.merge-empty .btn button{
+    background: transparent;
+    padding: 0;
+    height: auto;
+    color: #fff;
+    border: 0;
+    font-size: inherit;
+    line-height: inherit;
+}

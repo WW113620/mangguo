@@ -1,0 +1,22 @@
+<!--pages/userIntegral/userIntegral.wxml-->
+<view class="container">
+  <view class='integral_order' bindtap='bindGiftsOrder'>礼品兑换记录</view>
+  <view class='asset-total'>
+    {{integral}}
+    <view>分</view>
+  </view>
+  <view class='asset-list {{isEnd?"isEnd":""}}'>
+    <view class='item' wx:for='{{list}}' wx:key="{{index}}">
+      <view class='info clearfix'>
+        <view class='fl'>
+          <text class='text'>{{item.TypeName}}</text>
+          <text class='price'>{{item.Integral>0?"+":""}}{{item.Integral}}</text>
+        </view>
+        <view class='fr time'>{{item.RecordDate}}</view>
+      </view>
+      <view class='desc' wx:if='{{item.ReMark}}'>
+        {{(item.TypeName=="其他" || item.TypeName=="积分抵扣")?"":"订单号"}}{{item.ReMark}}
+      </view>
+    </view>
+  </view>
+</view>

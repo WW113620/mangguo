@@ -1,0 +1,31 @@
+<view class='list_item' wx:for='{{vshopList}}' wx:key='{{index}}'>
+    <view bindtap='bindVshop' class='info_wrapper' data-shopid='{{item.VShopId}}'>
+        <view class='img'>
+            <image wx:if='{{item.Success}}' class='recommend' src='../../images/recommend.png'></image>
+            <image mode='aspectFit' class='icon' src='{{item.ShopLogo}}'></image>
+        </view>
+        <view class='title'>
+            <view>{{item.ShopName}}</view>
+        </view>
+        <view class='count'>
+            宝贝数
+            <text>{{item.productCount}}</text>　|　关注度
+            <text>{{item.FavoritesCount}}</text>
+        </view>
+        <view class='officialrun'>
+            <text wx:if='{{item.Tag1.length>0}}'>{{item.Tag1}}</text>
+            <text wx:if='{{item.Tag2.length>0}}'>{{item.Tag2}}</text>
+        </view>
+    </view>
+
+    <view class='iconfont {{item.IsFavorite ? "icon-love":"icon-hollowlove"}}' bindtap='bindFavorite' data-id='{{item.ShopId}}'></view>
+
+    <view class='products' wx:if='{{item.Products.length>0}}'>
+        <image wx:for='{{item.Products}}' wx:for-item='product' src='{{product.ImageUrl}}' bindtap='bindProductDetail' data-id='{{product.Id}}' data-shopid='{{item.ShopId}}'>
+        </image>
+    </view>
+</view>
+
+<view class='more' bindtap='bindMore' wx:if='{{vshopList.length>0}}'>
+    查看更多微店
+</view>

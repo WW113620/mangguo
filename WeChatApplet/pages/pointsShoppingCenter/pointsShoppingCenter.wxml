@@ -1,0 +1,81 @@
+<view class="container {{pageLoaded?'':'transparent'}}">
+    <view class='banner'>
+        <swiper indicator-dots autoplay circular interval="{{4000}}" duration="{{500}}" indicator-color='#424242' indicator-active-color='#fb1438'>
+            <block wx:for="{{indexData.SlideAds}}" wx:key='item'>
+                <swiper-item>
+                    <image src="{{item.ImageUrl}}" class="slide-image" />
+                </swiper-item>
+            </block>
+        </swiper>
+        <view class='help_item' wx:if='{{indexData.HasLogined}}' bindtap='bindUserIntegral'>
+            <view class='icon'>
+                <text class='iconfont icon-star24'></text>
+            </view>
+            <view class='txt has_indicator'>当前积分
+                <text class='points'>{{indexData.MemberAvailableIntegrals}}</text>
+            </view>
+        </view>
+        <view class='help_item' wx:if='{{!indexData.HasLogined}}'>
+            <view class='icon'>?</view>
+            <view class='txt'>登录后查看我的积分
+                <text class='login' bindtap='goLogin'>去登录</text>
+            </view>
+        </view>
+    </view>
+
+    <view class='gifts_group group'>
+        <view class='group_title'>
+            <image src='../../images/flr2.jpg' class='bg_img'></image>
+            <view class='content'>礼品兑换专区</view>
+        </view>
+        <view class='grid'>
+            <view class='grid_item' wx:for='{{indexData.HomeGiftses}}' wx:key='item' data-id='{{item.Id}}' bindtap='bindGiftDetail' data-id='{{item.Id}}'>
+                <image mode='aspectFit' src='{{item.DefaultShowImage}}'></image>
+                <view class='sale-out' wx:if='{{!item.StockQuantity}}'>已兑完</view>
+                <view class='name'>{{item.GiftName}}</view>
+                <view class='points'>
+                    <view class='fl'>
+                        <text>{{item.NeedIntegral}}</text>积分</view>
+                    <view class='fr'>￥{{item.GiftValue}}</view>
+                </view>
+            </view>
+        </view>
+        <view class='more has_indicator' wx:if='{{indexData.HasMoreGifts}}' bindtap='bindMore' data-type='1'>查看更多</view>
+    </view>
+
+    <view class='coupons_group group' wx:if='{{indexData.IntegralCoupons}}'>
+        <view class='group_title'>
+            <image src='../../images/flr2.jpg' class='bg_img'></image>
+            <view class='content'>优惠券兑换区</view>
+        </view>
+        <view class='list'>
+            <view class='list_item' wx:for="{{indexData.IntegralCoupons}}" wx:key='item'>
+                <image mode='aspectFit' class='fl' src='{{item.ShowIntegralCover?item.ShowIntegralCover : "../../images/logo-bg.png"}}'></image>
+                <view class='center fl'>
+                    <view class='store_name'>{{item.ShopName}}</view>
+                    <view class='des webkit_box'>{{item.UseArea == 1 ? item.Remark : '全场通用'}}</view>
+                    <view class='price'>
+                        <text>￥{{item.Price}}</text>{{item.OrderAmount != 0 ? ('满'+item.OrderAmount+'可用') : '无门槛'}}</view>
+                </view>
+                <view class='right fr'>
+                    {{item.NeedIntegral}}分
+                    <button class='status' style="{{item.StockQuantity == 0 ? 'background-color:#e0e0e0;' : 'background-color:#fb1438;'}}" disabled='{{item.StockQuantity == 0}}' bindtap='bindGetUserCoupon' data-item='{{item}}'>{{item.StockQuantity == 0 ? '已兑完' : '兑换'}}</button>
+                </view>
+            </view>
+        </view>
+        <view class='more has_indicator' wx:if='{{indexData.HasMoreIntegralCoupons}}' bindtap='bindMore' data-type='2'>查看更多</view>
+    </view>
+
+    <view class='other_group group'>
+        <view class='group_title'>
+            <image src='../../images/flr3.jpg' class='bg_img'></image>
+            <view class='content'>更多玩法</view>
+        </view>
+        <view class='imgs'>
+            <image src="{{item.ActivityType != 1 ? '../../images/flr3_img1.jpg' : '../../images/flr3_img2.jpg'}}" bindtap='bindOpenUrl' data-url='{{item.LinkUrl}}' wx:for='{{indexData.WeiActives}}' wx:key='type'></image>
+        </view>
+    </view>
+</view>
+<view class='gotop' bindtap='bindGotop' hidden='{{!showGotop}}'>
+    <text class='iconfont icon-gotop'></text>
+</view>
