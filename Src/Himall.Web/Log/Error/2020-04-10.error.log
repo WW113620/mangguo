@@ -1,0 +1,211 @@
+
+
+
+ 记录时间：2020-04-10 13:57:26,959 
+日志级别：  ERROR 
+出错类：Himall.SmallProgAPI.MemberCapitalController.PostCharge  
+错误描述：暂未配置支付方式 
+
+
+
+
+ 记录时间：2020-04-10 14:21:05,281 
+日志级别：  ERROR 
+出错类：Himall.SmallProgAPI.ApiExceptionFilterAttribute.OnException  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+   在 Himall.Service.LimitTimeBuyService.Get(Int64 id) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Market\LimitTimeBuyService.cs:行号 610
+   在 Himall.SmallProgAPI.LimitTimeBuyController.GetLimitBuyProduct(String openId, Int64 countDownId) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.SmallProgAPI\LimitTimeBuyController.cs:行号 78
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+
+ 记录时间：2020-04-10 14:21:32,864 
+日志级别：  ERROR 
+出错类：Himall.SmallProgAPI.ApiExceptionFilterAttribute.OnException  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+   在 Himall.Service.LimitTimeBuyService.Get(Int64 id) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Market\LimitTimeBuyService.cs:行号 610
+   在 Himall.SmallProgAPI.LimitTimeBuyController.GetLimitBuyProduct(String openId, Int64 countDownId) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.SmallProgAPI\LimitTimeBuyController.cs:行号 78
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+
+ 记录时间：2020-04-10 14:22:05,806 
+日志级别：  ERROR 
+出错类：Himall.SmallProgAPI.ApiExceptionFilterAttribute.OnException  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+   在 Himall.Service.LimitTimeBuyService.Get(Int64 id) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Market\LimitTimeBuyService.cs:行号 610
+   在 Himall.SmallProgAPI.LimitTimeBuyController.GetLimitBuyProduct(String openId, Int64 countDownId) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.SmallProgAPI\LimitTimeBuyController.cs:行号 78
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+
+ 记录时间：2020-04-10 14:22:12,806 
+日志级别：  ERROR 
+出错类：Himall.SmallProgAPI.ApiExceptionFilterAttribute.OnException  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+   在 Himall.Service.LimitTimeBuyService.Get(Int64 id) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Market\LimitTimeBuyService.cs:行号 610
+   在 Himall.SmallProgAPI.LimitTimeBuyController.GetLimitBuyProduct(String openId, Int64 countDownId) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.SmallProgAPI\LimitTimeBuyController.cs:行号 78
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+
+ 记录时间：2020-04-10 14:23:30,592 
+日志级别：  ERROR 
+出错类：Himall.SmallProgAPI.ApiExceptionFilterAttribute.OnException  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+   在 Himall.Service.LimitTimeBuyService.Get(Int64 id) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Market\LimitTimeBuyService.cs:行号 610
+   在 Himall.SmallProgAPI.LimitTimeBuyController.GetLimitBuyProduct(String openId, Int64 countDownId) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.SmallProgAPI\LimitTimeBuyController.cs:行号 78
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+
+ 记录时间：2020-04-10 14:24:44,570 
+日志级别：  ERROR 
+出错类：Himall.Service.WXApiService.GetTicket  
+错误描述：请求Ticket出错，强制刷新acess_token 
+
+Senparc.Weixin.Exceptions.ErrorJsonResultException: 微信请求发生错误！错误代码：40013，说明：invalid appid hint: [NKzUqa0887d530]
+   在 Senparc.Weixin.HttpUtility.Get.GetJson[T](String url, Encoding encoding)
+   在 Senparc.Weixin.MP.CommonAPIs.CommonApi.GetToken(String appid, String secret, String grant_type)
+   在 Senparc.Weixin.MP.CommonAPIs.AccessTokenContainer.GetTokenResult(String appId, Boolean getNewToken)
+   在 Senparc.Weixin.MP.CommonAPIs.AccessTokenContainer.GetToken(String appId, Boolean getNewToken)
+   在 Himall.Service.WXApiService.TryGetToken(String appId, String appSecret, Boolean getNewToken) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Weixin\WXApiService.cs:行号 126
+   在 Himall.Service.WXApiService.GetTicket(String appid, String appsecret) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Weixin\WXApiService.cs:行号 79
+
+
+
+ 记录时间：2020-04-10 14:24:46,575 
+日志级别：  ERROR 
+出错类：Himall.Service.WXApiService.GetTicket  
+错误描述：请求Ticket出错，强制刷新acess_token 
+
+Senparc.Weixin.Exceptions.ErrorJsonResultException: 微信请求发生错误！错误代码：40013，说明：invalid appid hint: [bgAWFA0889ha64]
+   在 Senparc.Weixin.HttpUtility.Get.GetJson[T](String url, Encoding encoding)
+   在 Senparc.Weixin.MP.CommonAPIs.CommonApi.GetToken(String appid, String secret, String grant_type)
+   在 Senparc.Weixin.MP.CommonAPIs.AccessTokenContainer.GetTokenResult(String appId, Boolean getNewToken)
+   在 Senparc.Weixin.MP.CommonAPIs.AccessTokenContainer.GetToken(String appId, Boolean getNewToken)
+   在 Himall.Service.WXApiService.TryGetToken(String appId, String appSecret, Boolean getNewToken) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Weixin\WXApiService.cs:行号 126
+   在 Himall.Service.WXApiService.GetTicket(String appid, String appsecret) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Weixin\WXApiService.cs:行号 79
+
+
+
+ 记录时间：2020-04-10 14:24:58,377 
+日志级别：  ERROR 
+出错类：Himall.Service.WXApiService.GetTicket  
+错误描述：请求Ticket出错，强制刷新acess_token 
+
+Senparc.Weixin.Exceptions.ErrorJsonResultException: 微信请求发生错误！错误代码：40013，说明：invalid appid hint: [sy9geA0901e508]
+   在 Senparc.Weixin.HttpUtility.Get.GetJson[T](String url, Encoding encoding)
+   在 Senparc.Weixin.MP.CommonAPIs.CommonApi.GetToken(String appid, String secret, String grant_type)
+   在 Senparc.Weixin.MP.CommonAPIs.AccessTokenContainer.GetTokenResult(String appId, Boolean getNewToken)
+   在 Senparc.Weixin.MP.CommonAPIs.AccessTokenContainer.GetToken(String appId, Boolean getNewToken)
+   在 Himall.Service.WXApiService.TryGetToken(String appId, String appSecret, Boolean getNewToken) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Weixin\WXApiService.cs:行号 126
+   在 Himall.Service.WXApiService.GetTicket(String appid, String appsecret) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Weixin\WXApiService.cs:行号 79
+
+
+
+ 记录时间：2020-04-10 14:24:59,526 
+日志级别：  ERROR 
+出错类：Himall.Service.WXApiService.GetTicket  
+错误描述：请求Ticket出错，强制刷新acess_token 
+
+Senparc.Weixin.Exceptions.ErrorJsonResultException: 微信请求发生错误！错误代码：40013，说明：invalid appid hint: [LYm_Ia09021507]
+   在 Senparc.Weixin.HttpUtility.Get.GetJson[T](String url, Encoding encoding)
+   在 Senparc.Weixin.MP.CommonAPIs.CommonApi.GetToken(String appid, String secret, String grant_type)
+   在 Senparc.Weixin.MP.CommonAPIs.AccessTokenContainer.GetTokenResult(String appId, Boolean getNewToken)
+   在 Senparc.Weixin.MP.CommonAPIs.AccessTokenContainer.GetToken(String appId, Boolean getNewToken)
+   在 Himall.Service.WXApiService.TryGetToken(String appId, String appSecret, Boolean getNewToken) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Weixin\WXApiService.cs:行号 126
+   在 Himall.Service.WXApiService.GetTicket(String appid, String appsecret) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Weixin\WXApiService.cs:行号 79
+
+
+
+ 记录时间：2020-04-10 14:42:40,251 
+日志级别：  ERROR 
+出错类：Himall.Service.Weixin.WXHelper.GetAccessToken  
+错误描述：[WXACT]appId=dsfsd;appSecret=k;微信请求发生错误！错误代码：40013，说明：invalid appid hint: [S.Lpwa09621512] 
+

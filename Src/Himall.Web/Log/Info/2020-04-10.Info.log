@@ -1,0 +1,897 @@
+
+
+
+ 记录时间：2020-04-10 13:54:11,415 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.Alipay.Service 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,468 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.Alipay_App.Service 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,517 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.Alipay_WAP.Service 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,569 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.B2BUnionPay.B2BUnionPay 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,579 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.UnionPay.UnionPay 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,586 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.WeiXinPay.Service 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,595 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.WeiXinPay_App.Service 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,601 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.WeiXinPay_H5.Service 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,609 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.WeiXinPay_Native.WeiXinPay 
+
+
+
+
+ 记录时间：2020-04-10 13:54:11,616 
+日志级别：  INFO  
+出错类：Himall.PaymentPlugin.PaymentBase`1[T].set_WorkDirectory  
+错误描述：set WorkDirectory:Himall.Plugin.Payment.WeiXinPay_SmallProg.Service 
+
+
+
+
+ 记录时间：2020-04-10 13:58:28,176 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1149.9984毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 13:59:50,351 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1161.0019毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:04:54,757 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1136.9966毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:05:07,066 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1132.0004毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:07:21,613 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1149.9995毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:08:24,612 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1173.9934毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:11:30,107 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1136.9984毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:13:58,192 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1168.0059毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:15:59,325 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1207.9998毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:16:28,058 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:60,耗时:1213.9993毫秒
+请求:http://localhost:32223/smallprogapi/Product/GetProductList?shopId=1&shopBranchId=26&shopCategoryId=352&openId=oNTAY0QN18Cq1tvrXix6JDJBwtrI&productid=&pageno=1&pagesize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:16:39,415 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:60,耗时:1142.9991毫秒
+请求:http://localhost:32223/smallprogapi/Product/GetProductList?shopId=1&shopBranchId=26&shopCategoryId=352&openId=oNTAY0QN18Cq1tvrXix6JDJBwtrI&productid=&pageno=1&pagesize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:17:11,449 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1211.9974毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:17:34,829 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1139.9993毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:19:46,896 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1196.9958毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:20:27,810 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:60,耗时:1338.9963毫秒
+请求:http://localhost:32223/smallprogapi/Product/GetProductList?shopId=1&shopBranchId=26&shopCategoryId=352&openId=oNTAY0QN18Cq1tvrXix6JDJBwtrI&productid=&pageno=1&pagesize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:21:05,273 
+日志级别：  INFO  
+出错类：Himall.Service.LimitTimeBuyService.Get  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+
+
+
+ 记录时间：2020-04-10 14:21:32,863 
+日志级别：  INFO  
+出错类：Himall.Service.LimitTimeBuyService.Get  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+
+
+
+ 记录时间：2020-04-10 14:22:05,805 
+日志级别：  INFO  
+出错类：Himall.Service.LimitTimeBuyService.Get  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+
+
+
+ 记录时间：2020-04-10 14:22:12,805 
+日志级别：  INFO  
+出错类：Himall.Service.LimitTimeBuyService.Get  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+
+
+
+ 记录时间：2020-04-10 14:23:21,419 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1209.9984毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:23:30,591 
+日志级别：  INFO  
+出错类：Himall.Service.LimitTimeBuyService.Get  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+
+
+
+ 记录时间：2020-04-10 14:24:44,709 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:83,耗时:5874.9999毫秒
+请求:http://localhost:32223/m-Wap/FightGroup/Detail/104 
+
+
+
+
+ 记录时间：2020-04-10 14:24:58,462 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:83,耗时:1953.9927毫秒
+请求:http://localhost:32223/m-Wap/FightGroup/Detail/104 
+
+
+
+
+ 记录时间：2020-04-10 14:29:52,488 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1265.9992毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:30:22,959 
+日志级别：  INFO  
+出错类：Himall.Web.Framework.Himall404..ctor  
+错误描述：应用程序中的错误。 
+
+Himall.Web.Framework.Himall404: 应用程序中的错误。
+
+
+
+ 记录时间：2020-04-10 14:32:43,800 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1186.0309毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:33:35,310 
+日志级别：  INFO  
+出错类：Himall.Service.LimitTimeBuyService.Get  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+
+
+
+ 记录时间：2020-04-10 14:34:06,724 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1212.0184毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:35:33,378 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1250.998毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:38:50,631 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1185.0142毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:42:54,166 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1312.0189毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:43:04,870 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1228.9968毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:45:23,490 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:62,耗时:1296.9978毫秒
+请求:http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,405 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---sss 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,452 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email2---:?<?xml version="1.0" encoding="utf-8" ?>
+<MessageStatus>
+  <EditPayPassWord>1</EditPayPassWord>
+  <EditLoginPassWord>1</EditLoginPassWord>
+  <OrderCreated>1</OrderCreated>
+  <OrderPay>1</OrderPay>
+  <OrderShipping>1</OrderShipping>
+  <OrderRefundApply>1</OrderRefundApply>
+  <OrderRefundSuccess>1</OrderRefundSuccess>
+  <OrderRefundFail>1</OrderRefundFail>
+  <OrderReturnApply>1</OrderReturnApply>
+  <OrderReturnSuccess>1</OrderReturnSuccess>
+  <OrderReturnFail>1</OrderReturnFail>
+  <FightGroupOpenSuccess>1</FightGroupOpenSuccess>
+  <FightGroupJoinSuccess>1</FightGroupJoinSuccess>
+  <FightGroupFailed>1</FightGroupFailed>
+  <FightGroupSuccess>1</FightGroupSuccess>
+  <SelfTakeOrderPay>1</SelfTakeOrderPay>
+  <AlreadyVerification>1</AlreadyVerification>
+  <VirtualOrderPay>1</VirtualOrderPay>
+  <VirtualAlreadyVerification>1</VirtualAlreadyVerification>
+  <DistributorApply>1</DistributorApply>
+  <DistributorAuditSuccess>1</DistributorAuditSuccess>
+  <DistributorAuditFail>1</DistributorAuditFail>
+  <DistributorNewJoin>3</DistributorNewJoin>
+  <DistributorCommissionPendingSettlement>1</DistributorCommissionPendingSettlement>
+  <DistributorCommissionSettled>1</DistributorCommissionSettled>
+  <MemberWithDrawApply>1</MemberWithDrawApply>
+  <MemberWithDrawSuccess>1</MemberWithDrawSuccess>
+  <MemberWithDrawFail>1</MemberWithDrawFail>
+  <ShopOrderShipping>3</ShopOrderShipping>
+  <ShopDelivering>3</ShopDelivering>
+  <!--<RefundDeliver>1</RefundDeliver>
+  <FindPassWord>1</FindPassWord>
+  <ShopAudited>1</ShopAudited>
+  <ShopHaveNewOrder>3</ShopHaveNewOrder>
+  <ReceiveBonus>3</ReceiveBonus>
+  <LimitTimeBuy>3</LimitTimeBuy>
+  <SubscribeLimitTimeBuy>3</SubscribeLimitTimeBuy>  
+  <SendCouponSuccess>1</SendCouponSuccess>
+  <GetBrokerage>1</GetBrokerage>-->
+</MessageStatus> 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,459 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---eee 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,466 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---sss 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,467 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email2---:?<?xml version="1.0" encoding="utf-8" ?>
+<MessageStatus>
+  <EditPayPassWord>1</EditPayPassWord>
+  <EditLoginPassWord>1</EditLoginPassWord>
+  <OrderCreated>1</OrderCreated>
+  <OrderPay>1</OrderPay>
+  <OrderShipping>1</OrderShipping>
+  <OrderRefundApply>1</OrderRefundApply>
+  <OrderRefundSuccess>1</OrderRefundSuccess>
+  <OrderRefundFail>1</OrderRefundFail>
+  <OrderReturnApply>1</OrderReturnApply>
+  <OrderReturnSuccess>1</OrderReturnSuccess>
+  <OrderReturnFail>1</OrderReturnFail>
+  <FightGroupOpenSuccess>1</FightGroupOpenSuccess>
+  <FightGroupJoinSuccess>1</FightGroupJoinSuccess>
+  <FightGroupFailed>1</FightGroupFailed>
+  <FightGroupSuccess>1</FightGroupSuccess>
+  <SelfTakeOrderPay>1</SelfTakeOrderPay>
+  <AlreadyVerification>1</AlreadyVerification>
+  <VirtualOrderPay>1</VirtualOrderPay>
+  <VirtualAlreadyVerification>1</VirtualAlreadyVerification>
+  <DistributorApply>1</DistributorApply>
+  <DistributorAuditSuccess>1</DistributorAuditSuccess>
+  <DistributorAuditFail>1</DistributorAuditFail>
+  <DistributorNewJoin>3</DistributorNewJoin>
+  <DistributorCommissionPendingSettlement>1</DistributorCommissionPendingSettlement>
+  <DistributorCommissionSettled>1</DistributorCommissionSettled>
+  <MemberWithDrawApply>1</MemberWithDrawApply>
+  <MemberWithDrawSuccess>1</MemberWithDrawSuccess>
+  <MemberWithDrawFail>1</MemberWithDrawFail>
+  <ShopOrderShipping>3</ShopOrderShipping>
+  <ShopDelivering>3</ShopDelivering>
+  <!--<RefundDeliver>1</RefundDeliver>
+  <FindPassWord>1</FindPassWord>
+  <ShopAudited>1</ShopAudited>
+  <ShopHaveNewOrder>3</ShopHaveNewOrder>
+  <ReceiveBonus>3</ReceiveBonus>
+  <LimitTimeBuy>3</LimitTimeBuy>
+  <SubscribeLimitTimeBuy>3</SubscribeLimitTimeBuy>  
+  <SendCouponSuccess>1</SendCouponSuccess>
+  <GetBrokerage>1</GetBrokerage>-->
+</MessageStatus> 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,469 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---eee 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,529 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageContentConfig  
+错误描述：email2---sss 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,546 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageContentConfig  
+错误描述：email2---eee 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,681 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---sss 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,682 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email2---:?<?xml version="1.0" encoding="utf-8" ?>
+<MessageStatus>
+  <EditPayPassWord>1</EditPayPassWord>
+  <EditLoginPassWord>1</EditLoginPassWord>
+  <OrderCreated>1</OrderCreated>
+  <OrderPay>1</OrderPay>
+  <OrderShipping>1</OrderShipping>
+  <OrderRefundApply>1</OrderRefundApply>
+  <OrderRefundSuccess>1</OrderRefundSuccess>
+  <OrderRefundFail>1</OrderRefundFail>
+  <OrderReturnApply>1</OrderReturnApply>
+  <OrderReturnSuccess>1</OrderReturnSuccess>
+  <OrderReturnFail>1</OrderReturnFail>
+  <FightGroupOpenSuccess>1</FightGroupOpenSuccess>
+  <FightGroupJoinSuccess>1</FightGroupJoinSuccess>
+  <FightGroupFailed>1</FightGroupFailed>
+  <FightGroupSuccess>1</FightGroupSuccess>
+  <SelfTakeOrderPay>1</SelfTakeOrderPay>
+  <AlreadyVerification>1</AlreadyVerification>
+  <VirtualOrderPay>1</VirtualOrderPay>
+  <VirtualAlreadyVerification>1</VirtualAlreadyVerification>
+  <DistributorApply>1</DistributorApply>
+  <DistributorAuditSuccess>1</DistributorAuditSuccess>
+  <DistributorAuditFail>1</DistributorAuditFail>
+  <DistributorNewJoin>3</DistributorNewJoin>
+  <DistributorCommissionPendingSettlement>1</DistributorCommissionPendingSettlement>
+  <DistributorCommissionSettled>1</DistributorCommissionSettled>
+  <MemberWithDrawApply>1</MemberWithDrawApply>
+  <MemberWithDrawSuccess>1</MemberWithDrawSuccess>
+  <MemberWithDrawFail>1</MemberWithDrawFail>
+  <ShopOrderShipping>3</ShopOrderShipping>
+  <ShopDelivering>3</ShopDelivering>
+  <!--<RefundDeliver>1</RefundDeliver>
+  <FindPassWord>1</FindPassWord>
+  <ShopAudited>1</ShopAudited>
+  <ShopHaveNewOrder>3</ShopHaveNewOrder>
+  <ReceiveBonus>3</ReceiveBonus>
+  <LimitTimeBuy>3</LimitTimeBuy>
+  <SubscribeLimitTimeBuy>3</SubscribeLimitTimeBuy>  
+  <SendCouponSuccess>1</SendCouponSuccess>
+  <GetBrokerage>1</GetBrokerage>-->
+</MessageStatus> 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,683 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---eee 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,684 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---sss 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,685 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email2---:?<?xml version="1.0" encoding="utf-8" ?>
+<MessageStatus>
+  <EditPayPassWord>1</EditPayPassWord>
+  <EditLoginPassWord>1</EditLoginPassWord>
+  <OrderCreated>1</OrderCreated>
+  <OrderPay>1</OrderPay>
+  <OrderShipping>1</OrderShipping>
+  <OrderRefundApply>1</OrderRefundApply>
+  <OrderRefundSuccess>1</OrderRefundSuccess>
+  <OrderRefundFail>1</OrderRefundFail>
+  <OrderReturnApply>1</OrderReturnApply>
+  <OrderReturnSuccess>1</OrderReturnSuccess>
+  <OrderReturnFail>1</OrderReturnFail>
+  <FightGroupOpenSuccess>1</FightGroupOpenSuccess>
+  <FightGroupJoinSuccess>1</FightGroupJoinSuccess>
+  <FightGroupFailed>1</FightGroupFailed>
+  <FightGroupSuccess>1</FightGroupSuccess>
+  <SelfTakeOrderPay>1</SelfTakeOrderPay>
+  <AlreadyVerification>1</AlreadyVerification>
+  <VirtualOrderPay>1</VirtualOrderPay>
+  <VirtualAlreadyVerification>1</VirtualAlreadyVerification>
+  <DistributorApply>1</DistributorApply>
+  <DistributorAuditSuccess>1</DistributorAuditSuccess>
+  <DistributorAuditFail>1</DistributorAuditFail>
+  <DistributorNewJoin>3</DistributorNewJoin>
+  <DistributorCommissionPendingSettlement>1</DistributorCommissionPendingSettlement>
+  <DistributorCommissionSettled>1</DistributorCommissionSettled>
+  <MemberWithDrawApply>1</MemberWithDrawApply>
+  <MemberWithDrawSuccess>1</MemberWithDrawSuccess>
+  <MemberWithDrawFail>1</MemberWithDrawFail>
+  <ShopOrderShipping>3</ShopOrderShipping>
+  <ShopDelivering>3</ShopDelivering>
+  <!--<RefundDeliver>1</RefundDeliver>
+  <FindPassWord>1</FindPassWord>
+  <ShopAudited>1</ShopAudited>
+  <ShopHaveNewOrder>3</ShopHaveNewOrder>
+  <ReceiveBonus>3</ReceiveBonus>
+  <LimitTimeBuy>3</LimitTimeBuy>
+  <SubscribeLimitTimeBuy>3</SubscribeLimitTimeBuy>  
+  <SendCouponSuccess>1</SendCouponSuccess>
+  <GetBrokerage>1</GetBrokerage>-->
+</MessageStatus> 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,686 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---eee 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,706 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageContentConfig  
+错误描述：email2---sss 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,708 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageContentConfig  
+错误描述：email2---eee 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,760 
+日志级别：  INFO  
+出错类：Himall.Service.WXMsgTemplateService.SendMessageByTemplate  
+错误描述：[模板消息]开始准备数据：569[分销：申请审核通过] 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,871 
+日志级别：  INFO  
+出错类：Himall.Service.WXMsgTemplateService.SendMessageByTemplate  
+错误描述：消息类型=分销：申请审核通过 userId=569 openId= dataerr=未开启 
+
+
+
+
+ 记录时间：2020-04-10 14:49:13,871 
+日志级别：  INFO  
+出错类：Himall.Service.WXMsgTemplateService.SendMessageByTemplate  
+错误描述：[模板消息]发送失败：数据验证未通过-未开启[分销：申请审核通过] 
+
+
+
+
+ 记录时间：2020-04-10 15:22:28,841 
+日志级别：  INFO  
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：MysqlExecuted:66,耗时:1765.0182毫秒
+请求:http://localhost:32223/smallprogapi/product/GetProductDetail?openId=oNTAY0QN18Cq1tvrXix6JDJBwtrI&productId=747&shopBranchId=0 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,758 
+日志级别：  INFO  
+出错类：Himall.Service.OrderService.SendMessage  
+错误描述：进入SendMessage发送短信通知方法里面 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,781 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---sss 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,800 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email2---:?<?xml version="1.0" encoding="utf-8" ?>
+<MessageStatus>
+  <EditPayPassWord>1</EditPayPassWord>
+  <EditLoginPassWord>1</EditLoginPassWord>
+  <OrderCreated>1</OrderCreated>
+  <OrderPay>1</OrderPay>
+  <OrderShipping>1</OrderShipping>
+  <OrderRefundApply>1</OrderRefundApply>
+  <OrderRefundSuccess>1</OrderRefundSuccess>
+  <OrderRefundFail>1</OrderRefundFail>
+  <OrderReturnApply>1</OrderReturnApply>
+  <OrderReturnSuccess>1</OrderReturnSuccess>
+  <OrderReturnFail>1</OrderReturnFail>
+  <FightGroupOpenSuccess>1</FightGroupOpenSuccess>
+  <FightGroupJoinSuccess>1</FightGroupJoinSuccess>
+  <FightGroupFailed>1</FightGroupFailed>
+  <FightGroupSuccess>1</FightGroupSuccess>
+  <SelfTakeOrderPay>1</SelfTakeOrderPay>
+  <AlreadyVerification>1</AlreadyVerification>
+  <VirtualOrderPay>1</VirtualOrderPay>
+  <VirtualAlreadyVerification>1</VirtualAlreadyVerification>
+  <DistributorApply>1</DistributorApply>
+  <DistributorAuditSuccess>1</DistributorAuditSuccess>
+  <DistributorAuditFail>1</DistributorAuditFail>
+  <DistributorNewJoin>3</DistributorNewJoin>
+  <DistributorCommissionPendingSettlement>1</DistributorCommissionPendingSettlement>
+  <DistributorCommissionSettled>1</DistributorCommissionSettled>
+  <MemberWithDrawApply>1</MemberWithDrawApply>
+  <MemberWithDrawSuccess>1</MemberWithDrawSuccess>
+  <MemberWithDrawFail>1</MemberWithDrawFail>
+  <ShopOrderShipping>3</ShopOrderShipping>
+  <ShopDelivering>3</ShopDelivering>
+  <!--<RefundDeliver>1</RefundDeliver>
+  <FindPassWord>1</FindPassWord>
+  <ShopAudited>1</ShopAudited>
+  <ShopHaveNewOrder>3</ShopHaveNewOrder>
+  <ReceiveBonus>3</ReceiveBonus>
+  <LimitTimeBuy>3</LimitTimeBuy>
+  <SubscribeLimitTimeBuy>3</SubscribeLimitTimeBuy>  
+  <SendCouponSuccess>1</SendCouponSuccess>
+  <GetBrokerage>1</GetBrokerage>-->
+</MessageStatus> 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,800 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---eee 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,802 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---sss 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,803 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email2---:?<?xml version="1.0" encoding="utf-8" ?>
+<MessageStatus>
+  <EditPayPassWord>1</EditPayPassWord>
+  <EditLoginPassWord>1</EditLoginPassWord>
+  <OrderCreated>1</OrderCreated>
+  <OrderPay>1</OrderPay>
+  <OrderShipping>1</OrderShipping>
+  <OrderRefundApply>1</OrderRefundApply>
+  <OrderRefundSuccess>1</OrderRefundSuccess>
+  <OrderRefundFail>1</OrderRefundFail>
+  <OrderReturnApply>1</OrderReturnApply>
+  <OrderReturnSuccess>1</OrderReturnSuccess>
+  <OrderReturnFail>1</OrderReturnFail>
+  <FightGroupOpenSuccess>1</FightGroupOpenSuccess>
+  <FightGroupJoinSuccess>1</FightGroupJoinSuccess>
+  <FightGroupFailed>1</FightGroupFailed>
+  <FightGroupSuccess>1</FightGroupSuccess>
+  <SelfTakeOrderPay>1</SelfTakeOrderPay>
+  <AlreadyVerification>1</AlreadyVerification>
+  <VirtualOrderPay>1</VirtualOrderPay>
+  <VirtualAlreadyVerification>1</VirtualAlreadyVerification>
+  <DistributorApply>1</DistributorApply>
+  <DistributorAuditSuccess>1</DistributorAuditSuccess>
+  <DistributorAuditFail>1</DistributorAuditFail>
+  <DistributorNewJoin>3</DistributorNewJoin>
+  <DistributorCommissionPendingSettlement>1</DistributorCommissionPendingSettlement>
+  <DistributorCommissionSettled>1</DistributorCommissionSettled>
+  <MemberWithDrawApply>1</MemberWithDrawApply>
+  <MemberWithDrawSuccess>1</MemberWithDrawSuccess>
+  <MemberWithDrawFail>1</MemberWithDrawFail>
+  <ShopOrderShipping>3</ShopOrderShipping>
+  <ShopDelivering>3</ShopDelivering>
+  <!--<RefundDeliver>1</RefundDeliver>
+  <FindPassWord>1</FindPassWord>
+  <ShopAudited>1</ShopAudited>
+  <ShopHaveNewOrder>3</ShopHaveNewOrder>
+  <ReceiveBonus>3</ReceiveBonus>
+  <LimitTimeBuy>3</LimitTimeBuy>
+  <SubscribeLimitTimeBuy>3</SubscribeLimitTimeBuy>  
+  <SendCouponSuccess>1</SendCouponSuccess>
+  <GetBrokerage>1</GetBrokerage>-->
+</MessageStatus> 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,803 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageStatus  
+错误描述：email3---eee 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,822 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageContentConfig  
+错误描述：email2---sss 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,824 
+日志级别：  INFO  
+出错类：Himall.Plugin.Message.Email.EmailCore.GetMessageContentConfig  
+错误描述：email2---eee 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,873 
+日志级别：  INFO  
+出错类：Himall.Service.MessageService.SendMessageOnOrderCreate  
+错误描述：小程序创建订单，准备开始发送消息 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,894 
+日志级别：  INFO  
+出错类：Himall.Service.MessageService.SendMessageOnOrderCreate  
+错误描述：小程序创建订单跳转地址：pages/orderdetails/orderdetails?orderid=2020041042582827 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,916 
+日志级别：  INFO  
+出错类：Himall.Service.MessageService.SendMessageOnOrderCreate  
+错误描述：拿到的小程序openid为：oNTAY0QN18Cq1tvrXix6JDJBwtrI 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,938 
+日志级别：  INFO  
+出错类：Himall.Service.MessageService.SendMessageOnOrderCreate  
+错误描述：拿到的小程序formId：the formId is a mock one 
+
+
+
+
+ 记录时间：2020-04-10 15:23:45,942 
+日志级别：  INFO  
+出错类：Himall.Service.WXMsgTemplateService.SendAppletMessageByTemplate  
+错误描述：未配置微信公众信息 
+
+Himall.Core.HimallException: 未配置微信公众信息

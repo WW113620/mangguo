@@ -1,0 +1,136 @@
+
+
+
+ 记录时间：2020-04-09 15:45:01,984 
+日志级别：  DEBUG 
+出错类：Himall.Web.WebApiConfig.Register  
+错误描述：[OpenApi]RegRoute-DefaultOpenApi 
+
+
+
+
+ 记录时间：2020-04-09 15:46:18,551 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 03:46:18 551:[当前请求URL：http://localhost:32223/Installer/SaveConfiguration；请求的参数为：；页面加载的时间：10594.0148 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 15:46:20,601 
+日志级别：  DEBUG 
+出错类：Himall.Web.WebApiConfig.Register  
+错误描述：[OpenApi]RegRoute-DefaultOpenApi 
+
+
+
+
+ 记录时间：2020-04-09 15:47:00,633 
+日志级别：  DEBUG 
+出错类：Himall.Web.WebApiConfig.Register  
+错误描述：[OpenApi]RegRoute-DefaultOpenApi 
+
+
+
+
+ 记录时间：2020-04-09 15:49:55,412 
+日志级别：  DEBUG 
+出错类：Himall.Web.WebApiConfig.Register  
+错误描述：[OpenApi]RegRoute-DefaultOpenApi 
+
+
+
+
+ 记录时间：2020-04-09 15:50:20,038 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 03:50:20 037:[当前请求URL：http://localhost:32223/topic/detail/138；请求的参数为：；页面加载的时间：18342.9998 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 16:13:07,470 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 04:13:07 469:[当前请求URL：http://localhost:32223/SellerAdmin/FightGroup/AddActive；请求的参数为：；页面加载的时间：8400.0008 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 16:14:00,731 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 04:14:00 728:[当前请求URL：http://localhost:32223/smallprogapi/LimitTimeBuy/GetLimitBuyProduct?openId=oNTAY0QN18Cq1tvrXix6JDJBwtrI&countDownId=141；请求的参数为：openId=oNTAY0QN18Cq1tvrXix6JDJBwtrI&countDownId=141；页面加载的时间：7350.9997 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 16:24:18,181 
+日志级别：  DEBUG 
+出错类：Himall.Application.MemberApplication.SendMemberCode  
+错误描述：Code:78956 
+
+
+
+
+ 记录时间：2020-04-09 16:24:24,627 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 04:24:24 627:[当前请求URL：http://localhost:32223/SellerAdmin/ShopProfile/SendCode；请求的参数为：；页面加载的时间：6694.0001 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 16:24:33,407 
+日志级别：  DEBUG 
+出错类：Himall.Application.MemberApplication.SendMemberCode  
+错误描述：Code:92425 
+
+
+
+
+ 记录时间：2020-04-09 16:24:54,388 
+日志级别：  DEBUG 
+出错类：Himall.Application.MemberApplication.SendMemberCode  
+错误描述：Code:21685 
+
+
+
+
+ 记录时间：2020-04-09 16:27:56,856 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 04:27:56 850:[当前请求URL：http://localhost:32223/SellerAdmin/ShopProfile/SendCode；请求的参数为：；页面加载的时间：182726.0007 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 16:36:25,945 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 04:36:25 919:[当前请求URL：http://localhost:32223/home/GetLimitedProducts；请求的参数为：；页面加载的时间：5209.0008 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 16:44:37,520 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 04:44:37 492:[当前请求URL：http://localhost:32223/smallprogapi/Cart/GetCartProduct?openId=oNTAY0QN18Cq1tvrXix6JDJBwtrI；请求的参数为：openId=oNTAY0QN18Cq1tvrXix6JDJBwtrI；页面加载的时间：6143.991 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 16:45:02,155 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 04:45:02 153:[当前请求URL：http://localhost:32223/smallprogapi/Home/GetIndexProductData?openId=&pageIndex=1&pageSize=10；请求的参数为：openId=&pageIndex=1&pageSize=10；页面加载的时间：33580.9763 毫秒] 
+
+
+
+
+ 记录时间：2020-04-09 17:04:25,165 
+日志级别：  DEBUG 
+出错类：Himall.Web.MvcApplication.Application_EndRequest  
+错误描述：2020-04-09 05:04:25 164:[当前请求URL：http://localhost:32223/smallprogapi/Cart/GetCartProduct?openId=；请求的参数为：openId=；页面加载的时间：329958.8423 毫秒] 
+

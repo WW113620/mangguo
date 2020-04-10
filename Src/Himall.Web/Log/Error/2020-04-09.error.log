@@ -1,0 +1,1414 @@
+
+
+
+ 记录时间：2020-04-09 15:47:04,997 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQQI5RmCwq8QmAtJMKattQ95LTlDAWMRTk2dpJrISHZnGQ== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:04,997 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:05,063 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:05,175 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:05,237 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:05,312 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:05,362 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:31,067 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQQI5RmCwq8QmAtJMKattQ95LTlDAWMRTk2dpJrISHZnGQ== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:31,126 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:31,235 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:31,633 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:32,289 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:32,340 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:32,392 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:47:36,752 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQSU28EaDpVwneJ7mX8YQqm5R8Uz0ZkpPtgYnCgWP59L5Q== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:50:00,947 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:50:01,504 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQQI5RmCwq8QmAtJMKattQ95LTlDAWMRTk2dpJrISHZnGQ== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:50:01,607 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:50:01,972 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:50:01,972 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:50:02,099 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:50:02,161 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:50:17,464 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.BaseController.OnException  
+错误描述：页面未捕获的异常：Area:Web,Controller:topic,Action:detail,id:Get:post: 
+
+System.NullReferenceException: 未将对象引用设置到对象的实例。
+   在 ASP._Page_Areas_Web_Views_topic_Detail_cshtml.Execute() 位置 h:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web\Areas\Web\Views\Topic\Detail.cshtml:行号 4
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   在 System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.StartPage.RunPage()
+   在 System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   在 System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   在 System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   在 System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   在 System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+
+
+
+ 记录时间：2020-04-09 15:59:53,660 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:53,778 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:53,928 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:54,316 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:54,512 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:55,132 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:55,196 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:55,268 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:55,586 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:56,655 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:57,045 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:57,146 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:58,189 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 15:59:58,283 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:00:00,371 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:00:00,863 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:32,670 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:32,792 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:33,211 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:33,282 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:33,335 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:33,501 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:33,711 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:33,760 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:33,809 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:34,392 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:35,345 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:35,768 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:37,405 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:37,601 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:37,702 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:42,342 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:01:42,813 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:03,951 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:04,059 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:04,515 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:04,668 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:04,851 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:04,976 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:05,528 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:05,584 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:05,637 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:06,091 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:07,728 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:05:09,215 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:30,907 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQQI5RmCwq8QmAtJMKattQ95LTlDAWMRTk2dpJrISHZnGQ== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:30,964 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:31,440 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:31,556 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:32,076 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:32,130 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:32,186 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:36,835 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQR3zWQZjE7ehxKHoB4BtgBa2i02yNpb+xBkH2pMBDk1oA== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:07:36,879 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.UserCookieEncryptHelper.Decrypt  
+错误描述：解密用户标识Cookie出错，Cookie密文：7+hH6ZGVmvEoFnwHrLoltJk6AxE9CF13jg+Z9EANpQQI5RmCwq8QmAtJMKattQ95LTlDAWMRTk2dpJrISHZnGQ== 
+
+System.Security.Cryptography.CryptographicException: 填充无效，无法被移除。
+   在 System.Security.Cryptography.RijndaelManagedTransform.DecryptData(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount, Byte[]& outputBuffer, Int32 outputOffset, PaddingMode paddingMode, Boolean fLast)
+   在 System.Security.Cryptography.RijndaelManagedTransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 System.Security.Cryptography.CryptoStream.Dispose(Boolean disposing)
+   在 System.IO.Stream.Close()
+   在 System.IO.Stream.Dispose()
+   在 Himall.Core.Helper.SecureHelper.AESDecrypt(String decryptStr, String decryptKey)
+   在 Himall.Web.Framework.UserCookieEncryptHelper.Decrypt(String userIdCookie, String role, Boolean checkexpire) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web.Framework\UserCookieEncryptHelper.cs:行号 69
+
+
+
+ 记录时间：2020-04-09 16:08:38,465 
+日志级别：  ERROR 
+出错类：Himall.Web.Framework.BaseController.OnException  
+错误描述：页面未捕获的异常：Area:SellerAdmin,Controller:DistributionProduct,Action:Management,id:Get:post: 
+
+System.Web.HttpException (0x80004005): 无法在发送 HTTP 标头之后进行重定向。
+   在 System.Web.HttpResponse.Redirect(String url, Boolean endResponse, Boolean permanent)
+   在 System.Web.HttpResponseWrapper.Redirect(String url, Boolean endResponse)
+   在 System.Web.Mvc.RedirectToRouteResult.ExecuteResult(ControllerContext context)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   在 System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   在 System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+
+
+
+ 记录时间：2020-04-09 16:14:00,684 
+日志级别：  ERROR 
+出错类：Himall.SmallProgAPI.ApiExceptionFilterAttribute.OnException  
+错误描述：活动不存在! 
+
+Himall.Core.HimallException: 活动不存在!
+   在 Himall.Service.LimitTimeBuyService.Get(Int64 id) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\Market\LimitTimeBuyService.cs:行号 610
+   在 Himall.SmallProgAPI.LimitTimeBuyController.GetLimitBuyProduct(String openId, Int64 countDownId) 位置 H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.SmallProgAPI\LimitTimeBuyController.cs:行号 78
+   在 lambda_method(Closure , Object , Object[] )
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   在 System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+
+
+ 记录时间：2020-04-09 16:24:18,717 
+日志级别：  ERROR 
+出错类：Himall.Plugin.Message.Email.SendMail.SendEmail  
+错误描述：[邮件发送]失败：WW1136@163.com 
+
+System.Net.Mail.SmtpException: 命令顺序不正确。 服务器响应为:Error: need EHLO and AUTH first !
+   在 System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   在 System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   在 System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   在 System.Net.Mail.SmtpClient.Send(MailMessage message)
+   在 Himall.Plugin.Message.Email.SendMail.SendEmail(String title, String[] mailto, String content, Boolean async)
+
+
+
+ 记录时间：2020-04-09 16:24:33,843 
+日志级别：  ERROR 
+出错类：Himall.Plugin.Message.Email.SendMail.SendEmail  
+错误描述：[邮件发送]失败：WW113620@163.com 
+
+System.Net.Mail.SmtpException: 命令顺序不正确。 服务器响应为:Error: need EHLO and AUTH first !
+   在 System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   在 System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   在 System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   在 System.Net.Mail.SmtpClient.Send(MailMessage message)
+   在 Himall.Plugin.Message.Email.SendMail.SendEmail(String title, String[] mailto, String content, Boolean async)
+
+
+
+ 记录时间：2020-04-09 16:24:54,820 
+日志级别：  ERROR 
+出错类：Himall.Plugin.Message.Email.SendMail.SendEmail  
+错误描述：[邮件发送]失败：WW113620@163.com 
+
+System.Net.Mail.SmtpException: 命令顺序不正确。 服务器响应为:Error: need EHLO and AUTH first !
+   在 System.Net.Mail.MailCommand.CheckResponse(SmtpStatusCode statusCode, String response)
+   在 System.Net.Mail.MailCommand.Send(SmtpConnection conn, Byte[] command, MailAddress from, Boolean allowUnicode)
+   在 System.Net.Mail.SmtpTransport.SendMail(MailAddress sender, MailAddressCollection recipients, String deliveryNotify, Boolean allowUnicode, SmtpFailedRecipientException& exception)
+   在 System.Net.Mail.SmtpClient.Send(MailMessage message)
+   在 Himall.Plugin.Message.Email.SendMail.SendEmail(String title, String[] mailto, String content, Boolean async)
+
+
+
+ 记录时间：2020-04-09 16:31:25,227 
+日志级别：  ERROR 
+出错类：Himall.SmallProgAPI.MemberCapitalController.PostCharge  
+错误描述：暂未配置支付方式 
+

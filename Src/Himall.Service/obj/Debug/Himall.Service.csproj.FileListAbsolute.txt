@@ -1,0 +1,14 @@
+D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Service\obj\Debug\Himall.Service.csprojResolveAssemblyReference.cache
+D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Web\bin\Himall.Service.dll.config
+D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Web\bin\Himall.Service.dll
+D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Web\bin\Himall.Service.pdb
+D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Service\obj\Debug\Himall.Service.dll
+D:\Hiishop_Mall\branches\Himall3.3\src\Himall.Service\obj\Debug\Himall.Service.pdb
+H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web\bin\Himall.Service.dll.config
+H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web\bin\Himall.Service.dll
+H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Web\bin\Himall.Service.pdb
+H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\obj\Debug\Himall.Service.csprojAssemblyReference.cache
+H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\obj\Debug\Himall.Service.csproj.CoreCompileInputs.cache
+H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\obj\Debug\Himall.Service.csproj.CopyComplete
+H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\obj\Debug\Himall.Service.dll
+H:\WeiXinProject\GroupBuy\HiMaLL3.0\HiMaLL3.3官网源码版\源码\Src\Himall.Service\obj\Debug\Himall.Service.pdb
